@@ -1,121 +1,70 @@
 import * as React from "react"
-import styled from "styled-components"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
+// import * as styles from "../components/index.module.css"
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
-
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
-
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
-
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
+import {
+  PageHeaderWrapper,
+  PageHeader,
+  PageBody,
+  StaticImageWrapper,
+} from "../components/page.styles"
 
 const IndexPage = () => (
   <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
+    <PageHeaderWrapper>
+      <div>Three JS</div>
+      <div>Published on: 12/12/2023</div>
+      <PageHeader>Adding textures to a scene in ThreeJS</PageHeader>
+    </PageHeaderWrapper>
+    <PageBody>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+        placerat accumsan consequat. Mauris vitae mi ullamcorper, sodales tortor
+        eget, porta tortor. Sed vel augue quis risus varius pretium. Praesent
+        fermentum massa sit amet <Link to="page-2">laoreet malesuada</Link>.
+        Phasellus vel ornare ante, eget porttitor justo. Nam convallis, libero
+        in maximus finibus, urna eros volutpat purus, quis placerat massa magna
+        sit amet dui. Aenean in iaculis ante. Maecenas et vehicula metus. Sed
+        fringilla odio non ipsum auctor congue. Cras mi urna, blandit in lacinia
+        ut, hendrerit tempus sapien. Nunc pretium porta quam in commodo. Nam
+        pharetra euismod scelerisque.
       </p>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
+      <StaticImageWrapper>
+        <StaticImage
+          src="../images/sampleCode.png"
+          loading="eager"
+          width={629}
+          quality={95}
+          formats={["auto", "webp", "avif"]}
+          alt="sample code"
+        />
+      </StaticImageWrapper>
+      <p>
+        Pellentesque lacinia egestas dolor, nec tristique velit condimentum ac.
+        In sed pulvinar tortor. Mauris orci ex, vehicula in aliquam id, commodo
+        et lacus. Morbi justo eros, rhoncus vel libero egestas, pulvinar congue
+        mi. Nunc viverra commodo felis ut imperdiet. Fusce ultricies, velit sit
+        amet interdum porta, neque mauris auctor mi, eu interdum mauris dui non
+        nunc. Pellentesque ultricies felis tincidunt magna semper, in viverra
+        purus fermentum. Nam a erat eu nunc condimentum ultricies non nec orci.
+      </p>
+      <h2>
+        Using an array modifier to build a stair case around the tree trunk
+      </h2>
+      <p>
+        Pellentesque lacinia egestas dolor, nec tristique velit condimentum ac.
+        In sed pulvinar tortor. Mauris orci ex, vehicula in aliquam id, commodo
+        et lacus. Morbi justo eros, rhoncus vel libero egestas, pulvinar congue
+        mi. Nunc viverra commodo felis ut imperdiet. Fusce ultricies, velit sit
+        amet interdum porta, neque mauris auctor mi, eu interdum mauris dui non
+        nunc. Pellentesque ultricies felis tincidunt magna semper, in viverra
+        purus fermentum. Nam a erat eu nunc condimentum ultricies non nec orci.
+      </p>
+    </PageBody>
   </Layout>
 )
 

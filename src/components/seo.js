@@ -37,6 +37,10 @@ function Seo({ description, title, children }) {
       <meta name="twitter:creator" content={site.siteMetadata?.author || ``} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&amp;family=Sofia+Sans+Condensed:wght@800&amp;display=swap"
+        rel="stylesheet"
+      ></link>
       {children}
     </>
   )
