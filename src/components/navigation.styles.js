@@ -9,7 +9,7 @@ export const NavWrapper = styled.nav`
   left: -100%;
   width: 100%;
   height: 100%;
-  padding: 0px 0 40px 40px;
+  padding: 0px 0 40px 20px;
   background-color: ${colours.siteBackgroundHighlight};
   transition: all ease 0.6s;
   z-index: 10;
@@ -70,12 +70,20 @@ export const PrimaryCategoryTitle = styled.p`
 
 export const SubCategoryTitle = styled.p`
   margin: 0 0 20px;
-  padding: 0 0 0 30px;
+  padding: 0;
   font-size: 24px;
+
+  ${mediaQuery.min_desktop} {
+    padding: 0 0 0 30px;
+  }
 `
 
 export const LinkListGroup = styled.ul`
-  margin: 0 0 30px 30px;
+  margin: 0 0 30px 0;
+
+  ${mediaQuery.min_desktop} {
+    margin: 0 0 30px 30px;
+  }
 `
 
 export const LinkListItem = styled.li``
