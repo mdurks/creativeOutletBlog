@@ -13,17 +13,17 @@ import {
 const Navigation = () => {
   const projectLinks = [
     {
-      text: "Creative Outlet Treehouse1",
+      text: "Test article title",
       url: "/",
       activeClassName: "linkItemActive",
     },
     {
-      text: "Creative Outlet Treehouse2",
+      text: "Test article title",
       url: "/page-2",
       activeClassName: "linkItemActive",
     },
     {
-      text: "Creative Outlet Treehouse3",
+      text: "Test article title",
       url: "/page-2",
       activeClassName: "linkItemActive",
     },
@@ -31,17 +31,17 @@ const Navigation = () => {
 
   const blogThreeJSLinks = [
     {
-      text: "Creative Outlet Treehouse4",
+      text: "Test article title",
       url: "/page-2",
       activeClassName: "linkItemActive",
     },
     {
-      text: "Creative Outlet Treehouse5",
+      text: "Test article title",
       url: "/page-2",
       activeClassName: "linkItemActive",
     },
     {
-      text: "Creative Outlet Treehouse6",
+      text: "Test article title",
       url: "/page-2",
       activeClassName: "linkItemActive",
     },

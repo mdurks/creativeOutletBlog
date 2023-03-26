@@ -39,7 +39,7 @@ const IndexPage = () => {
         <div>
           <strong>Published:</strong> 12/12/2023
         </div>
-        <PageHeader>Adding textures to a scene in ThreeJS</PageHeader>
+        <PageHeader>Test blog title</PageHeader>
       </PageHeaderWrapper>
       <PageBody>
         <p>
@@ -84,9 +84,7 @@ const IndexPage = () => {
           <pre dangerouslySetInnerHTML={{ __html: articleBody2 }} />
         </code>
 
-        <h2>
-          Using an array modifier to build a stair case around the tree trunk
-        </h2>
+        <h2>Nunc viverra commodo felis ut imperdiet</h2>
         <p>
           Pellentesque lacinia egestas dolor, nec tristique velit condimentum
           ac. In sed pulvinar tortor. Mauris orci ex, vehicula in aliquam id,
