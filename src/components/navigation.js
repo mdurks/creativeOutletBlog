@@ -2,6 +2,7 @@ import * as React from "react"
 
 import {
   NavWrapper,
+  MobileMenuButton,
   NavLogo,
   PrimaryCategoryTitle,
   SubCategoryTitle,
@@ -10,45 +11,46 @@ import {
   LinkItem,
 } from "./navigation.styles"
 
-const Navigation = () => {
+const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
+  const handleMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
   const projectLinks = [
     {
       text: "Test article title",
       url: "/",
-      activeClassName: "linkItemActive",
     },
     {
       text: "Test article title",
       url: "/page-2",
-      activeClassName: "linkItemActive",
     },
     {
       text: "Test article title",
-      url: "/page-2",
-      activeClassName: "linkItemActive",
+      url: "/page-3",
     },
   ]
 
   const blogThreeJSLinks = [
     {
       text: "Test article title",
-      url: "/page-2",
-      activeClassName: "linkItemActive",
+      url: "/page-4",
     },
     {
       text: "Test article title",
-      url: "/page-2",
-      activeClassName: "linkItemActive",
+      url: "/page-5",
     },
     {
       text: "Test article title",
-      url: "/page-2",
-      activeClassName: "linkItemActive",
+      url: "/page-6",
     },
   ]
 
   return (
-    <NavWrapper>
+    <NavWrapper className={isMenuOpen && "menuOpen"}>
+      <MobileMenuButton onClick={handleMenuClick} type="button">
+        Close
+      </MobileMenuButton>
       <NavLogo>Creative Outlet</NavLogo>
 
       <PrimaryCategoryTitle>Projects:</PrimaryCategoryTitle>
@@ -59,7 +61,7 @@ const Navigation = () => {
             <LinkItem
               key={link.url}
               to={link.url}
-              activeClassName={link.activeClassName}
+              activeClassName="linkItemActive"
             >
               {link.text}
             </LinkItem>
@@ -76,7 +78,7 @@ const Navigation = () => {
             <LinkItem
               key={link.url}
               to={link.url}
-              activeClassName={link.activeClassName}
+              activeClassName="linkItemActive"
             >
               {link.text}
             </LinkItem>

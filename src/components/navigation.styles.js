@@ -2,20 +2,61 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { fonts } from "../utilities/fonts"
 import { colours } from "../utilities/colours"
+import mediaQuery from "../utilities/mediaQuery"
 
 export const NavWrapper = styled.nav`
-  flex: 0 0 400px;
-  /* height: 100%; */
-  padding: 70px 0 40px 40px;
+  position: absolute;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  padding: 0px 0 40px 40px;
   background-color: ${colours.siteBackgroundHighlight};
+  transition: all ease 0.6s;
+  z-index: 10;
+
+  &.menuOpen {
+    left: 0;
+    overflow-y: auto;
+  }
+
+  ${mediaQuery.min_desktop} {
+    position: relative;
+    left: 0;
+    flex: 0 0 400px;
+    height: auto;
+    padding: 70px 0 40px 40px;
+  }
+`
+
+export const MobileMenuButton = styled.button`
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 10px 16px;
+  border: 2px solid ${colours.heading};
+  border-radius: 5px;
+  background: transparent;
+  color: ${colours.heading};
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  ${mediaQuery.min_desktop} {
+    display: none;
+  }
 `
 
 export const NavLogo = styled.p`
-  margin: 0 0 60px;
-  width: 230px;
-  font-family: ${fonts.primary};
-  font-size: 70px;
-  line-height: 70px;
+  display: none;
+
+  ${mediaQuery.min_desktop} {
+    display: block;
+    margin: 0 0 60px;
+    width: 230px;
+    font-family: ${fonts.primary};
+    font-size: 70px;
+    line-height: 70px;
+  }
 `
 
 export const PrimaryCategoryTitle = styled.p`

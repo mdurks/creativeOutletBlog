@@ -6,12 +6,19 @@
  */
 
 import * as React from "react"
+import { useState, useEffect } from "react"
 // import { useStaticQuery, graphql } from "gatsby"
 
 // import Header from "./header"
 import Navigation from "./navigation"
 import "./layout.css"
-import { PageWrapper, PageContent } from "./layout.styles"
+import {
+  PageWrapper,
+  PageContent,
+  MobileHeader,
+  MobileSiteTitle,
+  MobileMenuButton,
+} from "./layout.styles"
 
 const Layout = ({ children }) => {
   // const data = useStaticQuery(graphql`
@@ -24,11 +31,28 @@ const Layout = ({ children }) => {
   //   }
   // `)
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const handleMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
+  useEffect(() => {
+    if (isMenuOpen) document.querySelector("body").classList.add("menuOpen")
+    else document.querySelector("body").classList.remove("menuOpen")
+  }, [isMenuOpen])
+
   return (
     <>
       {/* <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> */}
       <PageWrapper>
-        <Navigation />
+        <MobileHeader>
+          <MobileSiteTitle>Creative Outlet</MobileSiteTitle>
+          <MobileMenuButton onClick={handleMenuClick} type="button">
+            Menu
+          </MobileMenuButton>
+        </MobileHeader>
+        <Navigation setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
         <PageContent>{children}</PageContent>
       </PageWrapper>
       {/* <footer
