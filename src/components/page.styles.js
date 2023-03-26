@@ -17,6 +17,6 @@ export const PageBody = styled.main`
 `
 
 export const StaticImageWrapper = styled.div`
-  margin: 50px;
+  margin: 60px 0;
   text-align: center;
 `

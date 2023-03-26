@@ -11,48 +11,79 @@ import {
 } from "./navigation.styles"
 
 const Navigation = () => {
-  const nav = 5
-  console.log("nav", nav)
+  const projectLinks = [
+    {
+      text: "Creative Outlet Treehouse1",
+      url: "/",
+      activeClassName: "linkItemActive",
+    },
+    {
+      text: "Creative Outlet Treehouse2",
+      url: "/page-2",
+      activeClassName: "linkItemActive",
+    },
+    {
+      text: "Creative Outlet Treehouse3",
+      url: "/page-2",
+      activeClassName: "linkItemActive",
+    },
+  ]
+
+  const blogThreeJSLinks = [
+    {
+      text: "Creative Outlet Treehouse4",
+      url: "/page-2",
+      activeClassName: "linkItemActive",
+    },
+    {
+      text: "Creative Outlet Treehouse5",
+      url: "/page-2",
+      activeClassName: "linkItemActive",
+    },
+    {
+      text: "Creative Outlet Treehouse6",
+      url: "/page-2",
+      activeClassName: "linkItemActive",
+    },
+  ]
+
   return (
     <NavWrapper>
       <NavLogo>Creative Outlet</NavLogo>
+
       <PrimaryCategoryTitle>Projects:</PrimaryCategoryTitle>
+
       <LinkListGroup>
-        <LinkListItem>
-          <LinkItem to="/" activeClassName="linkItemActive">
-            Creative Outlet Treehouse
-          </LinkItem>
-        </LinkListItem>
-        <LinkListItem>
-          <LinkItem to="/page-2" activeClassName="linkItemActive">
-            Creative Outlet Treehouse
-          </LinkItem>
-        </LinkListItem>
-        <LinkListItem>
-          <LinkItem to="/page-2" activeClassName="linkItemActive">
-            Creative Outlet Treehouse
-          </LinkItem>
-        </LinkListItem>
+        {projectLinks.map(link => (
+          <LinkListItem>
+            <LinkItem
+              key={link.url}
+              to={link.url}
+              activeClassName={link.activeClassName}
+            >
+              {link.text}
+            </LinkItem>
+          </LinkListItem>
+        ))}
       </LinkListGroup>
+
       <PrimaryCategoryTitle>Blog:</PrimaryCategoryTitle>
+
       <SubCategoryTitle>Three JS:</SubCategoryTitle>
       <LinkListGroup>
-        <LinkListItem>
-          <LinkItem to="/page-2" activeClassName="linkItemActive">
-            Creative Outlet Treehouse
-          </LinkItem>
-        </LinkListItem>
-        <LinkListItem>
-          <LinkItem to="/page-2" activeClassName="linkItemActive">
-            Creative Outlet Treehouse
-          </LinkItem>
-        </LinkListItem>
-        <LinkListItem>
-          <LinkItem to="/page-2" activeClassName="linkItemActive">
-            Creative Outlet Treehouse
-          </LinkItem>
-        </LinkListItem>
+        {blogThreeJSLinks.map(link => (
+          <LinkListItem>
+            <LinkItem
+              key={link.url}
+              to={link.url}
+              activeClassName={link.activeClassName}
+            >
+              {link.text}
+            </LinkItem>
+          </LinkListItem>
+        ))}
       </LinkListGroup>
+
       <SubCategoryTitle>Blender</SubCategoryTitle>
       <SubCategoryTitle>React</SubCategoryTitle>
     </NavWrapper>
