@@ -3,11 +3,12 @@ import { colours } from "../utilities/colours"
 import mediaQuery from "../utilities/mediaQuery"
 
 export const PageHeaderWrapper = styled.div`
-  margin: 0 0 40px;
-  padding: 30px;
+  margin: -20px -20px 20px;
+  padding: 20px;
   background-color: ${colours.siteBackgroundHighlight};
 
   ${mediaQuery.min_desktop} {
+    margin: 0 0 40px;
     padding: 50px 100px;
   }
 `
@@ -45,6 +46,10 @@ export const PageBody = styled.main`
 `
 
 export const StaticImageWrapper = styled.div`
-  margin: 60px 0;
+  margin: 30px 0;
   text-align: center;
+
+  ${mediaQuery.min_desktop} {
+    margin: 60px 0;
+  }
 `

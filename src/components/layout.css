@@ -8,7 +8,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Dosis', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   line-height: normal;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -17,6 +17,11 @@ body {
   color: #B2CACD;
   height: 100%;
   overflow-x: hidden;
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 20px;
+  }
 }
 
 body.menuOpen {
@@ -39,17 +44,32 @@ body.menuOpen {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 60px 0 30px;
+  margin: 40px 0 20px;
   padding: 0;
   font-family: 'Sofia Sans Condensed', sans-serif;
   font-weight: 400;
   color: #49D6E9;
 }
+@media (min-width: 768px) {
+  h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 60px 0 30px;
+  }
+}
 
 p {
   margin: 0 0 30px;
   padding: 0;
-  line-height: 37px;
+  line-height: 32px;
+}
+@media (min-width: 768px) {
+  p {
+    line-height: 37px;
+  }
 }
 
 a {
