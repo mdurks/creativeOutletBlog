@@ -6,7 +6,7 @@ import mediaQuery from "../utilities/mediaQuery"
 
 export const NavWrapper = styled.nav`
   position: absolute;
-  left: 100%;
+  left: -100%;
   width: 100%;
   height: 100%;
   padding: 0px 0 40px 40px;

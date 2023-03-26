@@ -14,7 +14,11 @@ export const PageHeaderWrapper = styled.div`
 
 export const PageHeader = styled.h1`
   margin: 20px 0 0;
-  font-size: 70px;
+  font-size: 40px;
+
+  ${mediaQuery.min_desktop} {
+    font-size: 70px;
+  }
 `
 
 export const PageBody = styled.main`
