@@ -35,6 +35,7 @@ export const PageBody = styled.main`
     margin: 0 auto 30px;
     padding: 15px !important;
     font-size: 16px;
+    line-height: 23px;
     background: #052529 !important;
     overflow-x: auto;
 
