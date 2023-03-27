@@ -94,6 +94,7 @@ export const LinkItem = styled(Link)`
 
   /* &.linkItemActive, */
   &:hover {
+    text-decoration: underline;
     color: ${colours.linkActive};
   }
 `
