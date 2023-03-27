@@ -27,6 +27,7 @@ const mediaQuery = {
   //   Other
   // -------------------------------------------------------------
   //
+  desktop_medium: "@media (min-width: 1600px)",
   desktop_max: "1400px",
   //
   //

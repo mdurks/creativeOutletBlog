@@ -22,7 +22,7 @@ export const NavWrapper = styled.nav`
   ${mediaQuery.min_desktop} {
     position: relative;
     left: 0;
-    flex: 0 0 400px;
+    flex: 0 0 350px;
     height: auto;
     padding: 70px 0 40px 40px;
   }
@@ -46,7 +46,7 @@ export const MobileMenuButton = styled.button`
   }
 `
 
-export const NavLogo = styled.p`
+export const NavLogo = styled(Link)`
   display: none;
 
   ${mediaQuery.min_desktop} {
@@ -56,6 +56,12 @@ export const NavLogo = styled.p`
     font-family: ${fonts.primary};
     font-size: 70px;
     line-height: 70px;
+    color: ${colours.bodyText};
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: ${colours.linkActive} !important;
   }
 `
 
@@ -72,18 +78,10 @@ export const SubCategoryTitle = styled.p`
   margin: 0 0 20px;
   padding: 0;
   font-size: 24px;
-
-  ${mediaQuery.min_desktop} {
-    padding: 0 0 0 30px;
-  }
 `
 
 export const LinkListGroup = styled.ul`
   margin: 0 0 30px 0;
-
-  ${mediaQuery.min_desktop} {
-    margin: 0 0 30px 30px;
-  }
 `
 
 export const LinkListItem = styled.li``
@@ -94,7 +92,7 @@ export const LinkItem = styled(Link)`
   color: ${colours.link};
   text-decoration: none;
 
-  &.linkItemActive,
+  /* &.linkItemActive, */
   &:hover {
     color: ${colours.linkActive};
   }

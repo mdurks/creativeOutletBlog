@@ -1,11 +1,11 @@
 import styled from "styled-components"
+import { Link } from "gatsby"
 import mediaQuery from "../utilities/mediaQuery"
 import { colours } from "../utilities/colours"
 
 export const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
 
   ${mediaQuery.min_desktop} {
     flex-direction: row;
@@ -33,8 +33,10 @@ export const MobileHeader = styled.div`
   }
 `
 
-export const MobileSiteTitle = styled.div`
+export const MobileSiteTitle = styled(Link)`
   font-size: 30px;
+  color: ${colours.bodyText};
+  text-decoration: none;
 `
 
 export const MobileMenuButton = styled.button`

@@ -1,18 +1,56 @@
 /**
  * Implement Gatsby's Node APIs in this file.
- *
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/
  */
-
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
-exports.createPages = async ({ actions }) => {
-  const { createPage } = actions
-  createPage({
-    path: "/using-dsg",
-    component: require.resolve("./src/templates/using-dsg.js"),
-    context: {},
-    defer: true,
+// exports.createPages = async ({ actions }) => {
+exports.createPages = async ({ graphql, actions: { createPage } }) => {
+  // const { createPage } = actions
+  // createPage({
+  //   path: "/using-dsg",
+  //   component: require.resolve("./src/templates/using-dsg.js"),
+  //   context: {},
+  //   defer: true,
+  // })
+
+  // Dynamic Query for blogs
+  // ------------------------------------------------------------------------------------
+  const {
+    data: {
+      gcms: { blogs },
+    },
+  } = await graphql(`
+    {
+      gcms {
+        blogs(stage: PUBLISHED) {
+          id
+          slug
+          createdAt
+          updatedAt
+          articleTitle
+          blogCategory
+          content {
+            html
+          }
+        }
+      }
+    }
+  `)
+
+  // Dynamic Query to generate Blogs
+  // ------------------------------------------------------------------------------------
+  // Dynamicaly create all the blog pages from query above
+  // Pass the ID to find that blog article when doing the gcms query on that page for its content
+  blogs.forEach(blog => {
+    const id = blog.id
+    createPage({
+      path: `/${blog.slug}`,
+      component: require.resolve(`./src/templates/blogArticle.js`),
+      context: {
+        id,
+      },
+    })
   })
 }

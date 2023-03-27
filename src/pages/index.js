@@ -33,13 +33,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <PageHeaderWrapper>
-        <div>
-          <strong>Category:</strong> Three JS
-        </div>
-        <div>
-          <strong>Published:</strong> 12/12/2023
-        </div>
-        <PageHeader>Test blog title</PageHeader>
+        <PageHeader>Welcome</PageHeader>
       </PageHeaderWrapper>
       <PageBody>
         <p>
@@ -76,13 +70,19 @@ const IndexPage = () => {
           condimentum ultricies non nec orci.
         </p>
 
-        <code>
-          <pre dangerouslySetInnerHTML={{ __html: articleBody }} />
-        </code>
+        <ul>
+          <li>lkjlkj lkj lkj lk</li>
+          <li>lkjlkj lkj lkj lk</li>
+          <li>lkjlkj lkj lkj lk</li>
+        </ul>
 
-        <code>
-          <pre dangerouslySetInnerHTML={{ __html: articleBody2 }} />
-        </code>
+        <pre>
+          <code dangerouslySetInnerHTML={{ __html: articleBody }} />
+        </pre>
+
+        <pre>
+          <code dangerouslySetInnerHTML={{ __html: articleBody2 }} />
+        </pre>
 
         <h2>Nunc viverra commodo felis ut imperdiet</h2>
         <p>
