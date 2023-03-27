@@ -81,14 +81,22 @@ export const PageBody = styled.main`
     color: ${colours.highLight} !important;
   }
 
-  .quote p {
-    font-size: 20px;
-    line-height: 35px;
-    font-style: italic;
+  .quote {
+    margin: 35px 0 45px;
 
     ${mediaQuery.min_desktop} {
-      font-size: 30px;
-      line-height: 45px;
+      margin: 0;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 38px;
+      font-style: italic;
+
+      ${mediaQuery.min_desktop} {
+        font-size: 30px;
+        line-height: 45px;
+      }
     }
   }
 `
