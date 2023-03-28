@@ -99,6 +99,24 @@ export const PageBody = styled.main`
       }
     }
   }
+
+  .blog-build-process {
+    img {
+      display: block;
+      width: 100%;
+      margin: 40px auto;
+
+      ${mediaQuery.min_desktop} {
+        margin: 75px auto;
+        height: 950px;
+        margin: 60px 0;
+      }
+    }
+  }
+
+  .largeEmoji {
+    font-size: 60px;
+  }
 `
 
 export const StaticImageWrapper = styled.div`

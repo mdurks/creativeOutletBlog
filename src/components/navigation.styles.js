@@ -33,11 +33,12 @@ export const MobileMenuButton = styled.button`
   right: 20px;
   top: 20px;
   padding: 10px 16px;
-  border: 2px solid ${colours.heading};
+  border: 2px solid ${colours.link};
   border-radius: 5px;
   background: transparent;
-  color: ${colours.heading};
+  color: ${colours.link};
   font-size: 20px;
+  font-family: ${fonts.primary};
   text-transform: uppercase;
   cursor: pointer;
 
@@ -56,8 +57,9 @@ export const NavLogo = styled(Link)`
     font-family: ${fonts.primary};
     font-size: 70px;
     line-height: 70px;
-    color: ${colours.bodyText};
+    color: ${colours.link};
     text-decoration: none;
+    text-transform: uppercase;
   }
 
   &:hover {
@@ -78,6 +80,7 @@ export const SubCategoryTitle = styled.p`
   margin: 0 0 20px;
   padding: 0;
   font-size: 24px;
+  color: ${colours.highLight};
 `
 
 export const LinkListGroup = styled.ul`

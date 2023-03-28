@@ -1,7 +1,7 @@
 export const colours = {
-  link: "#bba010",
+  link: "#0096ab",
   linkActive: "#49D6E9",
-  heading: "#0096ab",
+  heading: "#bba010",
   bodyText: "#B2CACD",
   highLight: "#b55228",
   siteBackground: "#041D20",
