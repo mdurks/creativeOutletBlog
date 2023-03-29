@@ -38,10 +38,6 @@ function Seo({ description, title, children }) {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="theme-color" content="#041d20" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&amp;family=Sofia+Sans+Condensed:wght@800&amp;display=swap"
-        rel="stylesheet"
-      ></link>
       {children}
     </>
   )

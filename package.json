@@ -11,6 +11,7 @@
     "gatsby-plugin-manifest": "^5.8.0",
     "gatsby-plugin-sharp": "^5.8.0",
     "gatsby-plugin-styled-components": "^6.8.0",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^5.8.0",
     "gatsby-transformer-sharp": "^5.8.0",
     "highlight.js": "^11.7.0",
