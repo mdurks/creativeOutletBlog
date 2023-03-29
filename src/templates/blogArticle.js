@@ -19,7 +19,6 @@ const IndexPage = ({
     gcms: { blog },
   },
 }) => {
-  console.log("Blog article data", blog)
   const dateBlogPublished = formatDate(blog.createdAt)
   const dateBlogUpdated = blog?.updatedAt ? formatDate(blog.updatedAt) : false
 

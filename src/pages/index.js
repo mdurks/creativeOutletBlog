@@ -1,13 +1,10 @@
 import * as React from "react"
-import { useEffect } from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 // import * as styles from "../components/index.module.css"
-
-import highlightCode from "../utilities/highlightCode"
 
 import {
   PageHeaderWrapper,
@@ -17,19 +14,6 @@ import {
 } from "../components/page.styles"
 
 const IndexPage = () => {
-  // const articleBody =
-  //   "&lt;StaticImageWrapper&gt;\n  &lt;StaticImage\n    src=&quot;../images/sampleCode.png&quot;\n    loading=&quot;eager&quot;\n    width={629}\n    quality={95}\n    formats={[&quot;auto&quot;, &quot;webp&quot;, &quot;avif&quot;]}\n    alt=&quot;sample code&quot;\n  /&gt;\n&lt;/StaticImageWrapper&gt;"
-  const articleBody =
-    "&lt;StaticImageWrapper&gt;\r\n  &lt;StaticImage\r\n    src=&quot;../images/sampleCode.png&quot;\r\n    loading=&quot;eager&quot;\r\n    width={629}\r\n    quality={95}\r\n    formats={[&quot;auto&quot;, &quot;webp&quot;, &quot;avif&quot;]}\r\n    alt=&quot;sample code&quot;\r\n  /&gt;\r\n&lt;/StaticImageWrapper&gt;"
-  // const articleBody2 =
-  //   'const blogThreeJSLinks = [\n  {\n    text: "Creative Outlet Treehouse4",\n    url: "/page-2",\n    activeClassName: "linkItemActive",\n  },\n  {\n    text: "Creative Outlet Treehouse5",\n    url: "/page-2",\n    activeClassName: "linkItemActive",\n  },\n  {\n    text: "Creative Outlet Treehouse6",\n    url: "/page-2",\n    activeClassName: "linkItemActive",\n  },\n]'
-  const articleBody2 =
-    "import hljs from &quot;highlight.js&quot;\r\n// import &quot;highlight.js/styles/atom-one-dark.css&quot;\r\nimport &quot;highlight.js/styles/agate.css&quot;\r\n\r\nhljs.configure({\r\n  languages: [\r\n    &quot;php&quot;,\r\n    &quot;javascript&quot;,\r\n    &quot;json&quot;,\r\n    &quot;bash&quot;,\r\n    &quot;scss&quot;,\r\n    &quot;css&quot;,\r\n    &quot;yml&quot;,\r\n    &quot;twig&quot;,\r\n    &quot;html&quot;,\r\n  ],\r\n})\r\n\r\nexport default function highlightCode() {\r\n  const codeBlocks = document.querySelectorAll(&quot;code &gt; pre&quot;)\r\n  codeBlocks.forEach(codeBlock =&gt; {\r\n    if (typeof codeBlock === &quot;object&quot;) {\r\n      hljs.highlightElement(codeBlock)\r\n    }\r\n  })\r\n}"
-
-  useEffect(() => {
-    highlightCode()
-  })
-
   return (
     <Layout>
       <PageHeaderWrapper>
@@ -75,14 +59,6 @@ const IndexPage = () => {
           <li>lkjlkj lkj lkj lk</li>
           <li>lkjlkj lkj lkj lk</li>
         </ul>
-
-        <pre>
-          <code dangerouslySetInnerHTML={{ __html: articleBody }} />
-        </pre>
-
-        <pre>
-          <code dangerouslySetInnerHTML={{ __html: articleBody2 }} />
-        </pre>
 
         <h2>Nunc viverra commodo felis ut imperdiet</h2>
         <p>

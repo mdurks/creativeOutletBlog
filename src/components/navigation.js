@@ -28,7 +28,6 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
   const {
     gcms: { blogs },
   } = useStaticQuery(pageQuery)
-  console.log("Navigation Links", blogs)
 
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen)

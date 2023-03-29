@@ -10,13 +10,12 @@ import "highlight.js/styles/base16/hardcore.css"
 
 hljs.configure({
   languages: ["javascript", "css", "scss", "json", "html"],
+  throwUnescapedHTML: "",
 })
 
 export default function highlightCode() {
-  const codeBlocks = document.querySelectorAll("pre > code")
-  codeBlocks.forEach(codeBlock => {
-    if (typeof codeBlock === "object") {
-      hljs.highlightElement(codeBlock)
-    }
+  document.querySelectorAll("pre > code").forEach(el => {
+    el.innerHTML = el.textContent
   })
+  hljs.highlightAll()
 }
