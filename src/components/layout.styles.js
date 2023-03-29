@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
-import mediaQuery from "../utilities/mediaQuery"
+import { mediaQuery } from "../utilities/mediaQuery"
 import { colours } from "../utilities/colours"
 import { fonts } from "../utilities/fonts"
 

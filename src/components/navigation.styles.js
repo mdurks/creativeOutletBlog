@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { fonts } from "../utilities/fonts"
 import { colours } from "../utilities/colours"
-import mediaQuery from "../utilities/mediaQuery"
+import { mediaQuery } from "../utilities/mediaQuery"
 
 export const NavWrapper = styled.nav`
   position: absolute;

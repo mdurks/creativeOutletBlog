@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { colours } from "../utilities/colours"
-import mediaQuery from "../utilities/mediaQuery"
+import { mediaQuery } from "../utilities/mediaQuery"
 
 export const PageHeaderWrapper = styled.div`
   margin: -20px -20px 20px;
