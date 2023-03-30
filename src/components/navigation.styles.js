@@ -87,7 +87,9 @@ export const LinkListGroup = styled.ul`
   margin: 0 0 30px 0;
 `
 
-export const LinkListItem = styled.li``
+export const LinkListItem = styled.li`
+  line-height: 28px;
+`
 
 export const LinkItem = styled(Link)`
   display: block;

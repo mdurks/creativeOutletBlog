@@ -1,3 +1,24 @@
+@font-face {
+  font-family: 'Dosis';
+  src: url('../fonts/dosis-medium.woff2') format('woff2'),
+    url('../fonts/dosis-medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+
+@font-face {
+  font-family: 'Sofia Sans Condensed';
+  src: url('../fonts/sofiasanscondensed-extrabold.woff2') format('woff2'),
+    url('../fonts/sofiasanscondensed-extrabold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
@@ -98,4 +119,8 @@ a {
 source,
 img {
     width: 100%;
+}
+
+.hljs .hljs-comment {
+  color: #0096ab;
 }
