@@ -124,3 +124,7 @@ img {
 .hljs .hljs-comment {
   color: #0096ab;
 }
+
+.hljs .hljs-tag {
+  color: #cdcdcd;
+}
