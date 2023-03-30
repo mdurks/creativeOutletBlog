@@ -43,7 +43,7 @@ export const PageBody = styled.main`
     padding: 15px !important;
     font-size: 13px;
     line-height: 19px;
-    background: ${colours.siteBackgroundHighlight} !important;
+    background: ${colours.siteBackgroundHighlightDark} !important;
     overflow-x: auto;
 
     ${mediaQuery.min_desktop} {
