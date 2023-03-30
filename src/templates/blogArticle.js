@@ -12,6 +12,8 @@ import {
   PageHeaderWrapper,
   PageHeader,
   PageBody,
+  PublishedWrapper,
+  UpdatedWrapper,
 } from "../components/page.styles"
 
 const IndexPage = ({
@@ -30,13 +32,13 @@ const IndexPage = ({
     <Layout>
       <PageHeaderWrapper>
         <PageHeader>{blog.articleTitle}</PageHeader>
-        <div>
+        <PublishedWrapper>
           <strong>Published:</strong> {dateBlogPublished}
-        </div>
+        </PublishedWrapper>
         {dateBlogUpdated && (
-          <div>
+          <UpdatedWrapper>
             <strong>Updated:</strong> {dateBlogUpdated}
-          </div>
+          </UpdatedWrapper>
         )}
       </PageHeaderWrapper>
       <PageBody>

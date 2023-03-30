@@ -26,6 +26,12 @@ export const PageHeader = styled.h1`
   }
 `
 
+export const PublishedWrapper = styled.div`
+  margin: 10px 0;
+`
+
+export const UpdatedWrapper = styled.div``
+
 export const PageBody = styled.main`
   padding: 0px;
 
