@@ -18,4 +18,10 @@ export default function highlightCode() {
     el.innerHTML = el.textContent
   })
   hljs.highlightAll()
+  // const codeBlocks = document.querySelectorAll("pre > code")
+  // codeBlocks.forEach(codeBlock => {
+  //   if (typeof codeBlock === "object") {
+  //     hljs.highlightElement(codeBlock)
+  //   }
+  // })
 }

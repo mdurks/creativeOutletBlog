@@ -95,9 +95,15 @@ export const LinkItem = styled(Link)`
   color: ${colours.link};
   text-decoration: none;
 
-  /* &.linkItemActive, */
   &:hover {
     text-decoration: underline;
     color: ${colours.linkActive};
+  }
+
+  &.linkItemActive,
+  &.linkItemActive:hover {
+    color: ${colours.heading};
+    text-decoration: underline;
+    pointer-events: none;
   }
 `
