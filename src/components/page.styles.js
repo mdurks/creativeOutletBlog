@@ -43,26 +43,6 @@ export const PageBody = styled.main`
     padding: 50px 100px;
   }
 
-  code {
-    width: 100%;
-    margin: 0 auto 30px;
-    padding: 15px !important;
-    font-size: 13px;
-    line-height: 19px;
-    background: ${colours.siteBackgroundHighlightDark} !important;
-    overflow-x: auto;
-
-    ${mediaQuery.min_desktop} {
-      padding: 2em !important;
-      font-size: 15px;
-      line-height: 21px;
-    }
-
-    ${mediaQuery.desktop_medium} {
-      width: 80%;
-    }
-  }
-
   a {
     color: ${colours.link} !important;
 
@@ -79,7 +59,7 @@ export const PageBody = styled.main`
     }
 
     li {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
   }
 
@@ -88,15 +68,14 @@ export const PageBody = styled.main`
   }
 
   .quote {
-    margin: 35px 0 45px;
+    margin: 35px 0;
 
     ${mediaQuery.min_desktop} {
-      margin: 0;
+      margin: 0 0 40px;
     }
 
     p {
-      font-size: 20px;
-      line-height: 38px;
+      font-size: 18px;
       font-style: italic;
 
       ${mediaQuery.min_desktop} {

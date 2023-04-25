@@ -1,19 +1,16 @@
 @font-face {
-  font-family: 'Dosis';
-  src: url('../fonts/dosis-medium.woff2') format('woff2'),
-    url('../fonts/dosis-medium.woff') format('woff');
+  font-family: "Dosis";
+  src: url("../fonts/dosis-medium.woff2") format("woff2"),
+    url("../fonts/dosis-medium.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
-
-
-
 @font-face {
-  font-family: 'Sofia Sans Condensed';
-  src: url('../fonts/sofiasanscondensed-extrabold.woff2') format('woff2'),
-    url('../fonts/sofiasanscondensed-extrabold.woff') format('woff');
+  font-family: "Sofia Sans Condensed";
+  src: url("../fonts/sofiasanscondensed-extrabold.woff2") format("woff2"),
+    url("../fonts/sofiasanscondensed-extrabold.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -28,14 +25,14 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Dosis', sans-serif;
+  font-family: "Dosis", sans-serif;
   font-size: 18px;
   line-height: normal;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  /* word-wrap: break-word; */
-  background-color: #041D20;
-  color: #B2CACD;
+  word-wrap: break-word;
+  background-color: #041d20;
+  color: #b2cacd;
   height: 100%;
   overflow-x: hidden;
 }
@@ -64,45 +61,59 @@ body.menuOpen {
   box-sizing: inherit;
 }
 
+code::selection,
 ::selection {
-  color: white;
-  background: #084c55;
+  color: white !important;
+  background: #084c55 !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 40px 0 20px;
   padding: 0;
-  font-family: 'Sofia Sans Condensed', sans-serif;
+  font-family: "Sofia Sans Condensed", sans-serif;
   font-weight: 400;
   color: #bba010;
 }
 
+h2 {
+  line-height: 35px;
+}
+
+h3 {
+  line-height: 30px;
+}
+
 h1 {
-  color: #B2CACD;
+  color: #b2cacd;
 }
 @media (min-width: 768px) {
   h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      margin: 40px 0 20px;
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 40px 0 20px;
   }
 }
 @media (min-width: 1024px) {
   h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      margin: 80px 0 20px;
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 80px 0 20px;
   }
 }
 
 p {
-  margin: 0 0 30px;
+  margin: 0 0 20px;
   padding: 0;
   line-height: 32px;
 }
@@ -112,13 +123,22 @@ p {
   }
 }
 
+ul {
+  line-height: 32px;
+}
+@media (min-width: 768px) {
+  ul {
+    line-height: 37px;
+  }
+}
+
 a {
-  transition: all ease .4s;
+  transition: all ease 0.4s;
 }
 
 source,
 img {
-    width: 100%;
+  width: 100%;
 }
 
 .hljs .hljs-comment {
@@ -127,4 +147,28 @@ img {
 
 .hljs .hljs-tag {
   color: #cdcdcd;
+}
+
+code {
+  width: 100%;
+  margin: 0 auto 30px;
+  padding: 15px !important;
+  font-size: 13px;
+  line-height: 19px;
+  background: #03181a !important;
+  overflow-x: auto;
+}
+
+@media (min-width: 1024px) {
+  code {
+    padding: 2em !important;
+    font-size: 15px;
+    line-height: 21px;
+  }
+}
+
+@media (min-width: 1600px) {
+  code {
+    width: 80%;
+  }
 }

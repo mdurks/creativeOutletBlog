@@ -60,6 +60,7 @@ export const NavLogo = styled(Link)`
     color: ${colours.link};
     text-decoration: none;
     text-transform: uppercase;
+    word-wrap: normal;
   }
 
   &:hover {
