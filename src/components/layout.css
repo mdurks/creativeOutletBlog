@@ -149,14 +149,46 @@ img {
   color: #cdcdcd;
 }
 
+ul code,
 p code {
-  background: #274144;
+  position: relative;
+  top: -1px;
   margin: 0 3px;
-  padding: 4px 7px 5px;
+  padding: 3px 4px 3px;
+  background: #274144;
   border-radius: 3px;
   font-family: monospace;
   color: white;
   font-size: 15px;
+}
+@media (min-width: 768px) {
+  ul code,
+  p code {
+    padding: 4px 7px 5px;
+    font-size: 17px;
+  }
+}
+
+.filePath {
+  margin-top: 30px;
+}
+@media (min-width: 768px) {
+  .filePath {
+    margin-top: 50px;
+  }
+}
+
+.filePath code {
+  position: relative;
+  margin: 0;
+  padding: 5px 10px;
+  display: block;
+  z-index: 5;
+}
+
+.filePath + pre code {
+  margin-top: -30px;
+  padding-top: 37px !important;
 }
 
 pre code {
@@ -171,8 +203,8 @@ pre code {
 
 @media (min-width: 1024px) {
   pre code {
-    margin: 50px auto;
-    padding: 2em !important;
+    margin: 40px auto;
+    padding: 25px 30px 30px !important;
     font-size: 15px;
     line-height: 21px;
   }

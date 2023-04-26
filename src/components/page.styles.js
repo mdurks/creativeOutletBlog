@@ -57,6 +57,7 @@ export const PageBody = styled.main`
 
   ul {
     margin: 30px 30px 40px 0px;
+    padding: 0 0 0 30px;
 
     ${mediaQuery.min_tablet} {
       margin: 40px 30px 50px 20px;
