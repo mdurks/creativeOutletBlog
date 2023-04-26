@@ -8,7 +8,8 @@ export const PageHeaderWrapper = styled.div`
   background-color: ${colours.siteBackgroundHighlight};
 
   ${mediaQuery.min_desktop} {
-    margin: 0 0 20px;
+    max-width: 1100px;
+    margin: 0 auto 20px;
     padding: 40px;
   }
 
@@ -36,7 +37,10 @@ export const PageBody = styled.main`
   padding: 0px;
 
   ${mediaQuery.min_desktop} {
+    max-width: 1100px;
+    margin: 0 auto;
     padding: 40px;
+    font-size: 22px;
   }
 
   ${mediaQuery.desktop_medium} {

@@ -14,17 +14,17 @@ export const NavWrapper = styled.nav`
   transition: all ease 0.6s;
   z-index: 10;
 
-  &.menuOpen {
-    left: 0;
-    overflow-y: auto;
-  }
-
   ${mediaQuery.min_desktop} {
     position: relative;
     left: 0;
     flex: 0 0 350px;
     height: auto;
-    padding: 70px 0 40px 40px;
+    padding: 70px 40px 40px 40px;
+  }
+
+  &.menuOpen {
+    left: 0;
+    overflow-y: auto;
   }
 `
 
@@ -86,6 +86,7 @@ export const SubCategoryTitle = styled.p`
 
 export const LinkListGroup = styled.ul`
   margin: 0 0 30px 0;
+  padding: 0 0 0 30px;
 `
 
 export const LinkListItem = styled.li`
@@ -94,7 +95,7 @@ export const LinkListItem = styled.li`
 
 export const LinkItem = styled(Link)`
   display: block;
-  padding: 5px 0;
+  padding: 5px 10px 5px 0;
   color: ${colours.link};
   text-decoration: none;
 

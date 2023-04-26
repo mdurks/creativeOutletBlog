@@ -149,7 +149,17 @@ img {
   color: #cdcdcd;
 }
 
-code {
+p code {
+  background: #274144;
+  margin: 0 3px;
+  padding: 4px 7px 5px;
+  border-radius: 3px;
+  font-family: monospace;
+  color: white;
+  font-size: 15px;
+}
+
+pre code {
   width: 100%;
   margin: 0 auto 30px;
   padding: 15px !important;
@@ -160,15 +170,10 @@ code {
 }
 
 @media (min-width: 1024px) {
-  code {
+  pre code {
+    margin: 50px auto;
     padding: 2em !important;
     font-size: 15px;
     line-height: 21px;
-  }
-}
-
-@media (min-width: 1600px) {
-  code {
-    width: 80%;
   }
 }
