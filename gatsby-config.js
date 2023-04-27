@@ -10,9 +10,9 @@
 module.exports = {
   siteMetadata: {
     title: `Creative Outlet Blog`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    description: `Michael Durkins blog for all things web, 3D and general tech related topics.`,
+    author: `mdurks@gmail.com`,
+    siteUrl: `https://creativeoutletblog.netlify.app//`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -40,8 +40,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Creative Outlet Blog`,
+        short_name: `Creative Outlet Blog`,
         start_url: `/`,
         background_color: `#041d20`,
         // This will impact how browsers show your PWA/website
