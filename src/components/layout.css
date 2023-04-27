@@ -154,12 +154,12 @@ p code {
   position: relative;
   top: -1px;
   margin: 0 3px;
-  padding: 3px 4px 3px;
-  background: #274144;
+  padding: 4px 5px;
+  background: #153336;
   border-radius: 3px;
   font-family: monospace;
   color: white;
-  font-size: 15px;
+  font-size: 14px;
 }
 @media (min-width: 768px) {
   ul code,
