@@ -55,7 +55,10 @@ module.exports = {
     //   resolve: "gatsby-plugin-web-font-loader",
     //   options: {
     //     google: {
-    //       families: ["Dosis:500", "Sofia Sans Condensed:800"],
+    //       // families: ["Dosis:500", "Sofia Sans Condensed:800"],
+    //       families: [
+    //         "Roboto Condensed:300, 700",
+    //       ],
     //     },
     //   },
     // },

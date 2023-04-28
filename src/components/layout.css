@@ -1,8 +1,26 @@
-@font-face {
+/* @font-face {
   font-family: "Dosis";
   src: url("../fonts/dosis-medium.woff2") format("woff2"),
     url("../fonts/dosis-medium.woff") format("woff");
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("../fonts/roboto-condensed-v25-latin-300.woff2") format("woff2"),
+    url("../fonts/roboto-condensed-v25-latin-300.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("../fonts/roboto-condensed-v25-latin-700.woff2") format("woff2"),
+    url("../fonts/roboto-condensed-v25-latin-700.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -26,7 +44,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Dosis", sans-serif;
-  font-size: 18px;
+  font-family: "Roboto Condensed";
+  font-weight: 300;
+  font-size: 17px;
   line-height: normal;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -113,13 +133,14 @@ h1 {
 }
 
 p {
-  margin: 0 0 20px;
+  margin: 0 0 25px;
   padding: 0;
   line-height: 32px;
 }
 @media (min-width: 768px) {
   p {
-    line-height: 37px;
+    margin: 0 0 30px;
+    line-height: 40px;
   }
 }
 
@@ -133,7 +154,12 @@ ul {
 }
 
 a {
+  font-weight: 700;
   transition: all ease 0.4s;
+}
+
+strong {
+  font-weight: 700;
 }
 
 source,
@@ -256,7 +282,7 @@ pre code {
 .techIconGroup img {
   display: block;
   width: 65%;
-  max-height: 70px;
+  max-height: 55px;
   height: auto;
   margin: 0 auto 20px;
 }
@@ -271,4 +297,14 @@ pre code {
   font-size: 16px;
   line-height: 21px;
   display: block;
+}
+
+.introLinks strong {
+  display: block;
+}
+@media (min-width: 768px) {
+  .introLinks strong {
+    display: inline;
+    margin-right: 10px;
+  }
 }
