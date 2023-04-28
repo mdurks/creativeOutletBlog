@@ -9,7 +9,7 @@ export const NavWrapper = styled.nav`
   left: -100%;
   width: 100%;
   height: 100%;
-  padding: 0px 0 40px 20px;
+  padding: 0px 20px 40px 20px;
   background-color: ${colours.siteBackgroundHighlight};
   transition: all ease 0.6s;
   z-index: 10;
@@ -86,7 +86,7 @@ export const SubCategoryTitle = styled.p`
 
 export const LinkListGroup = styled.ul`
   margin: 0 0 30px 0;
-  padding: 0 0 0 30px;
+  padding: 0 10px 0 20px;
 `
 
 export const LinkListItem = styled.li`
@@ -95,9 +95,10 @@ export const LinkListItem = styled.li`
 
 export const LinkItem = styled(Link)`
   display: block;
-  padding: 5px 10px 5px 0;
+  padding: 10px 10px 10px 0;
   color: ${colours.link};
   text-decoration: none;
+  line-height: 25px;
 
   &:hover {
     text-decoration: underline;
