@@ -6,6 +6,7 @@ export const colours = {
   highLight: "#D26232",
   siteBackground: "#041D20",
   siteBackgroundHighlight: "#052529",
+  siteBackgroundHighlighter: "#072a2e",
   siteBackgroundHighlightText: "#274144",
   siteBackgroundHighlightDark: "#03181a",
 }
