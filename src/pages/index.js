@@ -30,8 +30,8 @@ const IndexPage = () => {
       <PageBody>
         <div className="headerTitle">
           <p>
-            Welcome to creative outlet, my online space for web development, 3D,
-            digital and various other interests.
+            Welcome to my Creative Outlet blog, an online space for web
+            development, 3D, digital and various other interests.
           </p>
         </div>
 
@@ -43,8 +43,8 @@ const IndexPage = () => {
         </p>
 
         <p>
-          If you didn't come to this blog via my personal website, you can view
-          this interactive 3D treehouse at:&nbsp;&nbsp;{" "}
+          If you didn't come to this blog via my personal website, do check out
+          my interactive 3D treehouse at:&nbsp;&nbsp;{" "}
           <a href="https://creativeoutlet.netlify.app/">
             https://creativeoutlet.netlify.app/
           </a>
@@ -113,7 +113,7 @@ const IndexPage = () => {
             </ProjectListContentCol>
           </ProjectListItem>
 
-          {/* Treehouse */}
+          {/* Blog */}
           <ProjectListItem to="/making-this-blog-with-gatsby-graphql-and-netlify/">
             <ProjectListPrimaryImg>
               <StaticImage
@@ -138,6 +138,23 @@ const IndexPage = () => {
                 Hygraph as a GraphQL headless CMS. Github, Netlify and Hypgrah
                 combine to deliver CI/CD empowering the front end.
               </p>
+            </ProjectListContentCol>
+          </ProjectListItem>
+
+          {/* Wenworths */}
+          <ProjectListItem to="/wentworth-jewels/">
+            <ProjectListPrimaryImg>
+              <StaticImage
+                src="../images/projectList/projectList-wentworths.jpg"
+                loading="eager"
+                quality={95}
+                formats={["auto", "webp", "avif"]}
+                alt="Creative Outlet Treehouse"
+              />
+            </ProjectListPrimaryImg>
+            <ProjectListContentCol>
+              <h2>Wentworth Jewels</h2>
+              <p>A work in progress project for a boutique jewellers.</p>
             </ProjectListContentCol>
           </ProjectListItem>
         </ProjectListWrapper>

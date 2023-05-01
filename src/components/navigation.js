@@ -14,11 +14,12 @@ import {
 const pageQuery = graphql`
   {
     gcms {
-      blogs(stage: PUBLISHED, orderBy: publishedAt_DESC) {
+      blogs(stage: PUBLISHED, orderBy: createdAt_ASC) {
         id
         articleTitle
         slug
         blogCategory
+        createdAt
       }
     }
   }
@@ -29,15 +30,22 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
     gcms: { blogs },
   } = useStaticQuery(pageQuery)
 
-  const blogDataProjects = blogs.filter(
+  const blogData = [...blogs]
+  blogData.sort(function (a, b) {
+    return new Date(b.createdAt) - new Date(a.createdAt)
+  })
+
+  const blogDataProjects = blogData.filter(
     blog => blog.blogCategory === "Projects"
   )
-  const blogDataMisc = blogs.filter(blog => blog.blogCategory === "Misc")
-  const blogDataReact = blogs.filter(blog => blog.blogCategory === "React")
-  const blogDataThree_JS = blogs.filter(
+  const blogDataMisc = blogData.filter(blog => blog.blogCategory === "Misc")
+  const blogDataReact = blogData.filter(blog => blog.blogCategory === "React")
+  const blogDataThree_JS = blogData.filter(
     blog => blog.blogCategory === "Three_JS"
   )
-  const blogDataBlender = blogs.filter(blog => blog.blogCategory === "Blender")
+  const blogDataBlender = blogData.filter(
+    blog => blog.blogCategory === "Blender"
+  )
 
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen)

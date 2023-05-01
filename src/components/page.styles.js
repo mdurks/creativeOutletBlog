@@ -248,7 +248,7 @@ export const ProjectListPrimaryImg = styled.div`
 
 export const ProjectListContentCol = styled.div`
   ${mediaQuery.min_desktop} {
-    flex: 1 1 auto;
+    flex: 1 1 100%;
     padding: 0 20px 0 40px;
   }
 `

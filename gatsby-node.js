@@ -24,7 +24,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
   } = await graphql(`
     {
       gcms {
-        blogs(stage: PUBLISHED) {
+        blogs(stage: PUBLISHED, orderBy: createdAt_ASC) {
           id
           slug
           createdAt
