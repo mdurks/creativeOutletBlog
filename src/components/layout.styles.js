@@ -35,7 +35,8 @@ export const MobileHeader = styled.div`
 `
 
 export const MobileSiteTitle = styled(Link)`
-  font-size: 30px;
+  font-size: 28px;
+  font-weight: var(--fontWeight-heavy);
   color: ${colours.link};
   text-decoration: none;
   text-transform: uppercase;
@@ -50,6 +51,7 @@ export const MobileMenuButton = styled.button`
   color: ${colours.link};
   font-family: ${fonts.primary};
   font-size: 20px;
+  font-weight: var(--fontWeight-bold);
   text-transform: uppercase;
   cursor: pointer;
 `

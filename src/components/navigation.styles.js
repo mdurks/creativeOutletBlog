@@ -39,6 +39,7 @@ export const MobileMenuButton = styled.button`
   color: ${colours.link};
   font-size: 20px;
   font-family: ${fonts.primary};
+  font-weight: var(--fontWeight-bold);
   text-transform: uppercase;
   cursor: pointer;
 
@@ -55,7 +56,8 @@ export const NavLogo = styled(Link)`
     margin: 0 0 60px;
     width: 230px;
     font-family: ${fonts.primary};
-    font-size: 70px;
+    font-size: 65px;
+    font-weight: var(--fontWeight-heavy);
     line-height: 70px;
     color: ${colours.link};
     text-decoration: none;
@@ -74,6 +76,7 @@ export const PrimaryCategoryTitle = styled.p`
   border-bottom: 1px solid ${colours.primary};
   font-family: ${fonts.primary};
   font-size: 30px;
+  font-weight: var(--fontWeight-heavy);
   color: ${colours.heading};
 `
 
@@ -81,21 +84,35 @@ export const SubCategoryTitle = styled.p`
   margin: 0 0 20px;
   padding: 0;
   font-size: 24px;
-  color: ${colours.highLight};
+  font-weight: var(--fontWeight-bold);
+  color: ${colours.heading};
 `
 
 export const LinkListGroup = styled.ul`
   margin: 0 0 30px 0;
   padding: 0 10px 0 20px;
+  list-style: none;
+
+  &:has(> li > a) {
+    list-style: disc;
+  }
 `
 
 export const LinkListItem = styled.li`
-  line-height: 28px;
+  line-height: 30px;
+
+  &:has(> a) {
+    color: ${colours.link};
+  }
+
+  &:has(> a.linkItemActive) {
+    color: ${colours.heading};
+  }
 `
 
 export const LinkItem = styled(Link)`
   display: block;
-  padding: 10px 10px 10px 0;
+  padding: 12px 10px 12px 0;
   color: ${colours.link};
   text-decoration: none;
   line-height: 25px;

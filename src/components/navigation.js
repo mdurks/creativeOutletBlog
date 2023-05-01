@@ -14,7 +14,7 @@ import {
 const pageQuery = graphql`
   {
     gcms {
-      blogs(stage: PUBLISHED) {
+      blogs(stage: PUBLISHED, orderBy: publishedAt_DESC) {
         id
         articleTitle
         slug
@@ -29,10 +29,6 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
     gcms: { blogs },
   } = useStaticQuery(pageQuery)
 
-  const handleMenuClick = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
-
   const blogDataProjects = blogs.filter(
     blog => blog.blogCategory === "Projects"
   )
@@ -43,6 +39,10 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
   )
   const blogDataBlender = blogs.filter(blog => blog.blogCategory === "Blender")
 
+  const handleMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
   return (
     <NavWrapper className={isMenuOpen && "menuOpen"}>
       <MobileMenuButton onClick={handleMenuClick} type="button">
@@ -50,21 +50,21 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
       </MobileMenuButton>
       <NavLogo to="/">Creative Outlet</NavLogo>
 
-      <PrimaryCategoryTitle>Projects:</PrimaryCategoryTitle>
+      <PrimaryCategoryTitle>Projects</PrimaryCategoryTitle>
       <NavigationLinkList linkData={blogDataProjects} />
 
-      <PrimaryCategoryTitle>Blog:</PrimaryCategoryTitle>
+      <PrimaryCategoryTitle>Blog</PrimaryCategoryTitle>
 
-      <SubCategoryTitle>Misc:</SubCategoryTitle>
+      <SubCategoryTitle>Misc</SubCategoryTitle>
       <NavigationLinkList linkData={blogDataMisc} />
 
-      <SubCategoryTitle>Javascript:</SubCategoryTitle>
+      <SubCategoryTitle>Javascript</SubCategoryTitle>
       <NavigationLinkList linkData={blogDataReact} />
 
-      <SubCategoryTitle>Three JS:</SubCategoryTitle>
+      <SubCategoryTitle>Three JS</SubCategoryTitle>
       <NavigationLinkList linkData={blogDataThree_JS} />
 
-      <SubCategoryTitle>Blender:</SubCategoryTitle>
+      <SubCategoryTitle>Blender</SubCategoryTitle>
       <NavigationLinkList linkData={blogDataBlender} />
     </NavWrapper>
   )

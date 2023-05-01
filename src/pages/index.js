@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
@@ -36,13 +35,34 @@ const IndexPage = () => {
           </p>
         </div>
 
+        <p>
+          What started out as a hobby has turned in to a career for over two
+          decades now. My passion is creating amazing user experiences delivered
+          by great technology and clever solutions to problems. This blog is a
+          place where I can experiment with technology and share my learnings.
+        </p>
+
+        <p>
+          If you didn't come to this blog via my personal website, you can view
+          this interactive 3D treehouse at:&nbsp;&nbsp;{" "}
+          <a href="https://creativeoutlet.netlify.app/">
+            https://creativeoutlet.netlify.app/
+          </a>
+        </p>
+
+        <p>
+          Reach out to me if you would like to get in touch:&nbsp;&nbsp;{" "}
+          <a href="mailto:mdurks@gmail.com">mdurks@gmail.com</a>
+        </p>
+
         <ProjectListWrapper>
           <ProjectListTitle>Projects:</ProjectListTitle>
+
           {/* Weather API */}
           <ProjectListItem to="/weather-charts-with-d3js/">
             <ProjectListPrimaryImg>
               <StaticImage
-                src="../images/projectList/projectList-weatherapi.jpg"
+                src="../images/projectList/projectList-weather.jpg"
                 loading="eager"
                 quality={95}
                 formats={["auto", "webp", "avif"]}
@@ -52,24 +72,24 @@ const IndexPage = () => {
             <ProjectListContentCol>
               <h2>Weather API</h2>
               <ProjectListTechList>
-                <p>React - Redux - Axios - Styled Components</p>
+                <p>
+                  React <span>-</span> D3 <span>-</span> Axios <span>-</span>{" "}
+                  Framer Motion <span>-</span> Styled Components
+                </p>
               </ProjectListTechList>
               <p>
-                Sed eu tristique erat. Cras pulvinar a magna ac commodo. Morbi
-                justo odio, placerat nec augue id, laoreet cursus enim. Sed
-                interdum nisl nisl, id euismod lacus malesuada non. Interdum et
-                malesuada fames ac ante ipsum primis in faucibus. In hac
-                habitasse platea dictumst. Praesent viverra ornare condimentum.
-                Morbi urna elit, fringilla ac blandit eget, scelerisque in
-                augue. Vivamus auctor nulla vitae vulputate ultrices.
+                An exercise with weather data and drawing charts using the
+                amazing charting library D3.js. Get weather data from around the
+                world with a 7 day forecast and interactive charts.
               </p>
             </ProjectListContentCol>
           </ProjectListItem>
+
           {/* TVFAVS */}
           <ProjectListItem to="/tv-favs-using-redux-react-router-and-local-storage/">
             <ProjectListPrimaryImg>
               <StaticImage
-                src="../images/projectList/projectList-weatherapi.jpg"
+                src="../images/projectList/projectList-tvfavs.jpg"
                 loading="eager"
                 quality={95}
                 formats={["auto", "webp", "avif"]}
@@ -79,51 +99,25 @@ const IndexPage = () => {
             <ProjectListContentCol>
               <h2>TV FAVS</h2>
               <ProjectListTechList>
-                <p>React - Redux - Axios - Styled Components</p>
+                <p>
+                  React <span>-</span> Redux Toolkit <span>-</span> React Router{" "}
+                  <span>-</span> Axios <span>-</span> Framer Motion
+                  <span>-</span> Styled Components <span>-</span> DOM Purify
+                </p>
               </ProjectListTechList>
               <p>
-                Sed eu tristique erat. Cras pulvinar a magna ac commodo. Morbi
-                justo odio, placerat nec augue id, laoreet cursus enim. Sed
-                interdum nisl nisl, id euismod lacus malesuada non. Interdum et
-                malesuada fames ac ante ipsum primis in faucibus. In hac
-                habitasse platea dictumst. Praesent viverra ornare condimentum.
-                Morbi urna elit, fringilla ac blandit eget, scelerisque in
-                augue. Vivamus auctor nulla vitae vulputate ultrices.
+                An exercise with Redux Toolkit and React Router to search TV
+                shows and save them as your favourites - in redux and
+                localStorage.
               </p>
             </ProjectListContentCol>
           </ProjectListItem>
-          {/* Wentworths */}
-          <ProjectListItem to="/wentworth-jewels/">
-            <ProjectListPrimaryImg>
-              <StaticImage
-                src="../images/projectList/projectList-weatherapi.jpg"
-                loading="eager"
-                quality={95}
-                formats={["auto", "webp", "avif"]}
-                alt="Creative Outlet Wentworths"
-              />
-            </ProjectListPrimaryImg>
-            <ProjectListContentCol>
-              <h2>Wentworths</h2>
-              <ProjectListTechList>
-                <p>React - Redux - Axios - Styled Components</p>
-              </ProjectListTechList>
-              <p>
-                Sed eu tristique erat. Cras pulvinar a magna ac commodo. Morbi
-                justo odio, placerat nec augue id, laoreet cursus enim. Sed
-                interdum nisl nisl, id euismod lacus malesuada non. Interdum et
-                malesuada fames ac ante ipsum primis in faucibus. In hac
-                habitasse platea dictumst. Praesent viverra ornare condimentum.
-                Morbi urna elit, fringilla ac blandit eget, scelerisque in
-                augue. Vivamus auctor nulla vitae vulputate ultrices.
-              </p>
-            </ProjectListContentCol>
-          </ProjectListItem>
+
           {/* Treehouse */}
-          <ProjectListItem to="/weather-charts-with-d3js/">
+          <ProjectListItem to="/making-this-blog-with-gatsby-graphql-and-netlify/">
             <ProjectListPrimaryImg>
               <StaticImage
-                src="../images/projectList/projectList-weatherapi.jpg"
+                src="../images/projectList/projectList-blog.jpg"
                 loading="eager"
                 quality={95}
                 formats={["auto", "webp", "avif"]}
@@ -131,18 +125,18 @@ const IndexPage = () => {
               />
             </ProjectListPrimaryImg>
             <ProjectListContentCol>
-              <h2>Treehouse</h2>
+              <h2>Making this blog</h2>
               <ProjectListTechList>
-                <p>React - Redux - Axios - Styled Components</p>
+                <p>
+                  Gatsby <span>-</span> GraphQL <span>-</span> Hygraph{" "}
+                  <span>-</span> Netlify <span>-</span> Styled Components{" "}
+                  <span>-</span> Highlight.js
+                </p>
               </ProjectListTechList>
               <p>
-                Sed eu tristique erat. Cras pulvinar a magna ac commodo. Morbi
-                justo odio, placerat nec augue id, laoreet cursus enim. Sed
-                interdum nisl nisl, id euismod lacus malesuada non. Interdum et
-                malesuada fames ac ante ipsum primis in faucibus. In hac
-                habitasse platea dictumst. Praesent viverra ornare condimentum.
-                Morbi urna elit, fringilla ac blandit eget, scelerisque in
-                augue. Vivamus auctor nulla vitae vulputate ultrices.
+                A look at the tech stack behind the creation of this blog using
+                Hygraph as a GraphQL headless CMS. Github, Netlify and Hypgrah
+                combine to deliver CI/CD empowering the front end.
               </p>
             </ProjectListContentCol>
           </ProjectListItem>

@@ -10,21 +10,23 @@ export const PageHeaderWrapper = styled.div`
 
   ${mediaQuery.min_desktop} {
     max-width: 1100px;
-    margin: 0 auto 20px;
-    padding: 40px;
+    margin: -40px auto 20px;
+    padding: 60px 40px 40px;
   }
 
   ${mediaQuery.desktop_medium} {
-    padding: 50px 100px;
+    padding: 60px 100px 40px;
   }
 `
 
 export const PageHeader = styled.h1`
   margin: 0 0 20px;
   font-size: 40px;
+  font-weight: var(--fontWeight-heavy);
 
   ${mediaQuery.min_desktop} {
     font-size: 70px;
+    line-height: 75px;
   }
 `
 
@@ -74,7 +76,7 @@ export const PageBody = styled.main`
   }
 
   .headerTitle {
-    margin: 20px 0 35px;
+    margin: 20px 0;
 
     ${mediaQuery.min_desktop} {
       margin: 0 0 40px;
@@ -153,48 +155,72 @@ export const ProjectListWrapper = styled.div`
   }
 `
 
-export const ProjectListTitle = styled.h2``
+export const ProjectListTitle = styled.h2`
+  margin: 0 0 50px;
+  font-size: 50px;
+  font-weight: var(--fontWeight-heavy);
+`
 
 export const ProjectListItem = styled(Link)`
   display: block;
-  margin: 10px 0;
-  padding: 20px;
+  max-width: 500px;
+  margin: 35px auto;
+  padding: 20px 20px 30px;
   border-radius: 10px;
   background: ${colours.siteBackgroundHighlight};
   text-decoration: none;
-  font-weight: 300;
+  font-weight: var(--fontWeight-light);
 
   ${mediaQuery.min_desktop} {
     display: flex;
-    padding: 40px;
+    max-width: none;
+    margin: 20px auto;
+    padding: 30px;
   }
 
-  &:hover {
-    background: ${colours.siteBackgroundHighlighter};
+  @media (hover: hover) {
+    &:hover {
+      background: ${colours.siteBackgroundHighlighter};
+
+      h2 {
+        color: ${colours.linkActive};
+        text-decoration: underline;
+      }
+    }
   }
 
   p {
+    margin: 0 0 10px;
     font-size: 18px;
-    line-height: 30px;
-    color: white;
+    line-height: 25px;
+    color: ${colours.bodyText};
+
+    &:last-of-type {
+      margin: 0;
+    }
   }
 
   h2 {
     margin: 20px 0;
-    font-size: 40px;
+    font-size: 35px;
     color: ${colours.link};
+    transition: color ease 0.3s;
 
     ${mediaQuery.min_desktop} {
-      font-size: 50px;
+      font-size: 45px;
     }
   }
 `
 
 export const ProjectListTechList = styled.div`
   p {
-    margin: 0 0 10px;
-    font-weight: 700;
-    color: ${colours.heading};
+    margin: 0 0 10px !important;
+    font-weight: var(--fontWeight-bold);
+    color: ${colours.highLight};
+
+    span {
+      color: ${colours.link};
+    }
   }
 `
 
@@ -204,10 +230,15 @@ export const ProjectListPrimaryImg = styled.div`
 
   > div {
     width: 100%;
+    max-height: 200px;
+    border-radius: 5px 5px 0 0;
   }
 
   ${mediaQuery.min_desktop} {
-    flex: 1 0 33%;
+    flex: 1 0 200px;
+    width: 100%;
+    max-height: none;
+    margin: 0;
 
     > div {
       border-radius: 5px;
@@ -217,6 +248,7 @@ export const ProjectListPrimaryImg = styled.div`
 
 export const ProjectListContentCol = styled.div`
   ${mediaQuery.min_desktop} {
-    padding: 0 20px 0 50px;
+    flex: 1 1 auto;
+    padding: 0 20px 0 40px;
   }
 `
