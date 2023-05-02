@@ -112,7 +112,7 @@ export const LinkListItem = styled.li`
 
 export const LinkItem = styled(Link)`
   display: block;
-  padding: 5px 10px 5px 0;
+  padding: 10px 10px 10px 0;
   color: ${colours.link};
   text-decoration: none;
   font-size: 17px;
@@ -123,10 +123,12 @@ export const LinkItem = styled(Link)`
   }}
 
   ${mediaQuery.min_desktop} {
+    padding: 6px 10px 6px 0;
     font-size: 18px;
 
     ${props => {
-      if (props.listtype === "projects") return "font-size: 19px;"
+      if (props.listtype === "projects")
+        return "font-size: 19px; padding: 10px 10px 10px 0;"
     }}
   }
 
