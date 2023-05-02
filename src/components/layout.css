@@ -336,6 +336,13 @@ pre code {
     padding: 25px 30px 30px !important;
     font-size: 15px;
     line-height: 21px;
+    width: calc(100vw - 520px);
+  }
+}
+
+@media (min-width: 1600px) {
+  pre code {
+    width: auto;
   }
 }
 
