@@ -2,14 +2,18 @@ import * as React from "react"
 
 import { LinkListGroup, LinkListItem, LinkItem } from "./navigation.styles"
 
-const NavigationLinkList = ({ linkData }) => {
+const NavigationLinkList = ({ linkData, listtype }) => {
   return (
     <>
       {linkData.length > 0 ? (
         <LinkListGroup>
           {linkData.map(link => (
             <LinkListItem key={link.id}>
-              <LinkItem to={`/${link.slug}`} activeClassName="linkItemActive">
+              <LinkItem
+                to={`/${link.slug}`}
+                activeClassName="linkItemActive"
+                listtype={listtype}
+              >
                 {link.articleTitle}
               </LinkItem>
             </LinkListItem>

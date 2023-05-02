@@ -59,7 +59,7 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
       <NavLogo to="/">Creative Outlet</NavLogo>
 
       <PrimaryCategoryTitle>Projects</PrimaryCategoryTitle>
-      <NavigationLinkList linkData={blogDataProjects} />
+      <NavigationLinkList linkData={blogDataProjects} listtype="projects" />
 
       <PrimaryCategoryTitle>Blog</PrimaryCategoryTitle>
 

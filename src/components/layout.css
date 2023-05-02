@@ -263,6 +263,12 @@ img {
   }
 }
 
+.fluidWidthImg source,
+.fluidWidthImg img {
+  width: 100%;
+  height: auto;
+}
+
 .hljs .hljs-comment {
   color: #0096ab;
 }
@@ -281,7 +287,7 @@ p code {
   border-radius: 3px;
   font-family: monospace;
   color: white;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 27px;
 }
 @media (min-width: 768px) {

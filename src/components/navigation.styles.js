@@ -112,10 +112,23 @@ export const LinkListItem = styled.li`
 
 export const LinkItem = styled(Link)`
   display: block;
-  padding: 12px 10px 12px 0;
+  padding: 5px 10px 5px 0;
   color: ${colours.link};
   text-decoration: none;
-  line-height: 25px;
+  font-size: 17px;
+  line-height: 22px;
+
+  ${props => {
+    if (props.listtype === "projects") return "padding: 10px 10px 10px 0;"
+  }}
+
+  ${mediaQuery.min_desktop} {
+    font-size: 18px;
+
+    ${props => {
+      if (props.listtype === "projects") return "font-size: 19px;"
+    }}
+  }
 
   &:hover {
     text-decoration: underline;
