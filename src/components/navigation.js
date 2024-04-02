@@ -63,9 +63,6 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
 
       <PrimaryCategoryTitle>Blog</PrimaryCategoryTitle>
 
-      <SubCategoryTitle>Misc</SubCategoryTitle>
-      <NavigationLinkList linkData={blogDataMisc} />
-
       <SubCategoryTitle>Javascript</SubCategoryTitle>
       <NavigationLinkList linkData={blogDataReact} />
 
@@ -79,3 +76,8 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
 }
 
 export default Navigation
+
+{
+  /* <SubCategoryTitle>Misc</SubCategoryTitle>
+<NavigationLinkList linkData={blogDataMisc} /> */
+}
