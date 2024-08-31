@@ -1,6 +1,6 @@
 export const colours = {
-  link: "#0096ab",
-  linkActive: "#49D6E9",
+  link: "#005a67",
+  linkActive: "#cd4370",
   heading: "#bba010",
   bodyText: "#c3dadd",
   // highLight: "#D26232",

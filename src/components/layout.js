@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
   return (
     <>
       {/* <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> */}
-      <PageWrapper>
+      {/* <PageWrapper>
         <MobileHeader>
           <MobileSiteTitle to="/">Creative Outlet</MobileSiteTitle>
           <MobileMenuButton onClick={handleMenuClick} type="button">
@@ -54,7 +54,17 @@ const Layout = ({ children }) => {
         </MobileHeader>
         <Navigation setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
         <PageContent>{children}</PageContent>
-      </PageWrapper>
+      </PageWrapper> */}
+
+      {/* <MobileHeader>
+        <MobileSiteTitle to="/">Creative Outlet</MobileSiteTitle>
+        <MobileMenuButton onClick={handleMenuClick} type="button">
+          Menu
+        </MobileMenuButton>
+      </MobileHeader> */}
+
+      <Navigation setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
+      {children}
     </>
   )
 }

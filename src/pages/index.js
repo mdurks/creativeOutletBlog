@@ -18,7 +18,7 @@ import {
 const IndexPage = () => {
   return (
     <Layout>
-      <HeaderHeroImg>
+      {/* <HeaderHeroImg>
         <StaticImage
           src="../images/co-treehouse-ultrawide.jpg"
           loading="eager"
@@ -26,36 +26,21 @@ const IndexPage = () => {
           formats={["auto", "webp", "avif"]}
           alt="Creative Outlet Treehouse"
         />
-      </HeaderHeroImg>
-      <PageBody>
-        <div className="headerTitle">
+      </HeaderHeroImg> */}
+      <div className="heroBlock">
+        <div className="centralColumn">
           <p>
-            Welcome to my Creative Outlet blog, an online space for web
-            development, 3D, digital and various other interests.
+            Hi, my name's Michael and welcome to my Creative Outlet blog, where
+            I share my passion for web development, 3D, and other digital
+            pursuits. With over two decades of experience, I'm passionate about
+            crafting outstanding digital experiences powered by innovative
+            technology and smart problem-solving.
           </p>
         </div>
+      </div>
 
-        <p>
-          What started out as a hobby has turned in to a career for over two
-          decades now. My passion is creating amazing user experiences delivered
-          by great technology and clever solutions to problems. This blog is a
-          place where I can experiment with technology and share my learnings.
-        </p>
-
-        <p>
-          If you didn't come to this blog via my personal website, do check out
-          my interactive 3D treehouse at:&nbsp;&nbsp;{" "}
-          <a href="https://creativeoutlet.netlify.app/">
-            https://creativeoutlet.netlify.app/
-          </a>
-        </p>
-
-        <p>
-          Reach out to me if you would like to get in touch:&nbsp;&nbsp;{" "}
-          <a href="mailto:mdurks@gmail.com">mdurks@gmail.com</a>
-        </p>
-
-        <ProjectListWrapper>
+      <div className="contentBlock">
+        <div className="centralColumn">
           <ProjectListTitle>Projects:</ProjectListTitle>
 
           {/* Weather API */}
@@ -157,8 +142,8 @@ const IndexPage = () => {
               <p>A work in progress project for a boutique jewellers.</p>
             </ProjectListContentCol>
           </ProjectListItem>
-        </ProjectListWrapper>
-      </PageBody>
+        </div>
+      </div>
     </Layout>
   )
 }

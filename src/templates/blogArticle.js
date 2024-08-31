@@ -24,25 +24,49 @@ const IndexPage = ({
   const dateBlogPublished = formatDate(blog.createdAt)
   const dateBlogUpdated = blog?.updatedAt ? formatDate(blog.updatedAt) : false
 
+  const richTextClassTypes = blog.myRichTextClassTypes?.split("").map(Number)
+  const richTextClassMapping = {
+    0: "contentBlock",
+    1: "contentBlockDark",
+    2: "contentBlockGray",
+  }
+  const richTextClassNames = richTextClassTypes?.map(number =>
+    richTextClassMapping[number]
+      ? richTextClassMapping[number]
+      : richTextClassMapping[0]
+  )
+
   useEffect(() => {
     highlightCode()
   })
 
   return (
     <Layout>
-      <PageHeaderWrapper>
-        <PageHeader>{blog.articleTitle}</PageHeader>
-        <PublishedWrapper>
-          <strong>Published:</strong> {dateBlogPublished}
-        </PublishedWrapper>
-        {dateBlogUpdated && (
-          <UpdatedWrapper>
-            <strong>Updated:</strong> {dateBlogUpdated}
-          </UpdatedWrapper>
-        )}
-      </PageHeaderWrapper>
+      <div className="heroBlock">
+        <div className="centralColumn">
+          <PageHeader>{blog.articleTitle}</PageHeader>
+          <PublishedWrapper>
+            <strong>Published:</strong> {dateBlogPublished}
+          </PublishedWrapper>
+          {dateBlogUpdated && (
+            <UpdatedWrapper>
+              <strong>Updated:</strong> {dateBlogUpdated}
+            </UpdatedWrapper>
+          )}
+        </div>
+      </div>
       <PageBody>
-        <div dangerouslySetInnerHTML={{ __html: blog.content.html }} />
+        {blog.myRichTextComponent.map((text, index) => (
+          <div
+            key={text.id}
+            className={richTextClassNames[index]}
+            dangerouslySetInnerHTML={{ __html: text.richText.html }}
+          />
+        ))}
+
+        <div className="contentBlock">
+          <div dangerouslySetInnerHTML={{ __html: blog.content.html }} />
+        </div>
       </PageBody>
     </Layout>
   )
@@ -67,6 +91,15 @@ export const pageQuery = graphql`
         content {
           html
         }
+        myRichTextComponent {
+          ... on GCMS_BlogRichTextComponent {
+            id
+            richText {
+              html
+            }
+          }
+        }
+        myRichTextClassTypes
       }
     }
   }

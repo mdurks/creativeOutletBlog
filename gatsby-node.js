@@ -27,13 +27,6 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
         blogs(stage: PUBLISHED, orderBy: createdAt_ASC) {
           id
           slug
-          createdAt
-          updatedAt
-          articleTitle
-          blogCategory
-          content {
-            html
-          }
         }
       }
     }
@@ -44,12 +37,11 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
   // Dynamicaly create all the blog pages from query above
   // Pass the ID to find that blog article when doing the gcms query on that page for its content
   blogs.forEach(blog => {
-    const id = blog.id
     createPage({
       path: `/${blog.slug}`,
       component: require.resolve(`./src/templates/blogArticle.js`),
       context: {
-        id,
+        id: blog.id,
       },
     })
   })
