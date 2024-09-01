@@ -75,10 +75,11 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
     document.querySelectorAll(".has-submenu > button").forEach(button => {
       button.addEventListener("click", function (event) {
         const submenu = this.nextElementSibling
+        console.log("click", submenu, submenu.style.display)
         const expanded = this.getAttribute("aria-expanded") === "true" || false
         this.setAttribute("aria-expanded", !expanded)
-        submenu.style.display =
-          submenu.style.display === "block" ? "none" : "block"
+        // submenu.style.display =
+        //   submenu.style.display === "none" ? "block" : "none"
       })
     })
 
@@ -290,7 +291,7 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
             >
               Projects
             </button>
-            <ul className="submenu">
+            <ul className="submenu" style={{ display: "none" }}>
               <li>
                 <Link to="/weather-charts-with-d3js/">Weather API</Link>
               </li>
@@ -313,10 +314,10 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
             <Link to="/web/">Web</Link>
           </li>
           <li>
-            <Link to="/">3D</Link>
+            <Link to="/3d/">3D</Link>
           </li>
           <li>
-            <Link to="/">About</Link>
+            <Link to="/about/">About</Link>
           </li>
         </ul>
       </div>

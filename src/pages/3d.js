@@ -76,38 +76,10 @@ const WebPage = () => {
 
       <div className="contentBlock">
         <section className="centralColumn">
-          <h1>Accessibility:</h1>
-          <CardList>
-            {blogDataAccessibility.map(article => (
-              <CardListItem key={article.id}>
-                <CardListItemLink to={`/${article.slug}/`}>
-                  <h2>{article.articleTitle.slice(16)}</h2>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: truncateHtml(article.content.html),
-                    }}
-                  />
-                  <strong>Read more...</strong>
-                </CardListItemLink>
-              </CardListItem>
-            ))}
-          </CardList>
-        </section>
-      </div>
-
-      <div className="contentBlockDark">
-        <section className="centralColumn">
           <h1>Topics Coming Soon:</h1>
-
-          <p>React</p>
-          <p>JavaScript</p>
-          <p>HTML</p>
-          <p>CSS</p>
+          <p>Blender</p>
+          <p>Web AR</p>
         </section>
-      </div>
-
-      <div className="contentBlock">
-        <section className="centralColumn"></section>
       </div>
     </Layout>
   )

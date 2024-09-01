@@ -31,7 +31,7 @@ const IndexPage = () => {
         <div className="centralColumn">
           <p>
             Hi, my name's Michael and welcome to my Creative Outlet blog, where
-            I share my passion for web development, 3D, and other digital
+            I share my passion for web development, 3D and other digital
             pursuits. With over two decades of experience, I'm passionate about
             crafting outstanding digital experiences powered by innovative
             technology and smart problem-solving.

@@ -136,8 +136,8 @@ export const ProjectListTitle = styled.h2`
 export const ProjectListItem = styled(Link)`
   display: block;
   max-width: 500px;
-  margin: 35px auto;
-  padding: 20px 20px 30px;
+  margin: 25px auto;
+  padding: 0 20px 30px;
   border-radius: 10px;
   background: ${colours.siteBackgroundHighlight};
   text-decoration: none;
@@ -154,9 +154,9 @@ export const ProjectListItem = styled(Link)`
     &:hover {
       background: ${colours.siteBackgroundHighlighter};
 
-      h2 {
+      h2,
+      h2:first-child {
         color: ${colours.linkActive};
-        text-decoration: underline;
       }
     }
   }
@@ -172,7 +172,8 @@ export const ProjectListItem = styled(Link)`
     }
   }
 
-  h2 {
+  h2,
+  h2:first-child {
     margin: 20px 0;
     font-size: 35px;
     color: ${colours.link};
@@ -180,6 +181,7 @@ export const ProjectListItem = styled(Link)`
 
     ${mediaQuery.min_desktop} {
       font-size: 45px;
+      margin: 10px 0;
     }
   }
 `
@@ -188,7 +190,6 @@ export const ProjectListTechList = styled.div`
   p {
     margin: 0 0 10px !important;
     font-weight: var(--fontWeight-bold);
-    color: ${colours.highLight};
 
     span {
       color: ${colours.link};
@@ -203,7 +204,7 @@ export const ProjectListPrimaryImg = styled.div`
   > div {
     width: 100%;
     max-height: 200px;
-    border-radius: 5px 5px 0 0;
+    border-radius: 10px 10px 0 0;
   }
 
   ${mediaQuery.min_desktop} {
@@ -222,5 +223,77 @@ export const ProjectListContentCol = styled.div`
   ${mediaQuery.min_desktop} {
     flex: 1 1 100%;
     padding: 0 20px 0 40px;
+  }
+`
+
+export const CardList = styled.ul`
+  display: flex;
+  flex-flow: wrap;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  margin: 2rem 0;
+  padding: 0;
+  list-style-type: none;
+
+  ${mediaQuery.min_desktop} {
+  }
+`
+export const CardListItem = styled.li`
+  margin: 0;
+  padding: 0;
+
+  ${mediaQuery.min_desktop} {
+    flex: 0 0 50%;
+  }
+`
+export const CardListItemLink = styled(Link)`
+  display: block;
+  margin: 8px -10px;
+  padding: 20px;
+  text-decoration: none;
+  background: #b5b5b5;
+  color: black;
+  border-radius: 5px;
+
+  font-size: 1rem;
+  line-height: normal;
+
+  ${mediaQuery.min_desktop} {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 90px);
+    margin: 5px;
+    padding: 40px;
+
+    /* font-size: 1.1rem; */
+    /* line-height: 1.6rem; */
+  }
+
+  &:focus-within,
+  &:hover {
+    background: #a3a3a3;
+
+    strong {
+      color: #cb235a;
+    }
+  }
+
+  h2 {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+    text-transform: none;
+    font-weight: bold;
+  }
+
+  p:last-of-type,
+  p {
+    margin: 0 0 1rem;
+  }
+  strong {
+    font-size: 1.25rem;
+    margin-top: auto;
+    color: #0096ab;
   }
 `
