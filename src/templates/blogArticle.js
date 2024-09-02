@@ -27,7 +27,7 @@ const IndexPage = ({
   const richTextClassTypes = blog.myRichTextClassTypes?.split("").map(Number)
   const richTextClassMapping = {
     0: "contentBlock",
-    1: "contentBlockDark",
+    1: "contentBlockDark code01",
     2: "contentBlockGray",
   }
   const richTextClassNames = richTextClassTypes?.map(number =>
