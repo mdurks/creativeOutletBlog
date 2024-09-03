@@ -405,10 +405,60 @@ Layout / Content:
 .heroBlock {
   padding: 5.5rem var(--centralColumnSidePaddingMobile) 5rem;
   background-color: hsl(0, 0%, 6%);
+  background-color: hsl(185deg 72% 10%);
   color: #fff;
+  /* perspective: 800px; */
 
   @media (min-width: 768px) {
     padding: 12rem 0;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Add perspective 3D affect */
+    /*
+    transform: rotateX(10deg);
+    transform-origin: center;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    */
+
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05) 1px,
+        transparent 1px,
+        transparent 100px
+      ),
+      repeating-linear-gradient(
+        180deg,
+        transparent,
+        transparent 99px,
+        rgba(255, 255, 255, 0.05) 99px,
+        rgba(255, 255, 255, 0.05) 100px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.04),
+        rgba(255, 255, 255, 0.04) 1px,
+        transparent 1px,
+        transparent 10px
+      ),
+      repeating-linear-gradient(
+        180deg,
+        transparent,
+        transparent 9px,
+        rgba(255, 255, 255, 0.04) 9px,
+        rgba(255, 255, 255, 0.04) 10px
+      );
   }
 
   p {
@@ -648,8 +698,8 @@ Layout / Content:
   &:before {
     background: repeating-linear-gradient(
         90deg,
-        rgba(255, 255, 255, 0.05),
-        rgba(255, 255, 255, 0.05) 1px,
+        rgba(255, 255, 255, 0.06),
+        rgba(255, 255, 255, 0.06) 1px,
         transparent 1px,
         transparent 100px
       ),
@@ -657,13 +707,13 @@ Layout / Content:
         180deg,
         transparent,
         transparent 99px,
-        rgba(255, 255, 255, 0.05) 99px,
-        rgba(255, 255, 255, 0.05) 100px
+        rgba(255, 255, 255, 0.06) 99px,
+        rgba(255, 255, 255, 0.06) 100px
       ),
       repeating-linear-gradient(
         90deg,
-        rgba(255, 255, 255, 0.03),
-        rgba(255, 255, 255, 0.03) 1px,
+        rgba(255, 255, 255, 0.04),
+        rgba(255, 255, 255, 0.04) 1px,
         transparent 1px,
         transparent 20px
       ),
@@ -671,8 +721,8 @@ Layout / Content:
         180deg,
         transparent,
         transparent 19px,
-        rgba(255, 255, 255, 0.03) 19px,
-        rgba(255, 255, 255, 0.03) 20px
+        rgba(255, 255, 255, 0.04) 19px,
+        rgba(255, 255, 255, 0.04) 20px
       ),
       var(--background-image), url("../images/concreteDark.png");
   }

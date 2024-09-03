@@ -22,7 +22,7 @@ const IndexPage = ({
   },
 }) => {
   const dateBlogPublished = formatDate(blog.createdAt)
-  const dateBlogUpdated = blog?.updatedAt ? formatDate(blog.updatedAt) : false
+  // const dateBlogUpdated = blog?.updatedAt ? formatDate(blog.updatedAt) : false
 
   const richTextClassTypes = blog.myRichTextClassTypes?.split("").map(Number)
   const richTextClassMapping = {
@@ -48,11 +48,11 @@ const IndexPage = ({
           <PublishedWrapper>
             <strong>Published:</strong> {dateBlogPublished}
           </PublishedWrapper>
-          {dateBlogUpdated && (
+          {/* {dateBlogUpdated && (
             <UpdatedWrapper>
               <strong>Updated:</strong> {dateBlogUpdated}
             </UpdatedWrapper>
-          )}
+          )} */}
         </div>
       </div>
       <PageBody>
