@@ -78,8 +78,8 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
         console.log("click", submenu, submenu.style.display)
         const expanded = this.getAttribute("aria-expanded") === "true" || false
         this.setAttribute("aria-expanded", !expanded)
-        // submenu.style.display =
-        //   submenu.style.display === "none" ? "block" : "none"
+        submenu.style.display =
+          submenu.style.display == "none" ? "block" : "none"
       })
     })
 
@@ -232,19 +232,21 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
     })
 
     // Keep submenu open when hovering over the button or submenu
-    document.querySelectorAll(".has-submenu").forEach(item => {
-      item.addEventListener("mouseenter", function () {
-        const button = this.querySelector("button")
-        button.setAttribute("aria-expanded", "true")
-        this.querySelector(".submenu").style.display = "block"
-      })
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      document.querySelectorAll(".has-submenu").forEach(item => {
+        item.addEventListener("mouseenter", function () {
+          const button = this.querySelector("button")
+          button.setAttribute("aria-expanded", "true")
+          this.querySelector(".submenu").style.display = "block"
+        })
 
-      item.addEventListener("mouseleave", function () {
-        const button = this.querySelector("button")
-        button.setAttribute("aria-expanded", "false")
-        this.querySelector(".submenu").style.display = "none"
+        item.addEventListener("mouseleave", function () {
+          const button = this.querySelector("button")
+          button.setAttribute("aria-expanded", "false")
+          this.querySelector(".submenu").style.display = "none"
+        })
       })
-    })
+    }
   }, [])
 
   return (

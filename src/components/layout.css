@@ -185,7 +185,7 @@ Main Navigation:
 
 .navbar {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   background-color: #004147;
   background-color: hsla(0, 0%, 6%, 80%);
   backdrop-filter: blur(4px);
@@ -304,11 +304,11 @@ Main Navigation:
     }
 
     .submenuBtn,
-    a {
+    > li > a {
       display: block;
       width: 100%;
       margin: 0;
-      padding: 1.25rem 2rem;
+      padding: 1.25rem;
       color: white;
       color: #0096ab;
       text-decoration: none;
@@ -316,6 +316,10 @@ Main Navigation:
       font-weight: bold;
       background: transparent;
       border: none;
+
+      @media (min-width: 768px) {
+        padding: 1.25rem 2rem;
+      }
     }
 
     .submenuBtn {
@@ -351,9 +355,12 @@ Main Navigation:
     }
 
     li a {
+      display: block;
+      width: 100%;
       color: white;
       padding: 1rem 1.8rem;
       font-weight: normal;
+      text-decoration: none;
 
       @media (min-width: 768px) {
         padding: 0.5rem 1.8rem;
@@ -368,10 +375,15 @@ Main Navigation:
       }
     }
 
-    .has-submenu:hover &,
     .has-submenu:focus-within &,
     .has-submenu[aria-expanded="true"] & {
       display: block;
+    }
+
+    @media (hover: hover) {
+      .has-submenu:hover & {
+        display: block;
+      }
     }
   }
 }

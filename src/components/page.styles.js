@@ -243,6 +243,7 @@ export const CardList = styled.ul`
 export const CardListItem = styled.li`
   margin: 0;
   padding: 0;
+  width: 100%;
 
   ${mediaQuery.min_desktop} {
     flex: 0 0 50%;
