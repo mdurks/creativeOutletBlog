@@ -1,4 +1,8 @@
 export const truncateHtml = (html, maxLength = 200) => {
+  if (typeof window === "undefined") {
+    return html
+  }
+
   let div = document.createElement("div")
   div.innerHTML = html
 

@@ -18,7 +18,7 @@ import {
   CardListItem,
   CardListItemLink,
 } from "../components/page.styles"
-import { truncateHtml } from "../utilities/truncateHtml"
+// import { truncateHtml } from "../utilities/truncateHtml"
 
 const pageQuery = graphql`
   {
@@ -82,11 +82,11 @@ const WebPage = () => {
               <CardListItem key={article.id}>
                 <CardListItemLink to={`/${article.slug}/`}>
                   <h2>{article.articleTitle.slice(16)}</h2>
-                  <p
+                  {/* <p
                     dangerouslySetInnerHTML={{
                       __html: truncateHtml(article.content.html),
                     }}
-                  />
+                  /> */}
                   <strong>Read more...</strong>
                 </CardListItemLink>
               </CardListItem>

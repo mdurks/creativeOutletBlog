@@ -18,7 +18,6 @@ import {
   CardListItem,
   CardListItemLink,
 } from "../components/page.styles"
-import { truncateHtml } from "../utilities/truncateHtml"
 
 const pageQuery = graphql`
   {
