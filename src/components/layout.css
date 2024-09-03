@@ -199,7 +199,7 @@ Main Navigation:
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: calc(var(--maxColumnWidth) + 4rem);
+    max-width: calc(var(--maxColumnWidth) + 5rem);
     margin: auto;
   }
 

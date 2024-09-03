@@ -1,10 +1,5 @@
 export const truncateHtml = (html, maxLength = 200) => {
-  if (typeof window === "undefined") {
-    return html
-  }
-
-  let div = document.createElement("div")
-  div.innerHTML = html
+  if (!html) return ""
 
   let truncatedText = ""
   let charCount = 0
@@ -20,26 +15,35 @@ export const truncateHtml = (html, maxLength = 200) => {
     }
   }
 
-  function truncateNode(node) {
-    if (charCount >= maxLength) return
+  function truncateFromHtml(html) {
+    const regex = /(<[^>]+>)|([^<]+)/g
+    let match
 
-    if (node.nodeType === Node.TEXT_NODE) {
-      truncatedText += processText(node.textContent)
-    } else if (node.nodeType === Node.ELEMENT_NODE) {
-      const tagName = node.tagName.toLowerCase()
+    while ((match = regex.exec(html)) !== null && charCount < maxLength) {
+      const [, tag, text] = match
 
-      if (/^h[1-6]$/.test(tagName)) {
-        // For heading tags, process their text and add a period.
-        truncatedText += processText(node.textContent.trim()) + ". "
-      } else if (tagName === "p" || tagName === "strong" || tagName === "em") {
-        node.childNodes.forEach(truncateNode)
-        if (tagName === "p") truncatedText += " "
+      if (text) {
+        truncatedText += processText(text.trim())
+      } else if (tag) {
+        const tagName = tag.match(/<\/?(\w+)/)?.[1]?.toLowerCase()
+
+        if (/^h[1-6]$/.test(tagName)) {
+          truncatedText += ". "
+        } else if (
+          tagName === "p" ||
+          tagName === "strong" ||
+          tagName === "em"
+        ) {
+          // Continue to the next iteration to process text within these tags
+        }
       }
     }
   }
 
-  div.childNodes.forEach(truncateNode)
+  truncateFromHtml(html)
 
-  // Trim any extra whitespace and return the text wrapped in a single <> tag.
-  return `${truncatedText.trim()}...`
+  // Ensure any final punctuation is followed by a space.
+  truncatedText = truncatedText.replace(/\.([^\s]|$)/g, ". $1").trim()
+
+  return `${truncatedText}...`
 }
