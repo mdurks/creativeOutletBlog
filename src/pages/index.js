@@ -33,9 +33,8 @@ const IndexPage = () => {
             <p className="heroBannerText">
               Hi, my name's Michael and welcome to my blog where I share my
               passion for web development, 3D and other digital pursuits. With
-              over two decades of experience, I'm passionate about crafting
-              outstanding digital experiences powered by innovative technology
-              and smart problem-solving.
+              over two decades of expertise, I'm passionate about crafting
+              outstanding digital experiences.
             </p>
             <div className="heroBannerTreehouseLogo">
               <StaticImage

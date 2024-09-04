@@ -58,7 +58,7 @@ font-display: swap;
 
   --tabletBreakPoint: 768px;
 
-  --zi_contentBlock: 5;
+  --zi_contentBlock: 10;
   --zi_centralColumn: 10;
   --zi_navbar: 100;
 
@@ -585,7 +585,7 @@ Layout / Content:
     margin: 0;
 
     @media (min-width: 768px) {
-      width: 61%;
+      width: 58%;
       margin: -2rem 0 -3rem;
       padding: 0 0 0 20px;
     }
