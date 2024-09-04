@@ -1,5 +1,6 @@
 import * as React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 import NavigationLinkList from "./navigationLinkList"
 import { useEffect } from "react"
@@ -272,6 +273,18 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
     // </NavWrapper>
     <nav className="navbar" aria-label="Main Navigation">
       <div className="innerColumn">
+        <div className="avatar">
+          <StaticImage
+            src="../images/avatar.png"
+            loading="eager"
+            quality={100}
+            // width={98}
+            // layout="fixed"
+            formats={["auto", "webp", "avif"]}
+            alt="Avatar"
+          />
+          {/* <img src="../images/avatar.png" alt="Avatar" /> */}
+        </div>
         <Link to="/" className="siteLogo">
           Creative Outlet
         </Link>
