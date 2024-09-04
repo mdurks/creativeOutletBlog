@@ -27,21 +27,36 @@ const IndexPage = () => {
           alt="Creative Outlet Treehouse"
         />
       </HeaderHeroImg> */}
-      <div className="heroBlock">
+      <div className="heroBlock overFlowHidden">
         <div className="centralColumn">
-          <p>
-            Hi, my name's Michael and welcome to my Creative Outlet blog, where
-            I share my passion for web development, 3D and other digital
-            pursuits. With over two decades of experience, I'm passionate about
-            crafting outstanding digital experiences powered by innovative
-            technology and smart problem-solving.
-          </p>
+          <div className="introBanner">
+            <p className="heroBannerText">
+              Hi, my name's Michael and welcome to my blog where I share my
+              passion for web development, 3D and other digital pursuits. With
+              over two decades of experience, I'm passionate about crafting
+              outstanding digital experiences powered by innovative technology
+              and smart problem-solving.
+            </p>
+            <div className="heroBannerTreehouseLogo">
+              <StaticImage
+                src="../images/avatarLarge.png"
+                loading="eager"
+                quality={100}
+                // width={452}
+                // layout="fixed"
+                // layout="constrained"
+                objectFit="contain"
+                // formats={["auto", "webp", "avif"]}
+                alt="Creative Outlet Treehouse"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="contentBlock">
         <div className="centralColumn">
-          <ProjectListTitle>Projects:</ProjectListTitle>
+          <ProjectListTitle>My Projects:</ProjectListTitle>
 
           {/* Weather API */}
           <ProjectListItem to="/weather-charts-with-d3js/">

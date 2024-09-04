@@ -130,7 +130,6 @@ export const ProjectListWrapper = styled.div`
 
 export const ProjectListTitle = styled.h2`
   margin: 0 0 50px;
-  font-size: 50px;
   font-weight: var(--fontWeight-heavy);
 `
 
