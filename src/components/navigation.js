@@ -283,7 +283,6 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
             formats={["auto", "webp", "avif"]}
             alt="Avatar"
           />
-          {/* <img src="../images/avatar.png" alt="Avatar" /> */}
         </div>
         <Link to="/" className="siteLogo">
           Creative Outlet

@@ -22,6 +22,7 @@ export const PageHeader = styled.h1`
   margin: 0 0 20px;
   font-size: 40px;
   font-weight: var(--fontWeight-heavy);
+  text-shadow: 0px 4px 4px #000;
 
   ${mediaQuery.min_desktop} {
     font-size: 70px;
