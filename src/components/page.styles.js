@@ -28,6 +28,10 @@ export const PageHeader = styled.h1`
     font-size: 70px;
     line-height: 75px;
   }
+
+  span {
+    color: white;
+  }
 `
 
 export const PublishedWrapper = styled.div`
@@ -121,10 +125,10 @@ export const HeaderHeroImg = styled.div`
 `
 
 export const ProjectListWrapper = styled.div`
-  margin: 50px 0;
-
   ${mediaQuery.min_desktop} {
-    margin: 100px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
   }
 `
 
@@ -144,9 +148,12 @@ export const ProjectListItem = styled(Link)`
   font-weight: var(--fontWeight-light);
 
   ${mediaQuery.min_desktop} {
+    flex: 1 1 calc(50% - 70px);
     display: flex;
+    flex-direction: column;
     max-width: none;
-    margin: 20px auto;
+    /* margin: 20px auto; */
+    margin: 0;
     padding: 30px;
   }
 
@@ -154,9 +161,8 @@ export const ProjectListItem = styled(Link)`
     &:hover {
       background: ${colours.siteBackgroundHighlighter};
 
-      h2,
       h2:first-child {
-        color: ${colours.linkActive};
+        color: var(--colors_secondary);
       }
     }
   }
@@ -164,7 +170,9 @@ export const ProjectListItem = styled(Link)`
   p {
     margin: 0 0 10px;
     font-size: 18px;
-    line-height: 25px;
+    font-size: 1.2rem;
+    /* line-height: 25px; */
+    line-height: normal;
     color: ${colours.bodyText};
 
     &:last-of-type {
@@ -175,13 +183,24 @@ export const ProjectListItem = styled(Link)`
   h2,
   h2:first-child {
     margin: 20px 0;
-    font-size: 35px;
-    color: ${colours.link};
+    color: var(--colors_primary);
     transition: color ease 0.3s;
 
     ${mediaQuery.min_desktop} {
       font-size: 45px;
       margin: 10px 0;
+    }
+  }
+
+  strong {
+    display: block;
+    margin: auto 0 0;
+    padding: 15px 0 0;
+    font-size: 1.2rem;
+    color: var(--colors_secondary);
+
+    ${mediaQuery.min_desktop} {
+      font-size: 1.5rem;
     }
   }
 `
@@ -208,12 +227,13 @@ export const ProjectListPrimaryImg = styled.div`
   }
 
   ${mediaQuery.min_desktop} {
-    flex: 1 0 200px;
+    /* flex: 1 0 200px; */
     width: 100%;
     max-height: none;
     margin: 0;
 
     > div {
+      max-height: 250px;
       border-radius: 5px;
     }
   }
@@ -222,7 +242,8 @@ export const ProjectListPrimaryImg = styled.div`
 export const ProjectListContentCol = styled.div`
   ${mediaQuery.min_desktop} {
     flex: 1 1 100%;
-    padding: 0 20px 0 40px;
+    display: flex;
+    flex-direction: column;
   }
 `
 

@@ -24,6 +24,14 @@ const IndexPage = ({
   const dateBlogPublished = formatDate(blog.createdAt)
   // const dateBlogUpdated = blog?.updatedAt ? formatDate(blog.updatedAt) : false
 
+  let hyphenIndex = blog.articleTitle.indexOf("-")
+  if (hyphenIndex !== -1) {
+    hyphenIndex = {
+      highlight: blog.articleTitle.substring(0, hyphenIndex),
+      remainder: blog.articleTitle.substring(hyphenIndex),
+    }
+  }
+
   const richTextClassTypes = blog.myRichTextClassTypes?.split("").map(Number)
   const richTextClassMapping = {
     0: "contentBlock",
@@ -44,7 +52,16 @@ const IndexPage = ({
     <Layout>
       <div className="heroBlock">
         <div className="centralColumn">
-          <PageHeader>{blog.articleTitle}</PageHeader>
+          <PageHeader>
+            {hyphenIndex.highlight ? (
+              <>
+                <span>{hyphenIndex.highlight}</span>
+                {hyphenIndex.remainder}
+              </>
+            ) : (
+              blog.articleTitle
+            )}
+          </PageHeader>
           <PublishedWrapper>
             <strong>Published:</strong> {dateBlogPublished}
           </PublishedWrapper>
