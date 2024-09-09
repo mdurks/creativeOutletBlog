@@ -320,7 +320,12 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
             </button>
             <ul className="submenu" style={{ display: "none" }}>
               <li>
-                <Link to="/weather-charts-with-d3js/">Weather API</Link>
+                <Link to="/ring-configurator-three-js-r3f-drei-web-xr-gsap-zustand-vite/">
+                  Ring Configurator
+                </Link>
+              </li>
+              <li>
+                <Link to="/weather-charts-with-d3js/">Weather App</Link>
               </li>
               <li>
                 <Link to="/tv-favs-using-redux-react-router-and-local-storage/">

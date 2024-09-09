@@ -49,6 +49,23 @@ export const PageBody = styled.main`
     }
   }
 
+  p:empty {
+    display: none;
+  }
+
+  .col3ImgWrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    img {
+      max-width: 300px;
+
+      &:first-child {
+        margin-top: 40px;
+      }
+    }
+  }
+
   .techIconGroup a {
     color: #00b0cf !important;
 

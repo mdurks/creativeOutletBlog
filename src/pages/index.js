@@ -59,6 +59,40 @@ const IndexPage = () => {
 
           <ProjectListWrapper>
             {/* Weather API */}
+            <ProjectListItem to="/ring-configurator-three-js-r3f-drei-web-xr-gsap-zustand-vite/">
+              <ProjectListPrimaryImg>
+                <StaticImage
+                  src="../images/projectList/projectList-ringConfigurator.jpg"
+                  loading="eager"
+                  quality={95}
+                  formats={["auto", "webp", "avif"]}
+                  alt="Creative Outlet Treehouse"
+                />
+              </ProjectListPrimaryImg>
+              <ProjectListContentCol>
+                <h2>Ring Configurator</h2>
+                <ProjectListTechList>
+                  <p>
+                    Three.js <span>- </span>
+                    R3F <span>- </span>
+                    Drei <span>- </span>
+                    Web XR <span>- </span>
+                    GSAP <span>- </span>
+                    Zustand <span>- </span>
+                    Vite
+                  </p>
+                </ProjectListTechList>
+                <p>
+                  Create your dream ring in immersive 3D amongst a beautiful
+                  garden and gazebo setting by choosing gem color, ring type and
+                  metal. Finally "try on" the ring with Web AR and your phones
+                  camera.
+                </p>
+                <strong>View Project</strong>
+              </ProjectListContentCol>
+            </ProjectListItem>
+
+            {/* Weather API */}
             <ProjectListItem to="/weather-charts-with-d3js/">
               <ProjectListPrimaryImg>
                 <StaticImage
@@ -70,7 +104,7 @@ const IndexPage = () => {
                 />
               </ProjectListPrimaryImg>
               <ProjectListContentCol>
-                <h2>Weather API</h2>
+                <h2>Weather App</h2>
                 <ProjectListTechList>
                   <p>
                     React <span>-</span> D3 <span>-</span> Axios <span>-</span>{" "}
