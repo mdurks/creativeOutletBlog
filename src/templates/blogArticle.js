@@ -9,11 +9,11 @@ import highlightCode from "../utilities/highlightCode"
 import { formatDate } from "../utilities/general"
 
 import {
-  PageHeaderWrapper,
+  // PageHeaderWrapper,
   PageHeader,
   PageBody,
   PublishedWrapper,
-  UpdatedWrapper,
+  // UpdatedWrapper,
 } from "../components/page.styles"
 
 const IndexPage = ({
@@ -81,7 +81,7 @@ const IndexPage = ({
           />
         ))}
 
-        {blog.content.html && (
+        {blog.content.html !== "<p></p>" && (
           <div className="contentBlock">
             <div dangerouslySetInnerHTML={{ __html: blog.content.html }} />
           </div>
