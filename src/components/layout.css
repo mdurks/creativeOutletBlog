@@ -84,6 +84,7 @@ font-display: swap;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* outline: 1px solid red; */
 }
 
 html {
@@ -94,7 +95,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: gray;
-  color: var(--colors_bodyOffBlack);
+  color: black;
 
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -632,8 +633,10 @@ Layout / Content:
     top: 0;
     width: 100%;
     height: 100%;
-    background: url("../images/concreteLight.png");
     z-index: -1;
+
+    background: url("../images/desktopGrafittiMobile.png") repeat-y 53% top,
+      url("../images/concreteLight.png");
 
     clip-path: polygon(
       5121px 100000px,
@@ -813,6 +816,13 @@ Layout / Content:
     );
   }
 
+  @media (min-width: 768px) {
+    &:before {
+      background: url("../images/desktopGrafitti.png") repeat-y 53% top,
+        url("../images/concreteLight.png");
+    }
+  }
+
   &:after {
     content: "";
     position: absolute;
@@ -985,7 +995,7 @@ blockquote {
   font-size: 1.2rem;
   line-height: 2rem;
   font-style: italic;
-  background: hsla(0, 0%, 85%, 0.4);
+  background: hsla(0, 0%, 85%, 0.7);
   border-radius: 8px;
 
   .contentBlockDark & {
@@ -1126,6 +1136,9 @@ pre code {
   overflow-x: auto;
   border-radius: 10px;
 }
+.contentBlock pre code {
+  background: hsla(185, 79%, 6%, 0.9) !important;
+}
 .contentBlockDark pre code {
   background: hsla(185, 79%, 6%, 0.82) !important;
 }
@@ -1255,5 +1268,275 @@ pre code {
     top: -10px;
     height: 400px;
     margin: 0 7rem 4rem 0;
+  }
+}
+
+/*
+
+
+
+
+
+
+Project List:
+------------------------------------------------------------
+
+
+
+
+
+*/
+.projectList {
+  .projectWrapper {
+    position: relative;
+    margin: 0 0 1.6rem;
+    padding: 1.5rem;
+    background: rgb(5, 37, 41);
+    border-radius: 10px;
+
+    @media (min-width: 850px) {
+      width: 100%;
+      max-width: 932px;
+      height: 571px;
+      margin: 0;
+      padding: 0;
+      background: none;
+      border-radius: 0;
+    }
+  }
+
+  .sketchGazebo {
+    @media (min-width: 850px) {
+      position: absolute;
+      z-index: -1;
+      top: -290px;
+      left: 496px;
+      width: 755px;
+      height: 736px;
+      background-image: url(../images/projectList/projectSketch-Gazebo.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+    }
+  }
+  .sketchWeather {
+    @media (min-width: 850px) {
+      position: absolute;
+      z-index: -1;
+      top: 240px;
+      left: -334px;
+      width: 480px;
+      height: 434px;
+      background-image: url(../images/projectList/projectSketch-Weather.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      transform: rotate(-4deg);
+    }
+  }
+  .sketchTv {
+    @media (min-width: 850px) {
+      position: absolute;
+      z-index: -1;
+      top: -40px;
+      left: 730px;
+      width: 482px;
+      height: 499px;
+      background-image: url(../images/projectList/projectSketch-TV.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+    }
+  }
+  .sketchComputerDesk {
+    @media (min-width: 850px) {
+      position: absolute;
+      z-index: -1;
+      top: 140px;
+      left: -350px;
+      width: 633px;
+      height: 535px;
+      background-image: url(../images/projectList/projectSketch-ComputerDesk.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      transform: rotate(-3deg);
+    }
+  }
+  .sketchRings {
+    @media (min-width: 850px) {
+      position: absolute;
+      z-index: -1;
+      top: 115px;
+      left: 610px;
+      width: 633px;
+      height: 535px;
+      background-image: url(../images/projectList/projectSketch-Rings.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      transform: rotate(-3deg);
+    }
+  }
+
+  .mainImg {
+    @media (min-width: 850px) {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 83%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+
+      &.ringConfigurator {
+        background-image: url(../images/projectList/projectBook-RingConfigurator.png);
+      }
+      &.weather {
+        background-image: url(../images/projectList/projectBook-Weather.png);
+      }
+      &.tvFavs {
+        background-image: url(../images/projectList/projectBook-TVFavs.png);
+      }
+      &.blog {
+        background-image: url(../images/projectList/projectBook-Blog.png);
+      }
+      &.wentworths {
+        background-image: url(../images/projectList/projectBook-Wentworths.png);
+      }
+    }
+  }
+
+  .bookImg {
+    @media (min-width: 850px) {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url(../images/projectList/projectBook.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+    }
+  }
+
+  .bodyContent {
+    color: white;
+
+    @media (min-width: 850px) {
+      position: absolute;
+      top: 110px;
+      /* left: 53.5%; */
+      left: 500px;
+      z-index: 1;
+      /* width: 30%; */
+      width: 280px;
+      font-size: 1.1rem;
+      line-height: normal;
+      transform: rotate(-3.25deg);
+    }
+  }
+
+  .projectTitle {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+    color: var(--colors_primary);
+  }
+
+  .skillsList {
+    margin: 0 0 1rem;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: rgb(224, 224, 224);
+
+    @media (min-width: 850px) {
+      color: var(--colors_bodyOffBlack);
+    }
+  }
+
+  .bodyText {
+    margin: 0 0 1.3rem;
+    font-size: 1.1rem;
+    color: rgb(224, 224, 224);
+
+    @media (min-width: 850px) {
+      color: var(--colors_bodyOffBlack);
+    }
+  }
+
+  .projectLink {
+    margin: 0 0 1rem;
+    padding: 6px 16px 9px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    background: var(--colors_secondary);
+    border-radius: 9px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .phoneWrapper {
+    @media (min-width: 850px) {
+      position: absolute;
+      top: 160px;
+      /* left: 85%; */
+      left: 793px;
+      z-index: 2;
+      width: 161px;
+      height: 100%;
+    }
+  }
+
+  .phoneImg {
+    @media (min-width: 850px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 161px;
+      height: 100%;
+
+      background-image: url(../images/projectList/projectBook-Phone.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+    }
+  }
+
+  .phoneWebImg {
+    @media (min-width: 850px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 161px;
+      height: 100%;
+
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+
+      &.ringConfigurator {
+        background-image: url(../images/projectList/projectBook-Phone-RingConfigurator.png);
+      }
+      &.weather {
+        background-image: url(../images/projectList/projectBook-Phone-Weather.png);
+      }
+      &.tvFavs {
+        background-image: url(../images/projectList/projectBook-Phone-TVFavs.png);
+      }
+      &.blog {
+        /* background-image: url(../images/projectList/projectBook-Phone-blog.png); */
+      }
+      &.wentworths {
+        background-image: url(../images/projectList/projectBook-Phone-Wentworths.png);
+      }
+    }
   }
 }

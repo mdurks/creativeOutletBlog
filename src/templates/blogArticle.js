@@ -81,10 +81,11 @@ const IndexPage = ({
           />
         ))}
 
-        {/* The following "blog.content.html" is empty now I've setup the Rich Text Component in Hygraph: */}
-        {/* <div className="contentBlock">
-          <div dangerouslySetInnerHTML={{ __html: blog.content.html }} />
-        </div> */}
+        {blog.content.html && (
+          <div className="contentBlock">
+            <div dangerouslySetInnerHTML={{ __html: blog.content.html }} />
+          </div>
+        )}
       </PageBody>
     </Layout>
   )
