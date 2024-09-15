@@ -192,8 +192,6 @@ footer {
 
   .footerContent {
     position: relative;
-    width: 100%;
-    max-width: var(--maxColumnWidth);
     margin: auto;
     padding: 20px;
     z-index: var(--zi_centralColumn);
@@ -201,6 +199,8 @@ footer {
     @media (min-width: 768px) {
       display: flex;
       justify-content: space-between;
+      width: 100%;
+      max-width: var(--maxColumnWidth);
       padding: 7px 20px 10px;
     }
 
@@ -1573,7 +1573,7 @@ Project List:
         background-image: url(../images/projectList/projectBook-Phone-TVFavs.png);
       }
       &.blog {
-        /* background-image: url(../images/projectList/projectBook-Phone-blog.png); */
+        background-image: url(../images/projectList/projectBook-Phone-blog.png);
       }
       &.wentworths {
         background-image: url(../images/projectList/projectBook-Phone-Wentworths.png);
