@@ -1305,8 +1305,8 @@ Project List:
     }
   }
 
-  .sketchGazebo {
-    @media (min-width: 850px) {
+  @media (min-width: 850px) {
+    .sketchGazebo {
       position: absolute;
       z-index: -1;
       top: -290px;
@@ -1319,8 +1319,8 @@ Project List:
       background-position: 0 0;
     }
   }
-  .sketchWeather {
-    @media (min-width: 850px) {
+  @media (min-width: 850px) {
+    .sketchWeather {
       position: absolute;
       z-index: -1;
       top: 240px;
@@ -1334,8 +1334,8 @@ Project List:
       transform: rotate(-4deg);
     }
   }
-  .sketchTv {
-    @media (min-width: 850px) {
+  @media (min-width: 850px) {
+    .sketchTv {
       position: absolute;
       z-index: -1;
       top: -40px;
@@ -1348,8 +1348,8 @@ Project List:
       background-position: 0 0;
     }
   }
-  .sketchComputerDesk {
-    @media (min-width: 850px) {
+  @media (min-width: 850px) {
+    .sketchComputerDesk {
       position: absolute;
       z-index: -1;
       top: 140px;
@@ -1363,8 +1363,8 @@ Project List:
       transform: rotate(-3deg);
     }
   }
-  .sketchRings {
-    @media (min-width: 850px) {
+  @media (min-width: 850px) {
+    .sketchRings {
       position: absolute;
       z-index: -1;
       top: 115px;
@@ -1481,8 +1481,8 @@ Project List:
     }
   }
 
-  .phoneWrapper {
-    @media (min-width: 850px) {
+  @media (min-width: 850px) {
+    .phoneWrapper {
       position: absolute;
       top: 160px;
       /* left: 85%; */
@@ -1493,8 +1493,8 @@ Project List:
     }
   }
 
-  .phoneImg {
-    @media (min-width: 850px) {
+  @media (min-width: 850px) {
+    .phoneImg {
       position: absolute;
       top: 0;
       left: 0;
@@ -1509,8 +1509,8 @@ Project List:
     }
   }
 
-  .phoneWebImg {
-    @media (min-width: 850px) {
+  @media (min-width: 850px) {
+    .phoneWebImg {
       position: absolute;
       top: 0;
       left: 0;
