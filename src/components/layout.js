@@ -65,6 +65,16 @@ const Layout = ({ children }) => {
 
       <Navigation setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
       {children}
+      <footer>
+        <div className="footerContent">
+          <div>
+            <a href="http://creativeoutlet.co.uk/">
+              Visit my treehouse if you haven't already...
+            </a>
+          </div>
+          <div>© Creative Outlet. All Rights Reserved.</div>
+        </div>
+      </footer>
     </>
   )
 }
