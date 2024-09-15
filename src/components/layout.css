@@ -990,10 +990,10 @@ img {
 
 blockquote {
   position: relative;
-  margin: 2rem 0 25rem;
-  padding: 1.5rem 1.5rem 2.5rem 4.75rem;
+  margin: 2.5rem 0;
+  padding: 1.5rem 1.5rem 2rem 4.75rem;
   font-size: 1.2rem;
-  line-height: 2rem;
+  line-height: 1.75rem;
   font-style: italic;
   background: hsla(0, 0%, 85%, 0.7);
   border-radius: 8px;
@@ -1029,19 +1029,19 @@ blockquote {
   &:after {
     content: "";
     position: absolute;
-    bottom: 15px;
-    left: -12px;
-    background-image: url(../images//sketches//Sketch\ -\ 2\ plants\ in\ pot.png);
+    bottom: 18px;
+    left: -7px;
+    background-image: url(../images/tyPointing.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 0 100%;
-    width: 100px;
+    width: 76px;
     height: 100%;
   }
 
   @media (min-width: 768px) {
     &:after {
-      left: 4px;
+      left: 10px;
       width: 160px;
     }
   }
