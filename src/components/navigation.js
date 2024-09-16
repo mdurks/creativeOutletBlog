@@ -3,7 +3,7 @@ import { useLocation } from "@reach/router"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
-import NavigationLinkList from "./navigationLinkList"
+// import NavigationLinkList from "./navigationLinkList"
 import { useEffect } from "react"
 
 // import {
@@ -40,21 +40,21 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
     return new Date(b.createdAt) - new Date(a.createdAt)
   })
 
-  const blogDataProjects = blogData.filter(
-    blog => blog.blogCategory === "Projects"
-  )
-  const blogDataMisc = blogData.filter(blog => blog.blogCategory === "Misc")
-  const blogDataReact = blogData.filter(blog => blog.blogCategory === "React")
-  const blogDataThree_JS = blogData.filter(
-    blog => blog.blogCategory === "Three_JS"
-  )
-  const blogDataBlender = blogData.filter(
-    blog => blog.blogCategory === "Blender"
-  )
+  // const blogDataProjects = blogData.filter(
+  //   blog => blog.blogCategory === "Projects"
+  // )
+  // const blogDataMisc = blogData.filter(blog => blog.blogCategory === "Misc")
+  // const blogDataReact = blogData.filter(blog => blog.blogCategory === "React")
+  // const blogDataThree_JS = blogData.filter(
+  //   blog => blog.blogCategory === "Three_JS"
+  // )
+  // const blogDataBlender = blogData.filter(
+  //   blog => blog.blogCategory === "Blender"
+  // )
 
-  const handleMenuClick = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+  // const handleMenuClick = () => {
+  //   setIsMenuOpen(!isMenuOpen)
+  // }
 
   useEffect(() => {
     // Toggle navigation menu on mobile

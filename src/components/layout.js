@@ -12,13 +12,13 @@ import { useState, useEffect } from "react"
 // import Header from "./header"
 import Navigation from "./navigation"
 import "./layout.css"
-import {
-  PageWrapper,
-  PageContent,
-  MobileHeader,
-  MobileSiteTitle,
-  MobileMenuButton,
-} from "./layout.styles"
+// import {
+//   PageWrapper,
+//   PageContent,
+//   MobileHeader,
+//   MobileSiteTitle,
+//   MobileMenuButton,
+// } from "./layout.styles"
 
 const Layout = ({ children }) => {
   // const data = useStaticQuery(graphql`

@@ -1,23 +1,23 @@
 import * as React from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+// import { graphql, useStaticQuery, Link } from "gatsby"
+// import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-import {
-  PageBody,
-  HeaderHeroImg,
-  ProjectListWrapper,
-  ProjectListTitle,
-  ProjectListItem,
-  ProjectListPrimaryImg,
-  ProjectListContentCol,
-  ProjectListTechList,
-  CardList,
-  CardListItem,
-  CardListItemLink,
-} from "../components/page.styles"
+// import {
+//   PageBody,
+//   HeaderHeroImg,
+//   ProjectListWrapper,
+//   ProjectListTitle,
+//   ProjectListItem,
+//   ProjectListPrimaryImg,
+//   ProjectListContentCol,
+//   ProjectListTechList,
+//   CardList,
+//   CardListItem,
+//   CardListItemLink,
+// } from "../components/page.styles"
 
 // const pageQuery = graphql`
 //   {

@@ -1,23 +1,23 @@
 import * as React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+// import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-import {
-  PageBody,
-  HeaderHeroImg,
-  ProjectListWrapper,
-  ProjectListTitle,
-  ProjectListItem,
-  ProjectListPrimaryImg,
-  ProjectListContentCol,
-  ProjectListTechList,
-  CardList,
-  CardListItem,
-  CardListItemLink,
-} from "../components/page.styles"
+// import {
+//   PageBody,
+//   HeaderHeroImg,
+//   ProjectListWrapper,
+//   ProjectListTitle,
+//   ProjectListItem,
+//   ProjectListPrimaryImg,
+//   ProjectListContentCol,
+//   ProjectListTechList,
+//   CardList,
+//   CardListItem,
+//   CardListItemLink,
+// } from "../components/page.styles"
 
 const pageQuery = graphql`
   {
@@ -46,9 +46,9 @@ const WebPage = () => {
     return new Date(b.createdAt) - new Date(a.createdAt)
   })
 
-  const blogDataAccessibility = blogData.filter(
-    blog => blog.blogCategory === "Accessibility"
-  )
+  // const blogDataAccessibility = blogData.filter(
+  //   blog => blog.blogCategory === "Accessibility"
+  // )
 
   return (
     <Layout>
