@@ -56,9 +56,11 @@ export const PageBody = styled.main`
   .col3ImgWrapper {
     display: flex;
     flex-wrap: wrap;
+    margin: 1.5rem 0;
 
     img {
       max-width: 300px;
+      filter: drop-shadow(10px 10px 5px #000000);
 
       &:first-child {
         margin-top: 40px;
