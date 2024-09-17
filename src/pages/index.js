@@ -6,6 +6,7 @@ import Seo from "../components/seo"
 
 import { ProjectListTitle } from "../components/page.styles"
 import { ProjectList } from "../components/ProjectList/ProjectList"
+import { ThreeJSCanvas } from "../components/ThreeJSCanvas/ThreeJSCanvas"
 
 const IndexPage = () => {
   return (
@@ -43,6 +44,7 @@ const IndexPage = () => {
             </div>
           </div>
         </div>
+        <ThreeJSCanvas cubesCount={100} />
       </div>
 
       <div className="contentBlock">

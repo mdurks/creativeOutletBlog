@@ -15,6 +15,7 @@ import {
   PublishedWrapper,
   // UpdatedWrapper,
 } from "../components/page.styles"
+import { ThreeJSCanvas } from "../components/ThreeJSCanvas/ThreeJSCanvas"
 
 const IndexPage = ({
   data: {
@@ -71,6 +72,7 @@ const IndexPage = ({
             </UpdatedWrapper>
           )} */}
         </div>
+        <ThreeJSCanvas />
       </div>
       <PageBody>
         {blog.myRichTextComponent.map((text, index) => (

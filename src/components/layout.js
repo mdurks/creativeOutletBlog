@@ -33,9 +33,9 @@ const Layout = ({ children }) => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const handleMenuClick = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+  // const handleMenuClick = () => {
+  //   setIsMenuOpen(!isMenuOpen)
+  // }
 
   useEffect(() => {
     if (isMenuOpen) document.querySelector("body").classList.add("menuOpen")

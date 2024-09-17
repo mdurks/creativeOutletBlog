@@ -83,7 +83,7 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
         const expanded = this.getAttribute("aria-expanded") === "true" || false
         this.setAttribute("aria-expanded", !expanded)
         submenu.style.display =
-          submenu.style.display == "none" ? "block" : "none"
+          submenu.style.display === "none" ? "block" : "none"
       })
     })
 
@@ -140,6 +140,8 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
               }
               this.focus()
               break
+            default:
+              break
           }
         })
       })
@@ -183,6 +185,8 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
             parent.setAttribute("aria-expanded", "false")
             parentMenu.style.display = "none"
             parent.focus()
+            break
+          default:
             break
         }
       })
@@ -277,7 +281,7 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
     <nav className="navbar" aria-label="Main Navigation">
       <div className="innerColumn">
         <div className="avatar">
-          {pathname == "/" && (
+          {pathname === "/" && (
             <StaticImage
               src="../images/avatarTreehouse.png"
               loading="eager"
@@ -288,7 +292,7 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
               alt="Avatar"
             />
           )}
-          {pathname != "/" && (
+          {pathname !== "/" && (
             <StaticImage
               src="../images/avatar.png"
               loading="eager"
@@ -358,8 +362,3 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
 }
 
 export default Navigation
-
-{
-  /* <SubCategoryTitle>Misc</SubCategoryTitle>
-<NavigationLinkList linkData={blogDataMisc} /> */
-}

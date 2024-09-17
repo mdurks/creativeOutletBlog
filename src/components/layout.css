@@ -511,6 +511,20 @@ Main Navigation:
   }
 }
 
+.physicsHeader {
+  position: fixed !important;
+  position: relative !important;
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height: calc(100% + 100px) !important; */
+  height: 100% !important;
+  /* height: 500px !important; */
+  overflow: hidden;
+  pointer-events: all !important;
+}
+
 /*
 
 
@@ -526,6 +540,7 @@ Layout / Content:
 */
 
 .heroBlock {
+  position: relative;
   padding: 5.5rem var(--centralColumnSidePaddingMobile) 5rem;
   color: #fff;
   pointer-events: none;
@@ -549,6 +564,7 @@ Layout / Content:
 
   @media (min-width: 768px) {
     padding: 12rem 0;
+    padding: 16rem 0;
   }
 
   &:before {
