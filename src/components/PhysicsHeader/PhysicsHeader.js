@@ -9,6 +9,7 @@ import {
   RigidBody,
 } from "@react-three/rapier"
 import { useGLTF } from "@react-three/drei"
+import { useWindowSize } from "../../hooks/useWindowSize"
 
 // Helper to debounce functions (ensures function is called only after a delay)
 const debounce = (func, delay) => {
@@ -28,6 +29,9 @@ export const PhysicsHeader = ({ cubesCount = 175 }) => {
     width: window.innerWidth,
     height: window.innerHeight,
   })
+
+  const { width } = useWindowSize()
+  const isMobile = width < 768
 
   const { nodes } = useGLTF("/models/Lego2x3.glb")
 
@@ -151,16 +155,20 @@ export const PhysicsHeader = ({ cubesCount = 175 }) => {
           />
 
           {/* Edge Colliders */}
-          <CuboidCollider
-            name="left Edge Collider"
-            args={[10, viewportSizeRef.current.height, 100]}
-            position={[-(viewportSizeRef.current.width / 2 / 35), 0, 0]}
-          />
-          <CuboidCollider
-            name="right Edge Collider"
-            args={[10, viewportSizeRef.current.height, 100]}
-            position={[viewportSizeRef.current.width / 2 / 35, 0, 0]}
-          />
+          {!isMobile && (
+            <>
+              <CuboidCollider
+                name="left Edge Collider"
+                args={[10, viewportSizeRef.current.height, 100]}
+                position={[-(viewportSizeRef.current.width / 2 / 35), 0, 0]}
+              />
+              <CuboidCollider
+                name="right Edge Collider"
+                args={[10, viewportSizeRef.current.height, 100]}
+                position={[viewportSizeRef.current.width / 2 / 35, 0, 0]}
+              />
+            </>
+          )}
         </RigidBody>
 
         <RigidBody
