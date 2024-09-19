@@ -44,7 +44,7 @@ const IndexPage = () => {
             </div>
           </div>
         </div>
-        <ThreeJSCanvas cubesCount={100} />
+        <ThreeJSCanvas cubesCount={100} techIcons={[]} />
       </div>
 
       <div className="contentBlock">

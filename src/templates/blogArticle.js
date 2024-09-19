@@ -52,6 +52,7 @@ const IndexPage = ({
   return (
     <Layout>
       <div className="heroBlock">
+        {/* <div className="centralColumn" style={{ opacity: 0 }}> */}
         <div className="centralColumn">
           <PageHeader>
             {hyphenIndex.highlight ? (
@@ -72,7 +73,7 @@ const IndexPage = ({
             </UpdatedWrapper>
           )} */}
         </div>
-        <ThreeJSCanvas />
+        <ThreeJSCanvas techIcons={blog.techIcons} />
       </div>
       <PageBody>
         {blog.myRichTextComponent.map((text, index) => (
@@ -109,6 +110,7 @@ export const pageQuery = graphql`
         updatedAt
         articleTitle
         blogCategory
+        techIcons
         content {
           html
         }

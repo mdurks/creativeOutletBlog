@@ -9,18 +9,13 @@ import {
   RigidBody,
 } from "@react-three/rapier"
 import { useGLTF } from "@react-three/drei"
+// import { OrbitControls } from "@react-three/drei"
 import { useWindowSize } from "../../hooks/useWindowSize"
+import { debounce } from "../../utilities/debounce"
 
-// Helper to debounce functions (ensures function is called only after a delay)
-const debounce = (func, delay) => {
-  let timeout
-  return (...args) => {
-    clearTimeout(timeout)
-    timeout = setTimeout(() => func(...args), delay)
-  }
-}
+export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
+  // console.log("techIconsToLoad", techIconsToLoad)
 
-export const PhysicsHeader = ({ cubesCount = 175 }) => {
   const { camera, gl } = useThree()
   const raycaster = new THREE.Raycaster()
   const mouse = new THREE.Vector2()
@@ -33,23 +28,174 @@ export const PhysicsHeader = ({ cubesCount = 175 }) => {
   const { width } = useWindowSize()
   const isMobile = width < 768
 
+  const techIconData = {
+    LegoMan: {
+      path: "/models/LegoMan.glb",
+      cuboidColliderArgs: [0.7, 1.2, 0.7],
+      modelName: "LegoMan",
+      scale: [1, 1, 1],
+    },
+    IconReact: {
+      path: "/models/IconReact.glb",
+      cuboidColliderArgs: [1.7, 0.25, 1.6],
+      modelName: "IconReact",
+      scale: [1.5, 1.5, 1.5],
+    },
+    IconD3: {
+      path: "/models/IconD3.glb",
+      cuboidColliderArgs: [1.35, 0.25, 1.3],
+      modelName: "IconD3",
+      scale: [1.2, 1.2, 1.2],
+    },
+    IconStyledComponents: {
+      path: "/models/IconStyledComponents.glb",
+      cuboidColliderArgs: [1.35, 0.25, 1.3],
+      modelName: "IconStyledComponents",
+      scale: [1.2, 1.2, 1.2],
+    },
+    IconGraphQL: {
+      path: "/models/IconGraphQL.glb",
+      cuboidColliderArgs: [1.4, 0.25, 1.4],
+      modelName: "IconGraphQL",
+      scale: [1.5, 1.5, 1.5],
+    },
+    IconGatsby: {
+      path: "/models/IconGatsby.glb",
+      cuboidColliderArgs: [1.35, 0.25, 1.3],
+      modelName: "IconGatsby",
+      scale: [1.2, 1.2, 1.2],
+    },
+    IconReduxToolkit: {
+      path: "/models/IconReduxToolkit.glb",
+      cuboidColliderArgs: [1.35, 0.25, 1.3],
+      modelName: "IconReduxToolkit",
+      scale: [1.2, 1.2, 1.2],
+    },
+    IconFramerMotion: {
+      path: "/models/IconFramerMotion.glb",
+      cuboidColliderArgs: [1, 0.25, 1.6],
+      modelName: "IconFramerMotion",
+      scale: [1.2, 1.2, 1.2],
+    },
+    IconR3F: {
+      path: "/models/IconR3F.glb",
+      cuboidColliderArgs: [2.5, 0.25, 0.7],
+      modelName: "IconR3F",
+      scale: [0.85, 0.85, 0.85],
+    },
+    IconZustand: {
+      path: "/models/IconZustand.glb",
+      cuboidColliderArgs: [1, 0.25, 1],
+      modelName: "IconZustand",
+      scale: [1.5, 1.5, 1.5],
+    },
+    IconVite: {
+      path: "/models/IconVite.glb",
+      cuboidColliderArgs: [1.5, 0.25, 1.5],
+      modelName: "IconVite",
+      scale: [1.6, 1.6, 1.6],
+    },
+    IconThreeJS: {
+      path: "/models/IconThreeJS.glb",
+      cuboidColliderArgs: [1.3, 0.25, 1.3],
+      modelName: "IconThreeJS",
+      scale: [1.5, 1.5, 1.5],
+    },
+    IconGSAP: {
+      path: "/models/IconGSAP.glb",
+      cuboidColliderArgs: [0.9, 0.25, 1.9],
+      modelName: "IconGSAP",
+      scale: [1.75, 1.75, 1.75],
+    },
+    IconReactRouter: {
+      path: "/models/IconReactRouter.glb",
+      cuboidColliderArgs: [1.3, 0.25, 0.9],
+      modelName: "IconReactRouter",
+      scale: [1.25, 1.25, 1.25],
+    },
+    IconAxios: {
+      path: "/models/IconAxios.glb",
+      cuboidColliderArgs: [2.5, 0.25, 0.6],
+      modelName: "IconAxios",
+      scale: [0.85, 0.85, 0.85],
+    },
+    IconNetlify: {
+      path: "/models/IconNetlify.glb",
+      cuboidColliderArgs: [2.9, 0.25, 0.7],
+      modelName: "IconNetlify",
+      scale: [1.1, 1.1, 1.1],
+    },
+    IconHygraph: {
+      path: "/models/IconHygraph.glb",
+      cuboidColliderArgs: [3.2, 0.25, 0.8],
+      modelName: "IconHygraph",
+      scale: [1.5, 1.5, 1.5],
+    },
+  }
+
+  // const techIconsToLoad = [
+  //   "IconAxios",
+  //   "IconD3",
+  //   "IconFramerMotion",
+  //   "IconGatsby",
+  //   "IconGraphQL",
+  //   "IconGSAP",
+  //   "IconHygraph",
+  //   "IconNetlify",
+  //   "IconR3F",
+  //   "IconReact",
+  //   "IconReactRouter",
+  //   "IconReduxToolkit",
+  //   "IconStyledComponents",
+  //   "IconThreeJS",
+  //   "IconVite",
+  //   "IconZustand",
+  //   "LegoMan",
+  // ]
+
+  const techIconsToLoadPlusLegoMan = [...techIconsToLoad, "LegoMan"]
+
   const { nodes } = useGLTF("/models/Lego2x3.glb")
 
-  const cubeInstances = useMemo(() => {
-    const cubeInstances = []
-    for (let i = 0; i < cubesCount; i++) {
-      cubeInstances.push({
+  const createCubeInstance = (count, yPos) => {
+    // console.log("yPos", yPos)
+    const instances = []
+    for (let i = 0; i < count; i++) {
+      instances.push({
         key: "cubeInstance" + i,
         position: [
           (Math.random() - 0.5) * 6,
-          15 + i * 0.75,
+          yPos + i,
           (Math.random() - 0.5) * 1.2,
         ],
         rotation: [Math.random(), Math.random(), Math.random()],
       })
     }
-    return cubeInstances
-  }, [])
+    return instances
+  }
+
+  const cubeInstanceColors = [
+    "#474747",
+    "#474747",
+    "#474747",
+    "#246f79",
+    "#246f79",
+    "#246f79",
+    "#246f79",
+    "#fda640",
+    "#fc317c",
+  ]
+  const cubeGroupSize = Math.ceil(cubesCount / cubeInstanceColors.length)
+  const cubeInstances = useMemo(
+    () =>
+      Array.from(
+        { length: cubeInstanceColors.length },
+        (_, index) =>
+          createCubeInstance(cubeGroupSize, 15 + cubeGroupSize * index) // staggered position
+        // createCubeInstance(cubeGroupSize, 15 + cubeGroupSize)
+      ),
+    [cubeGroupSize, cubeInstanceColors.length]
+  )
 
   // Update mouse position including scroll offset
   const updateMousePosition = debounce(event => {
@@ -112,28 +258,48 @@ export const PhysicsHeader = ({ cubesCount = 175 }) => {
   return (
     <>
       <ambientLight intensity={0.5} />
-      <directionalLight castShadow position={[0, 10, 5]} intensity={1.5} />
+      <directionalLight
+        castShadow
+        position={[0, 10, 10]}
+        intensity={1.5}
+        // shadow-bias={0.2}
+      />
       {/* <OrbitControls /> */}
 
-      <Physics gravity={[0, -15, 0]} debug={false}>
-        <InstancedRigidBodies
-          instances={cubeInstances}
-          linearDamping={0.8}
-          angularDamping={0.8}
-        >
-          <instancedMesh
-            args={[null, null, cubesCount]}
-            geometry={nodes.Cube.geometry}
-            castShadow
-            receiveShadow
+      <Physics gravity={[0, -20, 0]} debug={false}>
+        {techIconsToLoadPlusLegoMan.map((icon, index) => (
+          <LoadATechIcon
+            key={icon}
+            path={techIconData[icon].path}
+            cuboidColliderArgs={techIconData[icon].cuboidColliderArgs}
+            modelName={techIconData[icon].modelName}
+            scale={techIconData[icon].scale}
+            yPos={80 + index * 3}
+          />
+        ))}
+
+        {cubeInstances.map((cubeGroup, index) => (
+          <InstancedRigidBodies
+            key={"cubeGroup" + index}
+            instances={cubeGroup}
+            linearDamping={0.8}
+            angularDamping={0.8}
+            mass={1}
           >
-            {/* <meshStandardMaterial attach="material" color="#00e1ff" /> */}
-            {/* <meshStandardMaterial attach="material" color="#474747" /> */}
-            <meshStandardMaterial attach="material" color="#2d484d" />
-            {/* <meshStandardMaterial attach="material" color="#2c8793" /> */}
-            {/* <meshStandardMaterial attach="material" color="#1a8897" /> */}
-          </instancedMesh>
-        </InstancedRigidBodies>
+            <instancedMesh
+              args={[null, null, cubeGroup.length]}
+              geometry={nodes.Cube.geometry}
+              castShadow
+              receiveShadow
+              frustumCulled={false}
+            >
+              <meshStandardMaterial
+                attach="material"
+                color={cubeInstanceColors[index]}
+              />
+            </instancedMesh>
+          </InstancedRigidBodies>
+        ))}
 
         <RigidBody type="fixed" restitution={0} friction={0.5}>
           <CuboidCollider
@@ -160,12 +326,12 @@ export const PhysicsHeader = ({ cubesCount = 175 }) => {
               <CuboidCollider
                 name="left Edge Collider"
                 args={[10, viewportSizeRef.current.height, 100]}
-                position={[-(viewportSizeRef.current.width / 2 / 35), 0, 0]}
+                position={[-(viewportSizeRef.current.width / 2 / 37), 0, 0]}
               />
               <CuboidCollider
                 name="right Edge Collider"
                 args={[10, viewportSizeRef.current.height, 100]}
-                position={[viewportSizeRef.current.width / 2 / 35, 0, 0]}
+                position={[viewportSizeRef.current.width / 2 / 37, 0, 0]}
               />
             </>
           )}
@@ -174,18 +340,41 @@ export const PhysicsHeader = ({ cubesCount = 175 }) => {
         <RigidBody
           ref={mouseColliderRef}
           type="kinematicPosition"
-          colliders="hull"
-          restitution={0.2}
+          // colliders="hull"
+          // restitution={0.2}
+          restitution={0}
           friction={10}
+          // friction={1}
           ccd={true}
         >
           <CuboidCollider
             name="pointer Collider"
-            args={[0.75, 0.75, 0.75]}
+            args={[1, 1, 1]}
             position={[0, 0, 0]}
           />
         </RigidBody>
       </Physics>
     </>
+  )
+}
+
+const LoadATechIcon = ({
+  path,
+  cuboidColliderArgs,
+  modelName,
+  scale,
+  yPos,
+}) => {
+  const { nodes } = useGLTF(path)
+  return (
+    <RigidBody position={[0, yPos, 0]} mass={1} colliders={false}>
+      <CuboidCollider args={cuboidColliderArgs} />
+      <primitive
+        object={nodes[modelName]}
+        receiveShadow={true}
+        castShadow={true}
+        scale={scale}
+      />
+    </RigidBody>
   )
 }

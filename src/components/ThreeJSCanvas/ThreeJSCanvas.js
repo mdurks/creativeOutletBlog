@@ -2,19 +2,20 @@ import React from "react"
 import { Canvas } from "@react-three/fiber"
 import { PhysicsHeader } from "../PhysicsHeader/PhysicsHeader"
 
-export const ThreeJSCanvas = ({ cubesCount }) => {
+export const ThreeJSCanvas = ({ cubesCount, techIcons }) => {
   return (
     <Canvas
       shadows
       className="physicsHeader"
       camera={{
-        position: [0, 9, 7],
+        fov: 55,
+        position: [0, 9, 10],
       }}
       onCreated={({ camera }) => {
         camera.lookAt(0, 9, 0)
       }}
     >
-      <PhysicsHeader cubesCount={cubesCount} />
+      <PhysicsHeader cubesCount={cubesCount} techIconsToLoad={techIcons} />
     </Canvas>
   )
 }
