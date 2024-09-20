@@ -632,8 +632,7 @@ Layout / Content:
     overflow: hidden;
   }
 }
-
-.introBanner {
+initialMouseColliderYOffset .introBanner {
   display: flex;
   flex-direction: column-reverse;
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from "react"
+import React, { useCallback, useEffect, useMemo, useRef } from "react"
 import * as THREE from "three"
 import { useFrame, useThree } from "@react-three/fiber"
 import { degToRad } from "three/src/math/MathUtils.js"
@@ -13,12 +13,14 @@ import { useGLTF } from "@react-three/drei"
 import { useWindowSize } from "../../hooks/useWindowSize"
 import { debounce } from "../../utilities/debounce"
 
+import { techIconData } from "./techIconData"
+
 export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
   // console.log("techIconsToLoad", techIconsToLoad)
 
   const { camera, gl } = useThree()
-  const raycaster = new THREE.Raycaster()
-  const mouse = new THREE.Vector2()
+  const raycaster = useMemo(() => new THREE.Raycaster(), [])
+  const mouse = useMemo(() => new THREE.Vector2(), [])
   const mouseColliderRef = useRef(null)
   const viewportSizeRef = useRef({
     width: window.innerWidth,
@@ -27,111 +29,6 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
 
   const { width } = useWindowSize()
   const isMobile = width < 768
-
-  const techIconData = {
-    LegoMan: {
-      path: "/models/LegoMan.glb",
-      cuboidColliderArgs: [0.7, 1.2, 0.7],
-      modelName: "LegoMan",
-      scale: [1, 1, 1],
-    },
-    IconReact: {
-      path: "/models/IconReact.glb",
-      cuboidColliderArgs: [1.7, 0.25, 1.6],
-      modelName: "IconReact",
-      scale: [1.5, 1.5, 1.5],
-    },
-    IconD3: {
-      path: "/models/IconD3.glb",
-      cuboidColliderArgs: [1.35, 0.25, 1.3],
-      modelName: "IconD3",
-      scale: [1.2, 1.2, 1.2],
-    },
-    IconStyledComponents: {
-      path: "/models/IconStyledComponents.glb",
-      cuboidColliderArgs: [1.35, 0.25, 1.3],
-      modelName: "IconStyledComponents",
-      scale: [1.2, 1.2, 1.2],
-    },
-    IconGraphQL: {
-      path: "/models/IconGraphQL.glb",
-      cuboidColliderArgs: [1.4, 0.25, 1.4],
-      modelName: "IconGraphQL",
-      scale: [1.5, 1.5, 1.5],
-    },
-    IconGatsby: {
-      path: "/models/IconGatsby.glb",
-      cuboidColliderArgs: [1.35, 0.25, 1.3],
-      modelName: "IconGatsby",
-      scale: [1.2, 1.2, 1.2],
-    },
-    IconReduxToolkit: {
-      path: "/models/IconReduxToolkit.glb",
-      cuboidColliderArgs: [1.35, 0.25, 1.3],
-      modelName: "IconReduxToolkit",
-      scale: [1.2, 1.2, 1.2],
-    },
-    IconFramerMotion: {
-      path: "/models/IconFramerMotion.glb",
-      cuboidColliderArgs: [1, 0.25, 1.6],
-      modelName: "IconFramerMotion",
-      scale: [1.2, 1.2, 1.2],
-    },
-    IconR3F: {
-      path: "/models/IconR3F.glb",
-      cuboidColliderArgs: [2.5, 0.25, 0.7],
-      modelName: "IconR3F",
-      scale: [0.85, 0.85, 0.85],
-    },
-    IconZustand: {
-      path: "/models/IconZustand.glb",
-      cuboidColliderArgs: [1, 0.25, 1],
-      modelName: "IconZustand",
-      scale: [1.5, 1.5, 1.5],
-    },
-    IconVite: {
-      path: "/models/IconVite.glb",
-      cuboidColliderArgs: [1.5, 0.25, 1.5],
-      modelName: "IconVite",
-      scale: [1.6, 1.6, 1.6],
-    },
-    IconThreeJS: {
-      path: "/models/IconThreeJS.glb",
-      cuboidColliderArgs: [1.3, 0.25, 1.3],
-      modelName: "IconThreeJS",
-      scale: [1.5, 1.5, 1.5],
-    },
-    IconGSAP: {
-      path: "/models/IconGSAP.glb",
-      cuboidColliderArgs: [0.9, 0.25, 1.9],
-      modelName: "IconGSAP",
-      scale: [1.75, 1.75, 1.75],
-    },
-    IconReactRouter: {
-      path: "/models/IconReactRouter.glb",
-      cuboidColliderArgs: [1.3, 0.25, 0.9],
-      modelName: "IconReactRouter",
-      scale: [1.25, 1.25, 1.25],
-    },
-    IconAxios: {
-      path: "/models/IconAxios.glb",
-      cuboidColliderArgs: [2.5, 0.25, 0.6],
-      modelName: "IconAxios",
-      scale: [0.85, 0.85, 0.85],
-    },
-    IconNetlify: {
-      path: "/models/IconNetlify.glb",
-      cuboidColliderArgs: [2.9, 0.25, 0.7],
-      modelName: "IconNetlify",
-      scale: [1.1, 1.1, 1.1],
-    },
-    IconHygraph: {
-      path: "/models/IconHygraph.glb",
-      cuboidColliderArgs: [3.2, 0.25, 0.8],
-      modelName: "IconHygraph",
-      scale: [1.5, 1.5, 1.5],
-    },
-  }
 
   // const techIconsToLoad = [
   //   "IconAxios",
@@ -198,16 +95,24 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
   )
 
   // Update mouse position including scroll offset
-  const updateMousePosition = debounce(event => {
-    const canvasBounds = gl.domElement.getBoundingClientRect()
+  const updateMousePosition = useCallback(
+    event => {
+      const debouncedUpdate = debounce(() => {
+        const canvasBounds = gl.domElement.getBoundingClientRect()
 
-    // Calculate the mouse position relative to the canvas, including scroll offset
-    mouse.x = ((event.clientX - canvasBounds.left) / canvasBounds.width) * 2 - 1
-    mouse.y =
-      -((event.clientY - canvasBounds.top) / canvasBounds.height) * 2 + 1
-  }, 5) // Adjust the debounce delay as needed
+        // Calculate the mouse position relative to the canvas, including scroll offset
+        mouse.x =
+          ((event.clientX - canvasBounds.left) / canvasBounds.width) * 2 - 1
+        mouse.y =
+          -((event.clientY - canvasBounds.top) / canvasBounds.height) * 2 + 1
+      }, 5) // Adjust the debounce delay as needed
 
-  const updateColliderPosition = () => {
+      debouncedUpdate()
+    },
+    [gl.domElement, mouse] // Dependencies
+  )
+
+  const updateColliderPosition = useCallback(() => {
     raycaster.setFromCamera(mouse, camera)
 
     // Intersect with a plane at z=0
@@ -220,7 +125,7 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
     if (mouseColliderRef.current) {
       mouseColliderRef.current.setTranslation(intersectionPoint)
     }
-  }
+  }, [raycaster, mouse, camera, mouseColliderRef])
 
   useEffect(() => {
     const handleMouseMove = event => {
@@ -248,7 +153,7 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
       window.removeEventListener("scroll", handleScroll)
       window.removeEventListener("resize", handleResize)
     }
-  }, [gl.domElement])
+  }, [updateMousePosition, updateColliderPosition])
 
   // We keep the raycaster updated during the render loop
   useFrame(() => {
@@ -266,7 +171,7 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
       />
       {/* <OrbitControls /> */}
 
-      <Physics gravity={[0, -20, 0]} debug={false}>
+      <Physics gravity={[0, -20, 0]} debug={true}>
         {techIconsToLoadPlusLegoMan.map((icon, index) => (
           <LoadATechIcon
             key={icon}
