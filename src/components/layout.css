@@ -1515,10 +1515,11 @@ Project List:
 
   .bodyText {
     margin: 0 0 1.3rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: rgb(224, 224, 224);
 
     @media (min-width: 850px) {
+      margin: 0 0 1.75rem;
       color: var(--colors_bodyOffBlack);
     }
   }

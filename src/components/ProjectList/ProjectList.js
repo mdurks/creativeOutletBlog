@@ -37,8 +37,9 @@ export const ProjectList = () => {
       sketchImg: "sketchTv",
       mainImgClass: "tvFavs",
       mobileImgClass: "tvFavs",
-      skills: "Three.js - R3F - Drei - Web XR - GSAP - Zustand - Vite",
-      body: 'Create your dream ring in immersive 3D amongst a beautiful garden and gazebo setting by choosing gem color, ring type and metal. Finally "try on" the ring with Web AR and your phones camera.',
+      skills:
+        "React, React Router, Redux Toolkit, Axios, Framer Motion, Styled Components",
+      body: "Find your favourite TV shows from around the world using an API that returns global broadcasting data.  Easily save your shows to your device and never miss them again!",
       url: "/tv-favs-using-redux-react-router-and-local-storage/",
     },
     {

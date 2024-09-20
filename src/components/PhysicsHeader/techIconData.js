@@ -79,9 +79,9 @@ export const techIconData = {
   },
   IconReactRouter: {
     path: "/models/IconReactRouter.glb",
-    cuboidColliderArgs: [1.3, 0.25, 0.9],
+    cuboidColliderArgs: [1.9, 0.25, 0.9],
     modelName: "IconReactRouter",
-    scale: [1.25, 1.25, 1.25],
+    scale: [1.6, 1.6, 1.6],
   },
   IconAxios: {
     path: "/models/IconAxios.glb",

@@ -204,7 +204,7 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
             cuboidColliderArgs={techIconData[icon].cuboidColliderArgs}
             modelName={techIconData[icon].modelName}
             scale={techIconData[icon].scale}
-            yPos={80 + index * 3}
+            yPos={40 + index * 30}
           />
         ))}
 
@@ -297,7 +297,7 @@ const LoadATechIcon = ({
 }) => {
   const { nodes } = useGLTF(path)
   return (
-    <RigidBody position={[0, yPos, 0]} mass={1} colliders={false}>
+    <RigidBody position={[0, yPos, 5]} mass={1} colliders={false}>
       <CuboidCollider args={cuboidColliderArgs} />
       <primitive
         object={nodes[modelName]}
