@@ -196,7 +196,7 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
       <directionalLight castShadow position={[0, 10, 10]} intensity={1.5} />
       {/* <OrbitControls /> */}
 
-      <Physics gravity={[0, -20, 0]} debug={true}>
+      <Physics gravity={[0, -20, 0]} debug={false}>
         {techIconsToLoadPlusLegoMan.map((icon, index) => (
           <LoadATechIcon
             key={icon}
