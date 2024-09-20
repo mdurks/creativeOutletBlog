@@ -1,7 +1,7 @@
 import React from "react"
 import { Canvas } from "@react-three/fiber"
 import { PhysicsHeader } from "../PhysicsHeader/PhysicsHeader"
-import { TiltDetector } from "../TiltDetector/TiltDetector"
+// import { TiltDetector } from "../TiltDetector/TiltDetector"
 
 export const ThreeJSCanvas = ({ cubesCount, techIcons }) => {
   return (
@@ -19,7 +19,7 @@ export const ThreeJSCanvas = ({ cubesCount, techIcons }) => {
       >
         <PhysicsHeader cubesCount={cubesCount} techIconsToLoad={techIcons} />
       </Canvas>
-      <TiltDetector />
+      {/* <TiltDetector /> */}
     </>
   )
 }
