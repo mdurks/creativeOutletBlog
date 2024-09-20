@@ -1,23 +1,9 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-// import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
-// import {
-//   PageBody,
-//   HeaderHeroImg,
-//   ProjectListWrapper,
-//   ProjectListTitle,
-//   ProjectListItem,
-//   ProjectListPrimaryImg,
-//   ProjectListContentCol,
-//   ProjectListTechList,
-//   CardList,
-//   CardListItem,
-//   CardListItemLink,
-// } from "../components/page.styles"
+import { ThreeJSCanvas } from "../components/ThreeJSCanvas/ThreeJSCanvas"
 
 const pageQuery = graphql`
   {
@@ -52,25 +38,9 @@ const WebPage = () => {
 
   return (
     <Layout>
-      {/* <HeaderHeroImg>
-        <StaticImage
-          src="../images/co-treehouse-ultrawide.jpg"
-          loading="eager"
-          quality={95}
-          formats={["auto", "webp", "avif"]}
-          alt="Creative Outlet Treehouse"
-        />
-      </HeaderHeroImg> */}
       <div className="heroBlock">
-        <div className="centralColumn">
-          <p>
-            Hi, my name's Michael and welcome to my Creative Outlet blog, where
-            I share my passion for web development, 3D, and other digital
-            pursuits. With over two decades of experience, I'm passionate about
-            crafting outstanding digital experiences powered by innovative
-            technology and smart problem-solving.
-          </p>
-        </div>
+        <div className="emptySpacing"></div>
+        <ThreeJSCanvas cubesCount={150} techIcons={[]} />
       </div>
 
       <div className="contentBlock">

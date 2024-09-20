@@ -631,6 +631,10 @@ Layout / Content:
   &.overFlowHidden {
     overflow: hidden;
   }
+
+  .emptySpacing {
+    height: 150px;
+  }
 }
 
 .introBanner {
