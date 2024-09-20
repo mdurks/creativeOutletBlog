@@ -18,17 +18,29 @@ import { techIconData } from "./techIconData"
 export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
   // console.log("techIconsToLoad", techIconsToLoad)
 
+  //
+  //
+  //
+  // Global state:
+
   const { camera, gl } = useThree()
-  const raycaster = useMemo(() => new THREE.Raycaster(), [])
-  const mouse = useMemo(() => new THREE.Vector2(), [])
-  const mouseColliderRef = useRef(null)
   const viewportSizeRef = useRef({
     width: window.innerWidth,
     height: window.innerHeight,
   })
-
   const { width } = useWindowSize()
   const isMobile = width < 768
+
+  //
+  //
+  //
+  // Local init:
+
+  const raycaster = useMemo(() => new THREE.Raycaster(), [])
+  // give an initial position to move the mouseColliderRef from the center
+  // or else it gets in the way of all the falling items
+  const mouse = useMemo(() => new THREE.Vector2(0, 2), [])
+  const mouseColliderRef = useRef(null)
 
   // const techIconsToLoad = [
   //   "IconAxios",
@@ -52,10 +64,14 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
 
   const techIconsToLoadPlusLegoMan = [...techIconsToLoad, "LegoMan"]
 
+  //
+  //
+  //
+  // Load lego brick:
+
   const { nodes } = useGLTF("/models/Lego2x3.glb")
 
   const createCubeInstance = (count, yPos) => {
-    // console.log("yPos", yPos)
     const instances = []
     for (let i = 0; i < count; i++) {
       instances.push({
@@ -94,6 +110,11 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
     [cubeGroupSize, cubeInstanceColors.length]
   )
 
+  //
+  //
+  //
+  // Local functions:
+
   // Update mouse position including scroll offset
   const updateMousePosition = useCallback(
     event => {
@@ -127,6 +148,11 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
     }
   }, [raycaster, mouse, camera, mouseColliderRef])
 
+  //
+  //
+  //
+  // Effects:
+
   useEffect(() => {
     const handleMouseMove = event => {
       updateMousePosition(event)
@@ -155,7 +181,11 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
     }
   }, [updateMousePosition, updateColliderPosition])
 
-  // We keep the raycaster updated during the render loop
+  //
+  //
+  //
+  // Render loop:
+
   useFrame(() => {
     updateColliderPosition()
   })
@@ -163,12 +193,7 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
   return (
     <>
       <ambientLight intensity={0.5} />
-      <directionalLight
-        castShadow
-        position={[0, 10, 10]}
-        intensity={1.5}
-        // shadow-bias={0.2}
-      />
+      <directionalLight castShadow position={[0, 10, 10]} intensity={1.5} />
       {/* <OrbitControls /> */}
 
       <Physics gravity={[0, -20, 0]} debug={true}>
