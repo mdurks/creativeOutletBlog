@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef } from "react"
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import * as THREE from "three"
 import { useFrame, useThree } from "@react-three/fiber"
 import { degToRad } from "three/src/math/MathUtils.js"
@@ -28,8 +28,7 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
     width: window.innerWidth,
     height: window.innerHeight,
   })
-  const { width } = useWindowSize()
-  const isMobile = width < 768
+  const isMobile = viewportSizeRef.current.width < 768
 
   //
   //
@@ -41,6 +40,8 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
   // or else it gets in the way of all the falling items
   const mouse = useMemo(() => new THREE.Vector2(0, 2), [])
   const mouseColliderRef = useRef(null)
+
+  const totalCubes = isMobile ? cubesCount / 5 : cubesCount
 
   // const techIconsToLoad = [
   //   "IconAxios",
@@ -98,7 +99,7 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
     "#fda640",
     "#fc317c",
   ]
-  const cubeGroupSize = Math.ceil(cubesCount / cubeInstanceColors.length)
+  const cubeGroupSize = Math.ceil(totalCubes / cubeInstanceColors.length)
   const cubeInstances = useMemo(
     () =>
       Array.from(
@@ -120,12 +121,23 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
     event => {
       const debouncedUpdate = debounce(() => {
         const canvasBounds = gl.domElement.getBoundingClientRect()
+        let x, y
+
+        if (event.type === "mousemove") {
+          // Mouse move case
+          x = event.clientX
+          y = event.clientY
+        } else if (event.type === "touchmove") {
+          // Touch move case
+          x = event.touches[0].clientX
+          y = event.touches[0].clientY
+        }
 
         // Calculate the mouse position relative to the canvas, including scroll offset
-        mouse.x =
-          ((event.clientX - canvasBounds.left) / canvasBounds.width) * 2 - 1
-        mouse.y =
-          -((event.clientY - canvasBounds.top) / canvasBounds.height) * 2 + 1
+        if (x !== undefined && y !== undefined) {
+          mouse.x = ((x - canvasBounds.left) / canvasBounds.width) * 2 - 1
+          mouse.y = -((y - canvasBounds.top) / canvasBounds.height) * 2 + 1
+        }
       }, 5) // Adjust the debounce delay as needed
 
       debouncedUpdate()
@@ -159,6 +171,11 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
       updateColliderPosition() // Update collider position directly on mouse move
     }
 
+    const handleTouchMove = event => {
+      updateMousePosition(event)
+      updateColliderPosition() // Update collider position directly on touch move
+    }
+
     const handleScroll = () => {
       updateColliderPosition() // Update collider position on scroll
     }
@@ -171,11 +188,13 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
     }
 
     window.addEventListener("mousemove", handleMouseMove)
+    window.addEventListener("touchmove", handleTouchMove) // Touch move support
     window.addEventListener("scroll", handleScroll) // Update position when scrolling
     window.addEventListener("resize", handleResize)
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove)
+      window.removeEventListener("touchmove", handleTouchMove) // Clean up touch listener
       window.removeEventListener("scroll", handleScroll)
       window.removeEventListener("resize", handleResize)
     }
@@ -233,33 +252,47 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
 
         <RigidBody type="fixed" restitution={0} friction={0.5}>
           <CuboidCollider
-            name="floor Collider"
+            name="floor"
             args={[100, 10, 20]}
             position={[0, -6.25, 0]}
           />
           <CuboidCollider
-            name="front Collider"
+            name="front"
             args={[100, 100, 10]}
             position={[0, 50, 14]}
             rotation={[degToRad(3), 0, 0]}
           />
           <CuboidCollider
-            name="back Collider"
+            name="back"
             args={[100, 100, 10]}
             position={[0, 50, -14]}
             rotation={[degToRad(-3), 0, 0]}
           />
 
           {/* Edge Colliders */}
+          {isMobile && (
+            <>
+              <CuboidCollider
+                name="left"
+                args={[1, viewportSizeRef.current.height, 100]}
+                position={[-(viewportSizeRef.current.width / 2 / 40), 0, 0]}
+              />
+              <CuboidCollider
+                name="right"
+                args={[1, viewportSizeRef.current.height, 100]}
+                position={[viewportSizeRef.current.width / 2 / 40, 0, 0]}
+              />
+            </>
+          )}
           {!isMobile && (
             <>
               <CuboidCollider
-                name="left Edge Collider"
+                name="left"
                 args={[10, viewportSizeRef.current.height, 100]}
                 position={[-(viewportSizeRef.current.width / 2 / 37), 0, 0]}
               />
               <CuboidCollider
-                name="right Edge Collider"
+                name="right"
                 args={[10, viewportSizeRef.current.height, 100]}
                 position={[viewportSizeRef.current.width / 2 / 37, 0, 0]}
               />
