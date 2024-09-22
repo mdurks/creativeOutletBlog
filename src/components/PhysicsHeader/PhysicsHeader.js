@@ -310,11 +310,20 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
           // friction={1}
           ccd={true}
         >
-          <CuboidCollider
-            name="pointer Collider"
-            args={[1, 1, 1]}
-            position={[0, 0, 0]}
-          />
+          {isMobile && (
+            <CuboidCollider
+              name="pointer Collider"
+              args={[0.5, 0.5, 0.5]}
+              position={[0, 0, 0]}
+            />
+          )}
+          {!isMobile && (
+            <CuboidCollider
+              name="pointer Collider"
+              args={[1, 1, 1]}
+              position={[0, 0, 0]}
+            />
+          )}
         </RigidBody>
       </Physics>
     </>
