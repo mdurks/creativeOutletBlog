@@ -101,4 +101,10 @@ export const techIconData = {
     modelName: "IconHygraph",
     scale: [1.5, 1.5, 1.5],
   },
+  IconWebXr: {
+    path: "/models/IconHygraph.glb",
+    cuboidColliderArgs: [3.2, 0.25, 0.8],
+    modelName: "IconHygraph",
+    scale: [1.5, 1.5, 1.5],
+  },
 }

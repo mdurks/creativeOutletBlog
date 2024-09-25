@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
+import React, { useCallback, useEffect, useMemo, useRef } from "react"
 import * as THREE from "three"
 import { useFrame, useThree } from "@react-three/fiber"
 import { degToRad } from "three/src/math/MathUtils.js"
@@ -10,7 +10,6 @@ import {
 } from "@react-three/rapier"
 import { useGLTF } from "@react-three/drei"
 // import { OrbitControls } from "@react-three/drei"
-import { useWindowSize } from "../../hooks/useWindowSize"
 import { debounce } from "../../utilities/debounce"
 
 import { techIconData } from "./techIconData"

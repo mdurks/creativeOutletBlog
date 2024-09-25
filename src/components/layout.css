@@ -900,6 +900,11 @@ Layout / Content:
   :first-child {
     margin-top: 0;
   }
+
+  img {
+    filter: drop-shadow(hsla(0, 0%, 0%, 0.25) 6px 8px 3px);
+    border-radius: 4px;
+  }
 }
 
 .contentBlockDark {
@@ -956,7 +961,6 @@ Layout / Content:
 
   img {
     filter: drop-shadow(hsla(0, 0%, 0%, 0.8) 10px 10px 5px);
-    border-radius: 3px;
   }
 }
 
@@ -1036,6 +1040,135 @@ Layout / Content:
 
 
 
+Blog Article Skill Books:
+------------------------------------------------------------
+
+
+
+
+
+*/
+
+.skillBooks {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: -210px 0 100px !important;
+  z-index: 10;
+
+  .bookImg {
+    position: relative;
+    top: 0;
+    transform: rotate(0) scale(1);
+    display: block;
+    height: 143px;
+    transition: all ease-in-out 0.2s;
+
+    &:hover {
+      top: -20px;
+      transform: rotate(15deg) scale(1.1);
+
+      .techLabel {
+        opacity: 1;
+        top: 150px;
+        transform: rotate(-15deg) scale(1) translateX(-15%);
+      }
+    }
+
+    .svgWrapper {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 164px;
+      height: 143px;
+      perspective: 1000px; /* Enables 3D effect */
+
+      img {
+        width: 50%;
+        margin: 0;
+        transform-style: preserve-3d; /* Ensures 3D transformations are applied */
+        transform: rotateX(45deg) rotateY(4deg) rotateZ(326deg) translateX(22px)
+          translateY(-43px) translateZ(-18px) scaleX(0.75) scaleY(0.75);
+        filter: none;
+      }
+    }
+
+    .techLabel {
+      position: absolute;
+      top: 130px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 0.8rem;
+      line-height: normal;
+      opacity: 0;
+      background-color: var(--colors_codeBackground);
+      color: white;
+      transition: all ease-in-out 0.2s;
+    }
+
+    .blue img {
+      filter: hue-rotate(0) saturate(1) brightness(1) !important;
+    }
+    .blueBlack img {
+      filter: hue-rotate(324deg) saturate(0.1) brightness(0.5) !important;
+    }
+    .cream img {
+      filter: hue-rotate(213deg) saturate(0.5) brightness(1.5) !important;
+    }
+    .creamDark img {
+      filter: hue-rotate(213deg) saturate(0.75) brightness(0.8) !important;
+    }
+    .greenDark img {
+      filter: hue-rotate(250deg) saturate(1) brightness(0.7) !important;
+    }
+    .greyLight img {
+      filter: hue-rotate(0) saturate(0) brightness(1.5) !important;
+    }
+    .mint img {
+      filter: hue-rotate(317deg) saturate(1.5) brightness(1) !important;
+    }
+    .orange img {
+      filter: hue-rotate(193deg) saturate(2.3) brightness(1) !important;
+    }
+    .pink img {
+      filter: hue-rotate(150deg) saturate(3) brightness(0.8) !important;
+    }
+    .pinkPaleLight img {
+      filter: hue-rotate(157deg) saturate(0.4) brightness(1.4) !important;
+    }
+    .red img {
+      filter: hue-rotate(165deg) saturate(3) brightness(0.7) !important;
+    }
+    .tanzaniteDark img {
+      filter: hue-rotate(46deg) saturate(1.5) brightness(0.8) !important;
+    }
+    .tealDark img {
+      filter: hue-rotate(349deg) saturate(0.8) brightness(0.7) !important;
+    }
+    .tealLight img {
+      filter: hue-rotate(324deg) saturate(0.5) brightness(1.3) !important;
+    }
+    .yellow img {
+      filter: hue-rotate(213deg) saturate(1.5) brightness(1.2) !important;
+    }
+  }
+}
+
+/*
+
+
+
+
+
+
 Blog Article:
 ------------------------------------------------------------
 
@@ -1067,7 +1200,8 @@ blockquote {
   font-size: 1.2rem;
   line-height: 1.75rem;
   font-style: italic;
-  background: hsla(0, 0%, 85%, 0.7);
+  background: hsla(0, 0%, 83%, 1);
+  filter: drop-shadow(hsla(0, 0%, 0%, 0.1) 6px 8px 3px);
   border-radius: 8px;
 
   .contentBlockDark & {
@@ -1206,10 +1340,11 @@ pre code {
   line-height: 19px;
   background: hsl(185deg 72% 10%) !important;
   overflow-x: auto;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 .contentBlock pre code {
   background: hsla(185, 79%, 6%, 0.9) !important;
+  filter: drop-shadow(hsla(0, 0%, 0%, 0.25) 6px 8px 3px);
 }
 .contentBlockDark pre code {
   background: hsla(185, 79%, 6%, 0.82) !important;
@@ -1288,6 +1423,11 @@ pre code {
 
 .introLinks {
   margin: 0 0 2rem;
+
+  &:last-of-type,
+  &:last-of-type p {
+    margin: 0;
+  }
 
   p {
     margin: 0 0 20px;

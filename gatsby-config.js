@@ -48,7 +48,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         theme_color: `#041d20`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/creativeOutletSun.png`, // This path is relative to the root of the site.
       },
     },
     {
