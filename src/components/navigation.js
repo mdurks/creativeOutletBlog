@@ -79,7 +79,6 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
     document.querySelectorAll(".has-submenu > button").forEach(button => {
       button.addEventListener("click", function (event) {
         const submenu = this.nextElementSibling
-        console.log("click", submenu, submenu.style.display)
         const expanded = this.getAttribute("aria-expanded") === "true" || false
         this.setAttribute("aria-expanded", !expanded)
         submenu.style.display =
