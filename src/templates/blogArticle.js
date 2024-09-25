@@ -79,7 +79,7 @@ const IndexPage = ({
         <ThreeJSCanvas techIcons={blog.techIcons} />
       </div>
       <PageBody>
-        {richTextClassNames.length > 0 && (
+        {richTextClassNames && (
           <div className={richTextClassNames[0]}>
             {blog.techIcons && (
               <div className="skillBooks">

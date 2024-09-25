@@ -1055,6 +1055,10 @@ Blog Article Skill Books:
   margin: -55px 0 105px !important;
   z-index: 10;
 
+  &:empty {
+    margin: 0 !important;
+  }
+
   @media (min-width: 768px) {
     display: flex;
     justify-content: center;
