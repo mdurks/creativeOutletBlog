@@ -43,6 +43,7 @@ const WebPage = () => {
     "IconCone",
     "IconSphere",
     "IconCube",
+    "IconTeapot",
   ]
 
   return (
