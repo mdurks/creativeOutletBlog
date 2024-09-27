@@ -6,7 +6,7 @@ export const techIconMapping = {
   },
   d3: {
     label: "d3",
-    cssClass: "blue",
+    cssClass: "purple",
     website: "https://d3js.org/",
   },
   framermotion: {
@@ -18,6 +18,11 @@ export const techIconMapping = {
     label: "gatsby",
     cssClass: "yellow",
     website: "https://www.gatsbyjs.com/",
+  },
+  github: {
+    label: "github",
+    cssClass: "pink",
+    website: "https://github.com/",
   },
   graphql: {
     label: "graphql",

@@ -7,7 +7,7 @@ export const ThreeJSCanvas = ({ cubesCount, techIcons }) => {
   return (
     <>
       <Canvas
-        shadows
+        // shadows
         className="physicsHeader"
         camera={{
           fov: 55,

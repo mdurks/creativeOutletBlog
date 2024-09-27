@@ -1149,26 +1149,26 @@ Blog Article Skill Books:
       }
     }
 
-    .blue img {
-      filter: hue-rotate(0) saturate(1) brightness(1) !important;
-    }
     .blueBlack img {
       filter: hue-rotate(324deg) saturate(0.1) brightness(0.5) !important;
-    }
-    .cream img {
-      filter: hue-rotate(213deg) saturate(0.5) brightness(1.5) !important;
-    }
-    .creamDark img {
-      filter: hue-rotate(213deg) saturate(0.75) brightness(0.8) !important;
-    }
-    .greenDark img {
-      filter: hue-rotate(250deg) saturate(1) brightness(0.7) !important;
     }
     .greyLight img {
       filter: hue-rotate(0) saturate(0) brightness(1.5) !important;
     }
-    .mint img {
-      filter: hue-rotate(317deg) saturate(1.5) brightness(1) !important;
+    .purple img {
+      filter: hue-rotate(70deg) saturate(1.75) brightness(0.7) !important;
+    }
+    .blue img {
+      filter: hue-rotate(0) saturate(1) brightness(1) !important;
+    }
+    .tanzaniteDark img {
+      filter: hue-rotate(46deg) saturate(1.5) brightness(0.8) !important;
+    }
+    .tealDark img {
+      filter: hue-rotate(349deg) saturate(0.8) brightness(0.7) !important;
+    }
+    .tealLight img {
+      filter: hue-rotate(324deg) saturate(0.5) brightness(1.3) !important;
     }
     .orange img {
       filter: hue-rotate(193deg) saturate(2.3) brightness(1) !important;
@@ -1182,17 +1182,20 @@ Blog Article Skill Books:
     .red img {
       filter: hue-rotate(165deg) saturate(3) brightness(0.7) !important;
     }
-    .tanzaniteDark img {
-      filter: hue-rotate(46deg) saturate(1.5) brightness(0.8) !important;
+    .cream img {
+      filter: hue-rotate(213deg) saturate(0.5) brightness(1.5) !important;
     }
-    .tealDark img {
-      filter: hue-rotate(349deg) saturate(0.8) brightness(0.7) !important;
-    }
-    .tealLight img {
-      filter: hue-rotate(324deg) saturate(0.5) brightness(1.3) !important;
+    .creamDark img {
+      filter: hue-rotate(213deg) saturate(0.75) brightness(0.8) !important;
     }
     .yellow img {
       filter: hue-rotate(213deg) saturate(1.5) brightness(1.2) !important;
+    }
+    .greenDark img {
+      filter: hue-rotate(250deg) saturate(1) brightness(0.7) !important;
+    }
+    .mint img {
+      filter: hue-rotate(317deg) saturate(1.5) brightness(1) !important;
     }
   }
 }
@@ -1352,7 +1355,7 @@ p code {
   padding: 8px 15px;
   z-index: 5;
   background: #252525 !important;
-  border-radius: 10px;
+  border-radius: 5px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   /* outline: none; */

@@ -111,6 +111,8 @@ export const PageBody = styled.main`
   }
 
   .blog-build-process {
+    margin: 0 0 2.75rem;
+
     img {
       display: block;
       width: 100%;

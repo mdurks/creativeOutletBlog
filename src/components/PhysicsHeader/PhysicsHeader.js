@@ -312,7 +312,7 @@ export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
           {isMobile && (
             <CuboidCollider
               name="pointer Collider"
-              args={[0.5, 0.5, 0.5]}
+              args={[0.7, 0.7, 0.7]}
               position={[0, 0, 0]}
             />
           )}

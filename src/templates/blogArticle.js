@@ -25,6 +25,31 @@ const IndexPage = ({
   const dateBlogPublished = formatDate(blog.createdAt)
   // const dateBlogUpdated = blog?.updatedAt ? formatDate(blog.updatedAt) : false
 
+  /*
+
+
+    Burndown List
+    ----------------------------------------------------------------------
+
+    Make 3D models for:
+      - SASS, A11y
+      - Blender
+      - XYZ axis
+      - Sphere, Cube, Plane, Donut, Pryamid
+      - Wireframe
+
+    Write About page
+    Get picture of me
+    Ring Config - get picture of "Try it on"
+    Ring Config - get animated GIFs of screenshots
+
+
+    Done:
+    ---------------------------------
+
+
+  */
+
   let hyphenIndex = blog.articleTitle.indexOf("-")
   if (hyphenIndex !== -1) {
     hyphenIndex = {
@@ -99,6 +124,7 @@ const IndexPage = ({
                         quality={100}
                         width={164}
                         objectFit="contain"
+                        // placeholder="none"
                         // formats={["auto", "webp", "avif"]}
                         alt=""
                       />

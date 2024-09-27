@@ -43,11 +43,27 @@ const WebPage = () => {
     blog => blog.blogCategory === "Accessibility"
   )
 
+  const techIcons = [
+    "IconNetscape",
+    "IconIE",
+    "IconFirefox",
+    "IconSafari",
+    "IconChrome",
+    "IconEdge",
+    "IconHTML",
+    "IconCSS",
+    "IconJS",
+    "IconTag",
+    "IconArray",
+    "IconParens",
+    "IconBracket",
+  ]
+
   return (
     <Layout>
       <div className="heroBlock">
         <div className="emptySpacing"></div>
-        <ThreeJSCanvas cubesCount={150} techIcons={[]} />
+        <ThreeJSCanvas cubesCount={125} techIcons={techIcons} />
       </div>
 
       <div className="contentBlock">
