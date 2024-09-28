@@ -22,6 +22,8 @@ const IndexPage = ({
     gcms: { blog },
   },
 }) => {
+  // console.log("blog", blog)
+
   const dateBlogPublished = formatDate(blog.createdAt)
   // const dateBlogUpdated = blog?.updatedAt ? formatDate(blog.updatedAt) : false
 
@@ -35,17 +37,12 @@ const IndexPage = ({
       - SASS, A11y
       - Blender
       - XYZ axis
-      - Sphere, Cube, Plane, Donut, Pryamid
       - Wireframe
 
     Write About page
     Get picture of me
     Ring Config - get picture of "Try it on"
     Ring Config - get animated GIFs of screenshots
-
-
-    Done:
-    ---------------------------------
 
 
   */
@@ -143,11 +140,51 @@ const IndexPage = ({
             )}
 
             {blog.myRichTextComponent[0] && (
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: blog.myRichTextComponent[0].richText.html,
-                }}
-              />
+              <>
+                <div className="introTextAndPreviewWrapper">
+                  <div
+                    className="cmsContent"
+                    dangerouslySetInnerHTML={{
+                      __html: blog.myRichTextComponent[0].richText.html,
+                    }}
+                  />
+                  <div className="previewWrapper">
+                    <div className="previewWrapperInner">
+                      <StaticImage
+                        src="../images/project-desktop-preview.png"
+                        loading="eager"
+                        quality={100}
+                        width={573}
+                        objectFit="contain"
+                        // placeholder="none"
+                        // formats={["auto", "webp", "avif"]}
+                        alt=""
+                      />
+                      {blog.introPreviewImage &&
+                        blog.introPreviewImage.mimeType === "video/mp4" && (
+                          <video className="previewMedia" autoPlay muted loop>
+                            <source
+                              // src="/ringconfigurator-desktop-preview.mp4"
+                              src={blog.introPreviewImage.url}
+                              type="video/mp4"
+                            />
+                          </video>
+                        )}
+                      {blog.introPreviewImage &&
+                        blog.introPreviewImage.mimeType === "image/png" && (
+                          <img
+                            className="previewMedia"
+                            src={blog.introPreviewImage.url}
+                            alt=""
+                          />
+                        )}
+                      {blog.projectWebsiteUrl && (
+                        <a href={blog.projectWebsiteUrl}>Visit Website</a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </>
             )}
           </div>
         )}
@@ -202,6 +239,11 @@ export const pageQuery = graphql`
           }
         }
         myRichTextClassTypes
+        introPreviewImage {
+          url
+          mimeType
+        }
+        projectWebsiteUrl
       }
     }
   }

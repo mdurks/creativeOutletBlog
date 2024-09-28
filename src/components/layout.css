@@ -902,7 +902,7 @@ Layout / Content:
   }
 
   img {
-    filter: drop-shadow(hsla(0, 0%, 0%, 0.25) 6px 8px 3px);
+    filter: drop-shadow(hsla(0, 0%, 0%, 0.2) 5px 5px 2px);
     border-radius: 4px;
   }
 }
@@ -1031,6 +1031,101 @@ Layout / Content:
 .fRight {
   float: right;
   margin-left: 4.75rem;
+}
+
+/*
+
+
+
+
+
+Intro text and preview:
+------------------------------------------------------------
+
+
+
+
+*/
+
+.introTextAndPreviewWrapper {
+  @media (min-width: 768px) {
+    display: flex;
+  }
+
+  .cmsContent {
+    flex: 1;
+    padding: 0 50px 0 0;
+  }
+
+  .previewWrapper {
+    flex: 1 1 9%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+    .previewWrapperInner {
+      position: relative;
+      top: -20px;
+      z-index: -1;
+
+      @media (min-width: 768px) {
+        top: -50px;
+        z-index: 0;
+      }
+
+      img {
+        filter: none;
+        user-select: none;
+        pointer-events: none;
+      }
+
+      .previewMedia {
+        position: absolute;
+        top: 24.5%;
+        left: 51%;
+        transform: translateX(-50%);
+        margin: 0;
+        width: 64%;
+        max-width: 67%;
+        object-fit: cover;
+        background-color: #b1b1b1;
+        z-index: -1;
+      }
+
+      a {
+        position: absolute;
+        top: 100%;
+        left: 52.5%;
+        transform: translateX(-50%);
+        display: block;
+        z-index: 1;
+        padding: 15px 50px 20px;
+        /* background: var(--colors_primary); */
+        background: var(--colors_secondary);
+        color: white !important;
+        text-decoration: none;
+        text-underline-offset: 3px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        width: max-content;
+        font-size: 1.25rem;
+        font-weight: bold;
+        transition: all ease 0.3s;
+
+        @media (min-width: 768px) {
+          display: flex;
+          padding: 10px 50px 14px;
+          font-size: 1.5rem;
+        }
+
+        @media (hover: hover) and (min-width: 768px) {
+          &:hover {
+            font-size: 1.75rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 /*
@@ -1239,7 +1334,7 @@ blockquote {
   line-height: 1.75rem;
   font-style: italic;
   background: hsla(0, 0%, 83%, 1);
-  filter: drop-shadow(hsla(0, 0%, 0%, 0.1) 6px 8px 3px);
+  filter: drop-shadow(hsla(0, 0%, 0%, 0.1) 5px 5px 2px);
   border-radius: 8px;
 
   .contentBlockDark & {
@@ -1382,7 +1477,7 @@ pre code {
 }
 .contentBlock pre code {
   background: hsla(185, 79%, 6%, 0.9) !important;
-  filter: drop-shadow(hsla(0, 0%, 0%, 0.25) 6px 8px 3px);
+  filter: drop-shadow(hsla(0, 0%, 0%, 0.2) 5px 5px 2px);
 }
 .contentBlockDark pre code {
   background: hsla(185, 79%, 6%, 0.82) !important;

@@ -104,8 +104,9 @@ export const PageBody = styled.main`
       font-style: italic;
 
       ${mediaQuery.min_desktop} {
-        font-size: 1.5rem;
+        font-size: 1.45rem;
         /* line-height: 45px; */
+        line-height: 2.4rem;
       }
     }
   }
