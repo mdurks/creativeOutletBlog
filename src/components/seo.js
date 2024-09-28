@@ -1,15 +1,9 @@
-/**
- * SEO component that queries for data with
- * Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
-
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { getSrc } from "gatsby-plugin-image"
 
-function Seo({ description, title, children }) {
-  const { site } = useStaticQuery(
+function Seo({ description, title, children, preloadImageUrls = [] }) {
+  const { site, smallBlankBookImage } = useStaticQuery(
     graphql`
       query {
         site {
@@ -19,8 +13,17 @@ function Seo({ description, title, children }) {
             author
           }
         }
+        smallBlankBookImage: file(relativePath: { eq: "smallBlankBook.png" }) {
+          childImageSharp {
+            gatsbyImageData(layout: FIXED)
+          }
+        }
       }
     `
+  )
+
+  const smallBlankBookImageSrc = getSrc(
+    smallBlankBookImage.childImageSharp.gatsbyImageData
   )
 
   const metaDescription = description || site.siteMetadata.description
@@ -38,7 +41,10 @@ function Seo({ description, title, children }) {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="theme-color" content="#041d20" />
-      <link rel="preload" as="image" href="../images/smallBlankBook.png"></link>
+      <link rel="preload" as="image" href={smallBlankBookImageSrc}></link>
+      {preloadImageUrls.map(img => (
+        <link key={img.url} rel="preload" as="image" href={img.url}></link>
+      ))}
       {children}
     </>
   )

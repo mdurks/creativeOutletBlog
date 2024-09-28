@@ -114,17 +114,19 @@ const IndexPage = ({
                       href={targetIconMap.website}
                       className="bookImg"
                     >
-                      <StaticImage
-                        src="../images/smallBlankBook.png"
-                        className={targetIconMap.cssClass}
-                        loading="eager"
-                        quality={100}
-                        width={164}
-                        objectFit="contain"
-                        // placeholder="none"
-                        // formats={["auto", "webp", "avif"]}
-                        alt=""
-                      />
+                      <div className="disableFadeEffect">
+                        <StaticImage
+                          src="../images/smallBlankBook.png"
+                          className={targetIconMap.cssClass}
+                          loading="eager"
+                          quality={100}
+                          width={164}
+                          objectFit="contain"
+                          placeholder="none"
+                          // formats={["auto", "webp", "avif"]}
+                          alt=""
+                        />
+                      </div>
                       <div className="svgWrapper">
                         <img
                           src={blog.techIconSvGs[index].url}
@@ -211,7 +213,7 @@ export const Head = ({
   data: {
     gcms: { blog },
   },
-}) => <Seo title={blog.articleTitle} />
+}) => <Seo title={blog.articleTitle} preloadImageUrls={blog.techIconSvGs} />
 
 export const pageQuery = graphql`
   query BlogPageQuery($id: ID!) {

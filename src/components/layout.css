@@ -1179,6 +1179,11 @@ Blog Article Skill Books:
     transition: all ease-in-out 0.2s;
     transform: scale(0.7);
 
+    .disableFadeEffect img {
+      opacity: 1 !important;
+      transition: none !important;
+    }
+
     @media (min-width: 768px) {
       left: auto;
       height: 143px;
