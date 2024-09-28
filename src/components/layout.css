@@ -1053,8 +1053,10 @@ Intro text and preview:
   }
 
   .cmsContent {
-    flex: 1;
-    padding: 0 50px 0 0;
+    @media (min-width: 768px) {
+      flex: 1;
+      padding: 0 50px 0 0;
+    }
   }
 
   .previewWrapper {
@@ -1081,7 +1083,7 @@ Intro text and preview:
 
       .previewMedia {
         position: absolute;
-        top: 24.5%;
+        top: 25%;
         left: 51%;
         transform: translateX(-50%);
         margin: 0;
@@ -1090,12 +1092,16 @@ Intro text and preview:
         object-fit: cover;
         background-color: #b1b1b1;
         z-index: -1;
+
+        @media (min-width: 768px) {
+          top: 24.5%;
+        }
       }
 
       a {
         position: absolute;
         top: 100%;
-        left: 52.5%;
+        left: 50%;
         transform: translateX(-50%);
         display: block;
         z-index: 1;

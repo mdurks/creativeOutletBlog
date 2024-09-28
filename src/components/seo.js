@@ -38,6 +38,7 @@ function Seo({ description, title, children }) {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="theme-color" content="#041d20" />
+      <link rel="preload" as="image" href="../images/smallBlankBook.png"></link>
       {children}
     </>
   )
