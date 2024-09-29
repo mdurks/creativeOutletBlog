@@ -62,6 +62,7 @@ const WebPage = () => {
   return (
     <Layout>
       <div className="heroBlock">
+        <div className="grid"></div>
         <div className="emptySpacing"></div>
         <ThreeJSCanvas cubesCount={125} techIcons={techIcons} />
       </div>

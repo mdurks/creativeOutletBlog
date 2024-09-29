@@ -77,7 +77,7 @@ const IndexPage = ({
   return (
     <Layout>
       <div className="heroBlock">
-        {/* <div className="centralColumn" style={{ opacity: 0 }}> */}
+        <div className="grid"></div>
         <div className="centralColumn">
           <PageHeader>
             {hyphenIndex.highlight ? (
@@ -92,11 +92,6 @@ const IndexPage = ({
           <PublishedWrapper>
             <strong>Published:</strong> {dateBlogPublished}
           </PublishedWrapper>
-          {/* {dateBlogUpdated && (
-            <UpdatedWrapper>
-              <strong>Updated:</strong> {dateBlogUpdated}
-            </UpdatedWrapper>
-          )} */}
         </div>
         <ThreeJSCanvas techIcons={blog.techIcons} />
       </div>

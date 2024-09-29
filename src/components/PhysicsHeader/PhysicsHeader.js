@@ -14,7 +14,7 @@ import { debounce } from "../../utilities/debounce"
 
 import { techIconData } from "./techIconData"
 
-export const PhysicsHeader = ({ cubesCount = 150, techIconsToLoad }) => {
+export const PhysicsHeader = ({ cubesCount = 130, techIconsToLoad }) => {
   // console.log("techIconsToLoad", techIconsToLoad)
 
   //

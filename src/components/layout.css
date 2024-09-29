@@ -226,6 +226,14 @@ footer {
   }
 }
 
+/* setting up the parallax: */
+.parallaxContext {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+}
+
 /*
 
 
@@ -250,6 +258,11 @@ Main Navigation:
   font-size: 1.7rem;
   color: white;
   z-index: var(--zi_navbar);
+
+  @media (min-width: 768px) {
+    width: calc(100vw - 40px);
+    padding-left: 20px;
+  }
 
   .innerColumn {
     position: relative;
@@ -512,17 +525,18 @@ Main Navigation:
 }
 
 .physicsHeader {
-  position: fixed !important;
-  position: relative !important;
   position: absolute !important;
-  top: 0;
+  top: -100px;
   left: 0;
   width: 100%;
-  /* height: calc(100% + 100px) !important; */
   height: 100% !important;
-  /* height: 500px !important; */
   overflow: hidden;
   pointer-events: all !important;
+  transform: translateZ(-10px) scale(2);
+
+  @media (min-width: 768px) {
+    top: -150px;
+  }
 }
 
 /*
@@ -539,12 +553,13 @@ Layout / Content:
 
 */
 
-.heroBlock {
-  position: relative;
-  padding: 5.5rem var(--centralColumnSidePaddingMobile) 5rem;
-  color: #fff;
-  /* pointer-events: none; */
-  /* user-select: none; */
+.grid {
+  position: absolute;
+  left: 0;
+  top: -300px;
+  width: 100%;
+  height: 110%;
+  transform: translateZ(-25px) scale(3.5);
 
   background-image: linear-gradient(
     0deg,
@@ -560,11 +575,9 @@ Layout / Content:
     hsl(185deg 71% 19%) 100%
   );
 
-  /* perspective: 800px; */
-
   @media (min-width: 768px) {
-    padding: 12rem 0;
-    /* padding: 16rem 0; */
+    left: -25px;
+    top: -520px;
   }
 
   &:before {
@@ -574,16 +587,6 @@ Layout / Content:
     top: 0;
     width: 100%;
     height: 100%;
-
-    /* Add perspective 3D affect */
-    /*
-    transform: rotateX(10deg);
-    transform-origin: center;
-    left: -50%;
-    top: -50%;
-    width: 200%;
-    height: 200%;
-    */
 
     background: repeating-linear-gradient(
         90deg,
@@ -614,6 +617,18 @@ Layout / Content:
         rgba(255, 255, 255, 0.04) 10px
       );
   }
+}
+
+.heroBlock {
+  position: relative;
+  transform-style: preserve-3d;
+
+  padding: 5.5rem var(--centralColumnSidePaddingMobile) 5rem;
+  color: #fff;
+
+  @media (min-width: 768px) {
+    padding: 12rem 0;
+  }
 
   p {
     color: inherit;
@@ -634,6 +649,14 @@ Layout / Content:
 
   .emptySpacing {
     height: 150px;
+  }
+
+  .centralColumn {
+    transform: translateZ(-4px) translateY(-20px) scale(1.4);
+
+    @media (min-width: 768px) {
+      transform: translateZ(-5px) translateY(-80px) scale(1.5);
+    }
   }
 }
 

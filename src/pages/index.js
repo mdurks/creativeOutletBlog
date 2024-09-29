@@ -11,16 +11,8 @@ import { ThreeJSCanvas } from "../components/ThreeJSCanvas/ThreeJSCanvas"
 const IndexPage = () => {
   return (
     <Layout>
-      {/* <HeaderHeroImg>
-        <StaticImage
-          src="../images/co-treehouse-ultrawide.jpg"
-          loading="eager"
-          quality={95}
-          formats={["auto", "webp", "avif"]}
-          alt="Creative Outlet Treehouse"
-        />
-      </HeaderHeroImg> */}
-      <div className="heroBlock overFlowHidden">
+      <div className="heroBlock">
+        <div className="grid"></div>
         <div className="centralColumn">
           <div className="introBanner">
             <p className="heroBannerText">
@@ -34,11 +26,7 @@ const IndexPage = () => {
                 src="../images/avatarLarge.png"
                 loading="eager"
                 quality={100}
-                // width={452}
-                // layout="fixed"
-                // layout="constrained"
                 objectFit="contain"
-                // formats={["auto", "webp", "avif"]}
                 alt="Creative Outlet Treehouse"
               />
             </div>
