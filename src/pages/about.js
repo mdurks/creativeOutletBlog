@@ -64,7 +64,7 @@ const WebPage = () => {
           </video>
         </div>
         <div className="hobbySectionParallax">
-          <p className="parallaxItem">
+          <div className="parallaxItem">
             <img
               className="propose"
               src="/meribelPropose.jpg"
@@ -76,7 +76,7 @@ const WebPage = () => {
               alt="Meribel logo"
               width="60"
             />
-          </p>
+          </div>
         </div>
       </div>
 

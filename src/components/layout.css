@@ -2092,7 +2092,7 @@ About:
   .hobbySectionParallax {
     > * {
       animation: parallax linear;
-      animation-timeline: scroll();
+      animation-timeline: scroll() !important;
     }
 
     position: relative;
