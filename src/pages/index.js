@@ -15,12 +15,20 @@ const IndexPage = () => {
         <div className="grid"></div>
         <div className="centralColumn">
           <div className="introBanner">
-            <p className="heroBannerText">
-              Hi, my name's Michael and welcome to my blog where I share my
-              passion for web development, 3D and other digital pursuits. With
-              over two decades of expertise, I'm passionate about crafting
-              outstanding digital experiences.
-            </p>
+            <div className="heroBannerText">
+              <h1>Hi there, I'm Michael</h1>
+              <p>
+                I started building websites around 1998, driven by a passion for
+                crafting great digital experiences. I've worked in numerous
+                front end positions over the years and taught web development at
+                University. These days I'm exploring the world of 3D.
+              </p>
+              <p>
+                <strong>
+                  Dive in and <span>go build your dreams!</span>
+                </strong>
+              </p>
+            </div>
             <div className="heroBannerTreehouseLogo">
               <StaticImage
                 src="../images/avatarLarge.png"
@@ -37,7 +45,7 @@ const IndexPage = () => {
 
       <div className="contentBlock">
         <div className="centralColumn">
-          <ProjectListTitle>My Projects:</ProjectListTitle>
+          <ProjectListTitle>Recent Projects:</ProjectListTitle>
           <ProjectList />
         </div>
       </div>
