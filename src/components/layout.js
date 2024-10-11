@@ -78,7 +78,11 @@ const Layout = ({ children, showFooterForm = true }) => {
           {showFooterForm && (
             <div className="footerContactBar">
               <form action="https://submit-form.com/YpLIEIJWw">
-                <input type="hidden" name="_redirect" value="/thanks/" />
+                <input
+                  type="hidden"
+                  name="_redirect"
+                  value="https://creativeoutletblog.netlify.app/thanks/"
+                />
 
                 <p>Email me and say hello!</p>
                 <div className="col">
