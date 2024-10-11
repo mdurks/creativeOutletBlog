@@ -369,6 +369,185 @@ footer {
   color: rgb(163, 163, 163);
   font-size: 1rem;
 
+  .footerTreehouseLink {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+
+    @media (min-width: 768px) {
+      padding: 10px 0 30px;
+    }
+
+    a {
+      display: inline-block;
+      padding: 30px;
+      background-color: #1c3035;
+      font-size: 1rem;
+      text-decoration-color: #a5831d00;
+      text-underline-offset: 2px;
+      border-radius: 100%;
+      border-top: 3px solid #0a1416;
+      border-bottom: 3px solid #3a4d51;
+      transition: all ease 0.3s;
+
+      @media (min-width: 768px) {
+        margin-left: 7%;
+        padding: 50px;
+        font-size: 1.25rem;
+
+        &:hover {
+          background-color: #1d3338;
+          text-decoration-color: #a5831d;
+          border-bottom: 3px solid #0a1416;
+          border-top: 3px solid #3a4d51;
+          padding: 47px 50px 53px;
+        }
+      }
+
+      img {
+        width: 200px;
+        margin: 0 auto 10px;
+      }
+
+      span {
+        display: block;
+        margin: auto;
+        padding: 0 35px;
+        width: 175px;
+        text-align: center;
+        line-height: normal;
+        color: #259297;
+        color: #be8f00;
+
+        @media (min-width: 768px) {
+          padding: 0;
+          width: 250px;
+        }
+      }
+    }
+  }
+
+  .footerContactBar {
+    display: flex;
+    flex-direction: column;
+    padding: 10px var(--centralColumnSidePaddingMobile) 10px;
+    background-color: #102327;
+    font-size: 1.25rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      padding: 30px calc(50% - var(--maxColumnWidth) / 2) 20px;
+      font-size: 1.8rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: 768px) {
+        display: block;
+        margin: 0 0 0 auto;
+        width: 50%;
+      }
+    }
+
+    form p {
+      margin: 30px 0 35px;
+      font-weight: bold;
+      font-size: 2.75rem;
+      text-align: center;
+      color: var(--colors_primary);
+      line-height: 2.95rem;
+
+      @media (min-width: 768px) {
+        margin: 20px 0 35px;
+        font-size: 2.5rem;
+        text-align: left;
+        line-height: normal;
+      }
+    }
+
+    .col {
+      @media (min-width: 768px) {
+        margin: 0 0 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    label {
+      display: block;
+      margin: 0 0 20px;
+
+      @media (min-width: 768px) {
+        flex: 0 1 calc(50% - 10px);
+        margin: 0;
+      }
+
+      span {
+        font-weight: bold;
+        font-size: 1rem;
+        line-height: normal;
+        color: var(--colors_primary);
+
+        /* screen reader only: */
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
+      textarea,
+      input {
+        display: block;
+        width: -webkit-fill-available;
+        padding: 14px 18px;
+        background-color: #081a1c;
+        border: 1px solid #364a4d;
+        border-radius: 3px;
+        font-family: inherit;
+        color: white;
+
+        &:focus {
+          outline: 3px solid var(--colors_primary);
+        }
+      }
+
+      textarea::placeholder,
+      input::placeholder {
+        color: rgb(190, 190, 190);
+      }
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      margin: 0 0 15px;
+      padding: 8px 0 10px;
+      background-color: var(--colors_secondary);
+      border: none;
+      border-radius: 3px;
+      font-size: 1.25rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: white;
+      letter-spacing: 2px;
+
+      &:hover {
+        /* background-color: #c95f82; */
+        text-decoration: underline;
+      }
+
+      @media (min-width: 768px) {
+        margin: 20px 0 15px;
+      }
+    }
+  }
+
   .footerContent {
     position: relative;
     margin: auto;
@@ -376,36 +555,32 @@ footer {
     z-index: var(--zi_centralColumn);
 
     @media (min-width: 768px) {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
       max-width: var(--maxColumnWidth);
       padding: 7px 20px 10px;
-    }
-
-    &::before {
-      content: " ";
-      position: absolute;
-      width: 104px;
-      height: 107px;
-      top: -103px;
-      left: 40px;
-      background-image: url(../images/footerTreehouse.png);
-    }
-  }
-
-  a {
-    display: block;
-    padding: 0px 0 10px;
-    color: rgb(207, 207, 207);
-
-    @media (min-width: 768px) {
-      padding: 0;
     }
   }
 }
 
-/* setting up the parallax: */
+.colorPrimary {
+  color: var(--colors_primary);
+}
+.colorSecondary {
+  color: var(--colors_secondary);
+}
+
+/*
+
+
+
+
+
+Parallax:
+------------------------------------------------------------
+
+
+
+
+*/
 .parallaxContext {
   height: 100vh;
   overflow-y: auto;
@@ -746,10 +921,6 @@ Layout / Content:
 
 .emptySpacing {
   height: 150px;
-}
-
-.contentWrapper {
-  /* height: 150%; */
 }
 
 .grid {

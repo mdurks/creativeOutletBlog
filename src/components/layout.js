@@ -7,6 +7,7 @@
 
 import * as React from "react"
 import { useState, useEffect } from "react"
+
 // import { useStaticQuery, graphql } from "gatsby"
 
 // import Header from "./header"
@@ -20,7 +21,7 @@ import "./layout.css"
 //   MobileMenuButton,
 // } from "./layout.styles"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, showFooterForm = true }) => {
   // const data = useStaticQuery(graphql`
   //   query SiteTitleQuery {
   //     site {
@@ -32,6 +33,12 @@ const Layout = ({ children }) => {
   // `)
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  // const [currentUrl, setCurrentUrl] = useState("")
+
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") setCurrentUrl(window.location.href)
+  // }, [])
 
   // const handleMenuClick = () => {
   //   setIsMenuOpen(!isMenuOpen)
@@ -66,13 +73,58 @@ const Layout = ({ children }) => {
       <Navigation setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
       <div className="parallaxContext">
         {children}
+
         <footer>
-          <div className="footerContent">
-            <div>
-              <a href="http://creativeoutlet.co.uk/">
-                Visit my treehouse if you haven't already...
-              </a>
+          {showFooterForm && (
+            <div className="footerContactBar">
+              <form action="https://submit-form.com/YpLIEIJWw">
+                <input type="hidden" name="_redirect" value="/thanks/" />
+
+                <p>Email me and say hello!</p>
+                <div className="col">
+                  <label htmlFor="name">
+                    <span>Prefered name:</span>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Prefered name"
+                      required={true}
+                    />
+                  </label>
+                  <label htmlFor="email">
+                    <span>Email:</span>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Email address"
+                      required={true}
+                    />
+                  </label>
+                </div>
+                <label htmlFor="message">
+                  <span>Message:</span>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Message..."
+                    rows={5}
+                    required={true}
+                  ></textarea>
+                </label>
+                <button type="submit">Submit</button>
+              </form>
+              <div className="footerTreehouseLink">
+                <a href="http://creativeoutlet.co.uk/">
+                  <img src="/footerTreehouse.png" alt="" />
+                  <span>Visit my treehouse if you haven't already...</span>
+                </a>
+              </div>
             </div>
+          )}
+
+          <div className="footerContent">
             <div>© Creative Outlet. All Rights Reserved.</div>
           </div>
         </footer>

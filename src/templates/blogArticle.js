@@ -33,16 +33,14 @@ const IndexPage = ({
     Burndown List
     ----------------------------------------------------------------------
 
+    Get picture of me
+    Ring Config - get picture of "Try it on"
+
     Make 3D models for:
       - SASS, A11y
       - Blender
       - XYZ axis
       - Wireframe
-
-    Write About page
-    Get picture of me
-    Ring Config - get picture of "Try it on"
-    Ring Config - get animated GIFs of screenshots
 
 
   */
