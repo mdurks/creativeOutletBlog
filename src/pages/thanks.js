@@ -1,17 +1,26 @@
 import * as React from "react"
+import { useState, useEffect } from "react"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const WebPage = () => {
+  const [name, setName] = useState("")
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const nameFromUrl = params.get("name")
+      ? decodeURIComponent(params.get("name"))
+      : ""
+    setName(nameFromUrl)
+  }, [])
+
   return (
     <Layout showFooterForm={false}>
       <div className="contentBlock">
         <div className="centralColumn">
           <br />
-          <h2 className="noTextTransform colorSecondary">
-            Thank you for your message,
-          </h2>
+          <h2 className="noTextTransform colorSecondary">Hi {name},</h2>
           <p>
             <strong>
               Thank you for taking the time to reach out to me, I will respond

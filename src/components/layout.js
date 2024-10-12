@@ -77,11 +77,26 @@ const Layout = ({ children, showFooterForm = true }) => {
         <footer>
           {showFooterForm && (
             <div className="footerContactBar">
-              <form action="https://submit-form.com/YpLIEIJWw">
+              {/* <form
+                data-botpoison-public-key="pk_dddac682-0683-48e6-a41f-11f98093d505"
+                action="https://submit-form.com/echo"
+              > */}
+              <form
+                data-botpoison-public-key="pk_dddac682-0683-48e6-a41f-11f98093d505"
+                action="https://submit-form.com/YpLIEIJWw"
+              >
                 <input
                   type="hidden"
                   name="_redirect"
                   value="https://creativeoutletblog.netlify.app/thanks/"
+                />
+
+                <input
+                  type="checkbox"
+                  name="feedback"
+                  style={{ display: "none" }}
+                  tabIndex="-1"
+                  autoComplete="off"
                 />
 
                 <p>Email me and say hello!</p>

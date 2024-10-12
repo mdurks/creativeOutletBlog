@@ -46,6 +46,7 @@ function Seo({ description, title, children, preloadImageUrls = [] }) {
         <link key={img.url} rel="preload" as="image" href={img.url}></link>
       ))}
       {children}
+      <script src="https://unpkg.com/@botpoison/browser" async></script>
     </>
   )
 }
