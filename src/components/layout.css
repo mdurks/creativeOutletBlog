@@ -383,7 +383,7 @@ footer {
     a {
       display: inline-block;
       padding: 30px;
-      background-color: #1c3035;
+      background-color: #081a1c;
       font-size: 1rem;
       text-decoration-color: #a5831d00;
       text-underline-offset: 2px;
@@ -398,11 +398,11 @@ footer {
         font-size: 1.25rem;
 
         &:hover {
-          background-color: #1d3338;
+          background-color: hsl(190, 42%, 13%);
           text-decoration-color: #a5831d;
+          border-top: 3px solid #081a1c00;
           border-bottom: 3px solid #0a1416;
-          border-top: 3px solid #3a4d51;
-          padding: 47px 50px 53px;
+          padding: 46px 50px 54px;
         }
       }
 
@@ -535,11 +535,13 @@ footer {
       font-weight: bold;
       text-transform: uppercase;
       color: white;
-      letter-spacing: 2px;
+      letter-spacing: 0.1rem;
+      transition: all ease 0.2s;
 
       &:hover {
-        /* background-color: #c95f82; */
         text-decoration: underline;
+        background-color: #e15c88;
+        letter-spacing: 0;
       }
 
       @media (min-width: 768px) {
@@ -550,13 +552,43 @@ footer {
 
   .footerContent {
     position: relative;
+    display: flex;
+    flex-direction: column-reverse;
     margin: auto;
     padding: 20px;
     z-index: var(--zi_centralColumn);
 
     @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
       max-width: var(--maxColumnWidth);
       padding: 7px 20px 10px;
+    }
+
+    a {
+      display: flex;
+      color: inherit;
+      text-decoration: none;
+      margin: 10px 0 20px;
+
+      @media (min-width: 768px) {
+        margin: 0;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      &:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      svg {
+        margin-right: 7px;
+        color: #0a66c2;
+        background-color: white;
+        clip-path: inset(3px 3px 3px 3px);
+      }
     }
   }
 }

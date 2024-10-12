@@ -25,7 +25,7 @@ const IndexPage = () => {
               </p>
               <p>
                 <strong>
-                  Dive in and <span>go build your dreams!</span>
+                  Let's dive in and <span>build some dreams!</span>
                 </strong>
               </p>
             </div>
