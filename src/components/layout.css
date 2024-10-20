@@ -581,12 +581,16 @@ footer {
       &:hover {
         color: white;
         text-decoration: underline;
+
+        svg {
+          color: #0a66c2;
+        }
       }
 
       svg {
         margin-right: 7px;
-        color: #0a66c2;
-        background-color: white;
+        color: #fff;
+        /* background-color: white; */
         clip-path: inset(3px 3px 3px 3px);
       }
     }
@@ -1521,6 +1525,7 @@ Blog Article Skill Books:
       max-width: 157px;
       transform: scale(1);
 
+      &:focus,
       &:hover {
         top: -20px;
         transform: rotate(15deg) scale(1.1);

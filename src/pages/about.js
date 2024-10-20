@@ -115,17 +115,32 @@ const WebPage = () => {
               </h3>
               <p className="experience-date">Sept 2024 - Present</p>
               <p>
-                Victorian Plumbing is the UK's number 1 bathroom retailer with
-                revenues just under one million pounds per day. I joined a team
-                of 4 to completely rebuild the customer-facing website.
+                Promoted within the company to deliver a new online 3D solution
+                allowing customers to fully customize their bathrooms by
+                selecting products and visualizing their design in a virtual
+                space, offering a personalized and immersive experience.
               </p>
               <div className="experience">
                 <div className="col1"></div>
                 <div className="col2">
                   <ul>
                     <li>
-                      Promoted to develop the interactive 3D bathroom planner
-                      using WebGL, Three JS, React Three Fiber
+                      Laid the foundation and architecture for the project using
+                      React, Three JS and other supporting technologies
+                    </li>
+                    <li>
+                      Researched the best technology for current and future
+                      needs, with VR and AR capabilities
+                    </li>
+                    <li>
+                      Implemented TypeScript and a modular approach to ensure
+                      quality, safety and scalability of the codebase
+                    </li>
+                    <li>
+                      Met with various companies offering industry leading
+                      scanning equipment to solve Victorian Plumbings challenge
+                      of generating 3D assets for its catalogue of over 30
+                      thousand products
                     </li>
                   </ul>
                 </div>
@@ -197,8 +212,8 @@ const WebPage = () => {
                       chatbot creation
                     </li>
                     <li>
-                      Built a website facilitating the application of "green
-                      home grants" from the government
+                      Delivered a solution for facilitating the application of
+                      "green home grants" from the government
                     </li>
                   </ul>
                 </div>
@@ -281,7 +296,7 @@ const WebPage = () => {
               <p className="experience-date">Jan 2004 - Sept 2013</p>
               <p>
                 Managed multiple client contracts, delivering web design,
-                branding, and development for various businesses
+                branding, and development for various businesses:
               </p>
               <div className="experience">
                 <div className="col1"></div>
