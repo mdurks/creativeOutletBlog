@@ -116,9 +116,9 @@ const WebPage = () => {
               <p className="experience-date">Sept 2024 - Present</p>
               <p>
                 Promoted within the company to deliver a new online 3D solution
-                allowing customers to fully customize their bathrooms by
-                selecting products and visualizing their design in a virtual
-                space, offering a personalized and immersive experience.
+                allowing customers to fully customise their bathrooms by
+                selecting products and visualising their design in a virtual
+                space, offering a personalised and immersive experience.
               </p>
               <div className="experience">
                 <div className="col1"></div>
@@ -137,10 +137,10 @@ const WebPage = () => {
                       quality, safety and scalability of the codebase
                     </li>
                     <li>
-                      Met with various companies offering industry leading
-                      scanning equipment to solve Victorian Plumbings challenge
-                      of generating 3D assets for its catalogue of over 30
-                      thousand products
+                      Met with specialised companies offering industry leading
+                      scanning equipment to test and select the best solutions
+                      to solve Victorian Plumbings challenge of generating 3D
+                      assets for its catalogue of over 30 thousand products
                     </li>
                   </ul>
                 </div>
