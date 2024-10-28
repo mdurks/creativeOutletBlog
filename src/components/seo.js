@@ -41,10 +41,10 @@ function Seo({ description, title, children, preloadImageUrls = [] }) {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="theme-color" content="#041d20" />
-      <link rel="preload" as="image" href={smallBlankBookImageSrc}></link>
-      {preloadImageUrls.map(img => (
+      <link rel="prefetch" href={smallBlankBookImageSrc}></link>
+      {/* {preloadImageUrls.map(img => (
         <link key={img.url} rel="preload" as="image" href={img.url}></link>
-      ))}
+      ))} */}
       {children}
       <script src="https://unpkg.com/@botpoison/browser" async></script>
     </>

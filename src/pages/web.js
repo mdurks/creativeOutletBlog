@@ -9,16 +9,17 @@ import {
   CardListItem,
   CardListItemLink,
 } from "../components/page.styles"
-import { truncateHtml } from "../utilities/truncateHtml"
+// import { truncateHtml } from "../utilities/truncateHtml"
 import { ThreeJSCanvas } from "../components/ThreeJSCanvas/ThreeJSCanvas"
 
 const pageQuery = graphql`
   {
     gcms {
-      blogs(stage: PUBLISHED, orderBy: createdAt_ASC) {
+      blogs(first: 100, orderBy: createdAt_ASC, stage: PUBLISHED) {
         id
         articleTitle
         slug
+        summary
         blogCategory
         createdAt
         content {
@@ -35,6 +36,8 @@ const WebPage = () => {
   } = useStaticQuery(pageQuery)
 
   const blogData = [...blogs]
+  // console.log("blogData", blogData)
+
   blogData.sort(function (a, b) {
     return new Date(b.createdAt) - new Date(a.createdAt)
   })
@@ -42,6 +45,8 @@ const WebPage = () => {
   const blogDataAccessibility = blogData.filter(
     blog => blog.blogCategory === "Accessibility"
   )
+
+  const blogDataReact = blogData.filter(blog => blog.blogCategory === "React")
 
   const techIcons = [
     "IconNetscape",
@@ -53,6 +58,7 @@ const WebPage = () => {
     "IconHTML",
     "IconCSS",
     "IconJS",
+    "IconTypescript",
     "IconTag",
     "IconArray",
     "IconParens",
@@ -69,33 +75,31 @@ const WebPage = () => {
 
       <div className="contentBlock">
         <section className="centralColumn">
+          <h1>React:</h1>
+          <CardList>
+            {blogDataReact.map(article => (
+              <CardListItem key={article.id}>
+                <CardListItemLink to={`/${article.slug}/`}>
+                  <h2>{article.articleTitle.slice(8)}</h2>
+                  <p>{article.summary}</p>
+                  <strong>Read more...</strong>
+                </CardListItemLink>
+              </CardListItem>
+            ))}
+          </CardList>
+
           <h1>Accessibility:</h1>
           <CardList>
             {blogDataAccessibility.map(article => (
               <CardListItem key={article.id}>
                 <CardListItemLink to={`/${article.slug}/`}>
                   <h2>{article.articleTitle.slice(16)}</h2>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: truncateHtml(article.content.html),
-                    }}
-                  />
+                  <p>{article.summary}</p>
                   <strong>Read more...</strong>
                 </CardListItemLink>
               </CardListItem>
             ))}
           </CardList>
-        </section>
-      </div>
-
-      <div className="contentBlockDark">
-        <section className="centralColumn">
-          <h1>Topics Coming Soon:</h1>
-
-          <p>React</p>
-          <p>JavaScript</p>
-          <p>HTML</p>
-          <p>CSS</p>
         </section>
       </div>
 

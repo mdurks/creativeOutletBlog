@@ -74,6 +74,11 @@ export const techIconMapping = {
     cssClass: "greyLight",
     website: "https://threejs.org/",
   },
+  typescript: {
+    label: "TypeScript",
+    cssClass: "greyLight",
+    website: "https://www.typescriptlang.org/",
+  },
   vite: {
     label: "vite",
     cssClass: "pink",

@@ -126,6 +126,12 @@ export const techIconData = {
     modelName: "IconJS",
     scale: [1.2, 1.2, 1.2],
   },
+  IconTypescript: {
+    path: "/models/IconTypescript.glb",
+    cuboidColliderArgs: [1.35, 0.25, 1.3],
+    modelName: "IconTypescript",
+    scale: [1.2, 1.2, 1.2],
+  },
   IconHTML: {
     path: "/models/IconHTML.glb",
     cuboidColliderArgs: [1.35, 0.25, 1.3],

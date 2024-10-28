@@ -150,7 +150,11 @@ const Layout = ({ children, showFooterForm = true }) => {
           <div className="footerContent">
             <div>© Creative Outlet. All Rights Reserved.</div>
             <div>
-              <a href="https://www.linkedin.com/in/michael-durkin-a5a39776/">
+              <a
+                href="https://www.linkedin.com/in/michael-durkin-a5a39776/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"

@@ -1777,7 +1777,7 @@ p code {
 .contentBlockDark p code {
   background: var(--colors_codeTagBackgroundDark);
   color: var(--colors_codeTagColorDark);
-  outline: none;
+  outline: 1px solid #515151;
 }
 
 .filePath {
