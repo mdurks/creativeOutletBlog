@@ -34,6 +34,16 @@ export const techIconMapping = {
     cssClass: "tanzaniteDark",
     website: "https://gsap.com/",
   },
+  css: {
+    label: "CSS",
+    cssClass: "greyLight",
+    website: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  },
+  html: {
+    label: "HTML",
+    cssClass: "greyLight",
+    website: "https://html.spec.whatwg.org/multipage/",
+  },
   hygraph: {
     label: "hygraph",
     cssClass: "tanzaniteDark",

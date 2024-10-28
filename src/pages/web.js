@@ -21,6 +21,9 @@ const pageQuery = graphql`
         slug
         summary
         blogCategory
+        techIconSvGs {
+          url
+        }
         createdAt
         content {
           html
@@ -83,6 +86,11 @@ const WebPage = () => {
                   <h2>{article.articleTitle.slice(8)}</h2>
                   <p>{article.summary}</p>
                   <strong>Read more...</strong>
+                  <div className="svgList">
+                    {article.techIconSvGs.map(icon => (
+                      <img key={icon.url} src={icon.url} width="50" alt="" />
+                    ))}
+                  </div>
                 </CardListItemLink>
               </CardListItem>
             ))}
@@ -96,6 +104,11 @@ const WebPage = () => {
                   <h2>{article.articleTitle.slice(16)}</h2>
                   <p>{article.summary}</p>
                   <strong>Read more...</strong>
+                  <div className="svgList">
+                    {article.techIconSvGs.map(icon => (
+                      <img key={icon.url} src={icon.url} width="50" alt="" />
+                    ))}
+                  </div>
                 </CardListItemLink>
               </CardListItem>
             ))}

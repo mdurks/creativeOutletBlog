@@ -340,4 +340,25 @@ export const CardListItemLink = styled(Link)`
     margin-top: auto;
     color: #0096ab;
   }
+
+  .svgList {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    ${mediaQuery.min_desktop} {
+      margin: 0 0 5px;
+    }
+
+    img {
+      margin: 10px 7px 0px 7px;
+      width: 50px;
+      filter: drop-shadow(hsla(0, 0%, 0%, 0.2) 2px 2px 0px);
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
 `
