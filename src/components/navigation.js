@@ -277,7 +277,7 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
     //   <SubCategoryTitle>Blender</SubCategoryTitle>
     //   <NavigationLinkList linkData={blogDataBlender} />
     // </NavWrapper>
-    <nav className="navbar" aria-label="Main Navigation">
+    <nav className="navbar background-keep-alive" aria-label="Main Navigation">
       <div className="innerColumn">
         <div className="avatar">
           {pathname === "/" && (
