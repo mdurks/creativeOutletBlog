@@ -256,27 +256,22 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
     }
   }, [])
 
-  useEffect(() => {
-    const keepAliveInput = document.getElementById("keep-alive-input")
+  // const refHiddenInput = useRef()
 
-    if (keepAliveInput) {
-      // Initialize a counter or cycle of text updates
-      let counter = 0
+  // useEffect(() => {
+  //   const keepAliveInput = document.getElementById("keep-alive-input")
 
-      // Function to update the input field value and trigger an 'input' event
-      const simulateTyping = () => {
-        // Update the input's value
-        keepAliveInput.value = `keepAlive${counter++}`
-
-        // Dispatch an 'input' event to simulate user typing
-        const event = new Event("input", { bubbles: true })
-        keepAliveInput.dispatchEvent(event)
-      }
-
-      // Set an interval to trigger this function periodically
-      setInterval(simulateTyping, 1000) // Adjust frequency as needed
-    }
-  }, [])
+  //   // if (typeof window !== "undefined") {
+  //   console.log(" ")
+  //   // let counter = 0
+  //   // const simulateTyping = () => {
+  //   //   refHiddenInput.current.value = `keepAlive${counter++}`
+  //   //   const event = new Event("input", { bubbles: true })
+  //   //   refHiddenInput.current.dispatchEvent(event)
+  //   // }
+  //   // setInterval(simulateTyping, 1000)
+  //   // }
+  // }, [])
 
   return (
     // <NavWrapper className={isMenuOpen && "menuOpen"}>
@@ -300,7 +295,7 @@ const Navigation = ({ setIsMenuOpen, isMenuOpen }) => {
     //   <NavigationLinkList linkData={blogDataBlender} />
     // </NavWrapper>
     <nav className="navbar" aria-label="Main Navigation">
-      <input type="text" id="keep-alive-input" style="display: none;" />
+      {/* <input type="text" id="keep-alive-input" style="display: none;" /> */}
       <div className="innerColumn">
         <div className="avatar">
           {pathname === "/" && (

@@ -114,11 +114,16 @@ const WebPage = () => {
                 Senior 3D Developer at Victorian Plumbing Ltd, Manchester
               </h3>
               <p className="experience-date">Sept 2024 - Present</p>
-              <p>
+              {/* <p>
                 Promoted within the company to deliver a new online 3D solution
                 allowing customers to fully customise their bathrooms by
                 selecting products and visualising their design in a virtual
                 space, offering a personalised and immersive experience.
+              </p> */}
+              <p>
+                Promoted within the company to deliver a new 3D solution
+                allowing customers to visualise products offering a personalised
+                and immersive experience.
               </p>
               <div className="experience">
                 <div className="col1"></div>
@@ -130,7 +135,7 @@ const WebPage = () => {
                     </li>
                     <li>
                       Researched the best technology for current and future
-                      needs, with VR and AR capabilities
+                      needs, including VR and AR capabilities
                     </li>
                     <li>
                       Implemented TypeScript and a modular approach to ensure
